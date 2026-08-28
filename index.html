@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa TrustPulse — Autonomous Decisions You Can Audit</title>
+  <meta name="description" content="Visa TrustPulse interactive agentic commerce demo: Merchant Digital Twin (MDT), AP2 payment mandate, VIC verification, and programmable money escrow.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Step Progress Bar Header -->
+    <header class="top-nav">
+      <div class="step-progress-wrapper">
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="step-items-container">
+          <div class="step-pill" data-step="1" id="step-nav-1">
+            <span class="step-name">PROMPT</span>
+          </div>
+          <div class="step-pill" data-step="2" id="step-nav-2">
+            <span class="step-name">CONTEXT</span>
+          </div>
+          <div class="step-pill" data-step="3" id="step-nav-3">
+            <span class="step-name">RESEARCH</span>
+          </div>
+          <div class="step-pill" data-step="4" id="step-nav-4">
+            <span class="step-name">MDT SCORE</span>
+          </div>
+          <div class="step-pill" data-step="5" id="step-nav-5">
+            <span class="step-name">PAYMENT</span>
+          </div>
+          <div class="step-pill" data-step="6" id="step-nav-6">
+            <span class="step-name">ESCROW</span>
+          </div>
+          <div class="step-pill" data-step="7" id="step-nav-7">
+            <span class="step-name">DELIVERY</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="nav-controls">
+        <button id="btn-sound" class="control-btn icon-btn" title="Toggle Sound Effects">
+          <svg id="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+        <button id="btn-prev" class="control-btn nav-arrow" title="Previous Step">◀</button>
+        <button id="btn-play-pause" class="play-pause-btn">
+          <span id="play-icon">▶</span>
+          <span id="play-text">Run Demo</span>
+        </button>
+        <button id="btn-next" class="control-btn nav-arrow" title="Next Step">▶</button>
+        <button id="btn-reset" class="control-btn" title="Reset Demo">Reset</button>
+      </div>
+    </header>
+
+    <!-- Main Content 3-Column Layout -->
+    <main class="main-layout">
+      
+      <!-- LEFT COLUMN: Phone Frame Mockup -->
+      <section class="phone-column">
+        <div class="phone-frame">
+          <div class="phone-speaker-island">
+            <div class="dynamic-island">
+              <div class="island-camera"></div>
+            </div>
+          </div>
+          <div class="phone-status-bar">
+            <span class="phone-time" id="phone-clock">9:41</span>
+            <div class="phone-icons">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.37 19.58 10.64 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4z"/></svg>
+              <div class="battery-icon"><div class="battery-level"></div></div>
+            </div>
+          </div>
+
+          <!-- Phone Inner Screen Content Container -->
+          <div class="phone-screen" id="phone-screen">
+            
+            <!-- STEP 0: Intro / Awaiting Demo Start -->
+            <div class="screen-view active" id="view-step-0">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+              <div class="status-banner pulse-banner">
+                <span class="heart-pulse-emoji">💖</span>
+                <span>Visa TrustPulse enabled</span>
+                <span class="dot-online"></span>
+              </div>
+              <div class="intro-agent-hero">
+                <div class="agent-avatar-glow">
+                  <div class="heart-chat-icon">
+                    <svg viewBox="0 0 24 24" width="36" height="36" fill="#f43f5e"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                </div>
+                <h2 class="agent-title">Shopping Agent</h2>
+                <p class="agent-subtitle">Powered by Visa TrustPulse</p>
+              </div>
+              
+              <div class="visa-card-mockup">
+                <div class="chip-row">
+                  <span class="wifi-contactless">📶</span>
+                  <span class="card-visa-text">VISA</span>
+                </div>
+                <div class="card-bottom">
+                  <span class="card-visa-white">VISA</span>
+                </div>
+              </div>
+
+              <div class="intro-footer-text">
+                <p class="bold-note">MDT scoring active · 8 trust dimensions</p>
+                <p class="sub-note">Autonomous decisions within your mandate</p>
+              </div>
+            </div>
+
+            <!-- STEP 1: Prompt Input / Interpreting -->
+            <div class="screen-view" id="view-step-1">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+              <div class="agent-header-row">
+                <div class="mini-agent-avatar">💖</div>
+                <div>
+                  <div class="mini-agent-title">Shopping Agent</div>
+                  <div class="mini-agent-status">● Visa TrustPulse Active</div>
+                </div>
+              </div>
+
+              <div class="voice-interpreting-section">
+                <div class="mic-pulsing-circle">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+                </div>
+                <div class="interpreting-label">INTERPRETING...</div>
+                <div class="speech-quote-bubble">
+                  "Help me plan Lily's graduation party next Saturday. I want it elegant, warm, and personal — with a beautiful setup, a custom cake, great food, and one meaningful gift. Keep it under $3,500 and make sure everything is ready before 2 PM."
+                </div>
+              </div>
+
+              <div class="saved-context-preview-card">
+                <div class="context-card-header">
+                  <span class="sparkle-green">✨</span>
+                  <span class="bold">Using saved context</span>
+                </div>
+                <div class="context-card-body">
+                  <p><strong>Event:</strong> Lily's graduation party</p>
+                  <p>Guest count: 30 · Style: elegant, warm</p>
+                  <p>Priority: on-time delivery, quality vendors</p>
+                  <p>Preference: quality over cheapest price</p>
+                  <hr class="card-divider">
+                  <p class="muted-note">I'll scan merchant digital twins across setup, cake, catering, and gifts — handling everything within your mandate.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: Emma's Context & AP2 Mandate -->
+            <div class="screen-view" id="view-step-2">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+
+              <div class="context-title-card">
+                <div class="shield-green-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </div>
+                <div>
+                  <div class="context-heading">EMMA'S CONTEXT</div>
+                  <div class="context-subheading">Focus, preference, and AP2 mandate</div>
+                </div>
+              </div>
+
+              <div class="event-focus-card">
+                <div class="event-focus-header">
+                  <span class="mini-label">EVENT FOCUS</span>
+                  <span class="badge-pill green">Quality first</span>
+                </div>
+                <ul class="check-list">
+                  <li><span class="check-circle green">✓</span> Elegant graduation setup</li>
+                  <li><span class="check-circle green">✓</span> Custom cake and catering</li>
+                  <li><span class="check-circle green">✓</span> Meaningful personalized gift</li>
+                </ul>
+              </div>
+
+              <div class="context-param-grid">
+                <div class="param-box">
+                  <span class="param-title">GUEST COUNT</span>
+                  <span class="param-val">30</span>
+                </div>
+                <div class="param-box">
+                  <span class="param-title">STYLE</span>
+                  <span class="param-val highlight">Elegant, warm</span>
+                </div>
+                <div class="param-box">
+                  <span class="param-title">PREFERENCE</span>
+                  <span class="param-val">Quality over lowest price</span>
+                </div>
+                <div class="param-box">
+                  <span class="param-title">DEADLINE</span>
+                  <span class="param-val alert">Saturday 2 PM</span>
+                </div>
+              </div>
+
+              <div class="mandate-card-compact" onclick="openModal('modal-ap2')">
+                <div class="mandate-top-row">
+                  <span class="badge-ap2">AP2</span>
+                  <div class="mandate-titles">
+                    <span class="bold-text">Operating Mandate</span>
+                    <span class="sub-text">Autonomous action inside approved rails</span>
+                  </div>
+                </div>
+                <div class="mandate-2x2">
+                  <div class="m-cell">
+                    <span class="m-lbl">TOTAL BUDGET</span>
+                    <span class="m-v">$3,500.00</span>
+                  </div>
+                  <div class="m-cell">
+                    <span class="m-lbl">PER MERCHANT</span>
+                    <span class="m-v">$1,500.00</span>
+                  </div>
+                  <div class="m-cell">
+                    <span class="m-lbl">CATEGORIES</span>
+                    <span class="m-v cyan">Setup, Cake, Food, Gifts</span>
+                  </div>
+                  <div class="m-cell">
+                    <span class="m-lbl">PRIORITY</span>
+                    <span class="m-v green">Quality & Delivery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Research / Scanning MDTs -->
+            <div class="screen-view" id="view-step-3">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+
+              <div class="research-status-header">
+                <div class="radar-dot pulse"></div>
+                <div>
+                  <div class="scanning-title">SCANNING MDTS</div>
+                  <div class="scanning-subtitle">Evaluating merchant digital twins...</div>
+                </div>
+              </div>
+
+              <div class="candidates-grid">
+                <div class="candidate-card scanning-border">
+                  <div class="candidate-img-box">
+                    <img src="assets/candidate_brightcap.jpg" alt="BrightCap Events" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>BrightCap</text></svg>'">
+                  </div>
+                  <div class="candidate-info">
+                    <div class="c-name">BrightCap Events</div>
+                    <div class="c-cat">Graduation Setup</div>
+                  </div>
+                </div>
+
+                <div class="candidate-card scanning-border">
+                  <div class="candidate-img-box">
+                    <img src="assets/candidate_goldentassel.jpg" alt="Golden Tassel Cakes" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Custom Cake</text></svg>'">
+                  </div>
+                  <div class="candidate-info">
+                    <div class="c-name">Golden Tassel Cakes</div>
+                    <div class="c-cat">Custom Cake</div>
+                  </div>
+                </div>
+
+                <div class="candidate-card scanning-border">
+                  <div class="candidate-img-box">
+                    <img src="assets/candidate_harvesttable.jpg" alt="Harvest Table Catering" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Catering</text></svg>'">
+                  </div>
+                  <div class="candidate-info">
+                    <div class="c-name">Harvest Table Catering</div>
+                    <div class="c-cat">Catering</div>
+                  </div>
+                </div>
+
+                <div class="candidate-card scanning-border">
+                  <div class="candidate-img-box">
+                    <img src="assets/candidate_keepsakelane.jpg" alt="Keepsake Lane Gifts" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Gifts</text></svg>'">
+                  </div>
+                  <div class="candidate-info">
+                    <div class="c-name">Keepsake Lane Gifts</div>
+                    <div class="c-cat">Personalized Gifts</div>
+                  </div>
+                </div>
+
+                <div class="candidate-card dim-card">
+                  <div class="candidate-img-box">
+                    <img src="assets/candidate_invitations.jpg" alt="Graduation Invitations" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Invitations</text></svg>'">
+                  </div>
+                  <div class="candidate-info">
+                    <div class="c-name">Graduation Invitations</div>
+                    <div class="c-cat">Stationery</div>
+                  </div>
+                </div>
+
+                <div class="candidate-card dim-card">
+                  <div class="candidate-img-box">
+                    <img src="assets/candidate_decorations.jpg" alt="Decoration Bundle Store" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Party Supplies</text></svg>'">
+                  </div>
+                  <div class="candidate-info">
+                    <div class="c-name">Decoration Bundle Store</div>
+                    <div class="c-cat">Party Supplies</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="research-bottom-footer">
+                <span>Setup · Cake · Catering · Gifts</span>
+                <span class="blue-scoring-badge">Scoring top candidates...</span>
+              </div>
+            </div>
+
+            <!-- STEP 4: MDT Score Complete -->
+            <div class="screen-view" id="view-step-4">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+
+              <div class="score-banner-purple">
+                <div class="score-banner-title">MDT SCORING COMPLETE</div>
+                <div class="score-banner-sub">4 merchants selected · Best-in-category</div>
+              </div>
+
+              <div class="selected-merchants-list">
+                <div class="merchant-score-card">
+                  <div class="m-thumb-wrap">
+                    <img src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  </div>
+                  <div class="m-details">
+                    <div class="m-title">BrightCap Events</div>
+                    <div class="m-sub">GRADUATION SETUP · <span class="m-price">$1,280.00</span></div>
+                    <div class="m-bar-track"><div class="m-bar-fill fill-93"></div></div>
+                  </div>
+                  <div class="m-score-badge">
+                    <span class="m-score-val">0.93</span>
+                    <span class="m-sel-label">SELECTED</span>
+                  </div>
+                </div>
+
+                <div class="merchant-score-card">
+                  <div class="m-thumb-wrap">
+                    <img src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  </div>
+                  <div class="m-details">
+                    <div class="m-title">Golden Tassel Ca...</div>
+                    <div class="m-sub">CUSTOM CAKE · <span class="m-price">$680.00</span></div>
+                    <div class="m-bar-track"><div class="m-bar-fill fill-89"></div></div>
+                  </div>
+                  <div class="m-score-badge">
+                    <span class="m-score-val">0.89</span>
+                    <span class="m-sel-label">SELECTED</span>
+                  </div>
+                </div>
+
+                <div class="merchant-score-card">
+                  <div class="m-thumb-wrap">
+                    <img src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  </div>
+                  <div class="m-details">
+                    <div class="m-title">Harvest Table Cat...</div>
+                    <div class="m-sub">CATERING · <span class="m-price">$1,050.00</span></div>
+                    <div class="m-bar-track"><div class="m-bar-fill fill-87"></div></div>
+                  </div>
+                  <div class="m-score-badge">
+                    <span class="m-score-val">0.87</span>
+                    <span class="m-sel-label">SELECTED</span>
+                  </div>
+                </div>
+
+                <div class="merchant-score-card">
+                  <div class="m-thumb-wrap">
+                    <img src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  </div>
+                  <div class="m-details">
+                    <div class="m-title">Keepsake Lane Gi...</div>
+                    <div class="m-sub">PERSONALIZED GIFTS · <span class="m-price">$450.00</span></div>
+                    <div class="m-bar-track"><div class="m-bar-fill fill-85"></div></div>
+                  </div>
+                  <div class="m-score-badge">
+                    <span class="m-score-val">0.85</span>
+                    <span class="m-sel-label">SELECTED</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="screen-footer-summary">
+                Best merchant per category · Total $3,460.00 / $3,500.00 budget
+              </div>
+            </div>
+
+            <!-- STEP 5: Payment Verified -->
+            <div class="screen-view" id="view-step-5">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+
+              <div class="payment-verified-header">
+                <div class="shield-green-small">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </div>
+                <div>
+                  <div class="pv-title">AUDIT VERIFIED · 4 PAYMENTS</div>
+                  <div class="pv-sub">All within mandate limits</div>
+                </div>
+              </div>
+
+              <div class="payment-auth-list">
+                <div class="payment-auth-item">
+                  <img class="p-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  <div class="p-mid">
+                    <div class="p-name">BrightCap Events</div>
+                    <div class="p-desc">Graduation Setup</div>
+                  </div>
+                  <div class="p-right">
+                    <div class="p-amount">$1,280.00</div>
+                    <div class="p-auth-tag">✓ Auth</div>
+                  </div>
+                </div>
+
+                <div class="payment-auth-item">
+                  <img class="p-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  <div class="p-mid">
+                    <div class="p-name">Harvest Table ...</div>
+                    <div class="p-desc">Catering</div>
+                  </div>
+                  <div class="p-right">
+                    <div class="p-amount">$1,050.00</div>
+                    <div class="p-auth-tag">✓ Auth</div>
+                  </div>
+                </div>
+
+                <div class="payment-auth-item">
+                  <img class="p-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  <div class="p-mid">
+                    <div class="p-name">Golden Tassel Ca...</div>
+                    <div class="p-desc">Custom Cake</div>
+                  </div>
+                  <div class="p-right">
+                    <div class="p-amount">$680.00</div>
+                    <div class="p-auth-tag">✓ Auth</div>
+                  </div>
+                </div>
+
+                <div class="payment-auth-item">
+                  <img class="p-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  <div class="p-mid">
+                    <div class="p-name">Keepsake Lane G...</div>
+                    <div class="p-desc">Personalized Gifts</div>
+                  </div>
+                  <div class="p-right">
+                    <div class="p-amount">$450.00</div>
+                    <div class="p-auth-tag">✓ Auth</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="total-auth-bar">
+                <div class="total-left">
+                  <span class="total-lbl">Total</span>
+                  <span class="total-val">$3,460.00</span>
+                  <span class="total-budget-lbl">/ $3,500.00</span>
+                </div>
+              </div>
+
+              <div class="vic-processing-card">
+                <div class="mini-visa-rect">VISA</div>
+                <span class="vic-proc-text">Processing via VIC</span>
+              </div>
+            </div>
+
+            <!-- STEP 6: Escrow Secured -->
+            <div class="screen-view" id="view-step-6">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+
+              <div class="party-secured-header">
+                <div class="circle-check-big green">✓</div>
+                <div>
+                  <div class="ps-title">Party Secured!</div>
+                  <div class="ps-sub">4 smart contracts active</div>
+                </div>
+              </div>
+
+              <div class="escrow-contracts-list">
+                <div class="escrow-contract-card">
+                  <div class="ec-top">
+                    <img class="ec-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                    <div class="ec-info">
+                      <div class="ec-name">BrightCap Events</div>
+                      <div class="ec-amount">$1,280.00 · Escrowed</div>
+                    </div>
+                    <div class="ec-status-badge badge-green">✓</div>
+                  </div>
+                  <div class="ec-milestone-stages">
+                    <span class="stage-active">Deposit</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Deliver</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Release</span>
+                  </div>
+                </div>
+
+                <div class="escrow-contract-card">
+                  <div class="ec-top">
+                    <img class="ec-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                    <div class="ec-info">
+                      <div class="ec-name">Harvest Table Catering</div>
+                      <div class="ec-amount">$1,050.00 · Escrowed</div>
+                    </div>
+                    <div class="ec-status-badge badge-blue">✓</div>
+                  </div>
+                  <div class="ec-milestone-stages">
+                    <span class="stage-active">Deposit</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Deliver</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Release</span>
+                  </div>
+                </div>
+
+                <div class="escrow-contract-card">
+                  <div class="ec-top">
+                    <img class="ec-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                    <div class="ec-info">
+                      <div class="ec-name">Golden Tassel Cakes</div>
+                      <div class="ec-amount">$680.00 · Escrowed</div>
+                    </div>
+                    <div class="ec-status-badge badge-orange">✓</div>
+                  </div>
+                  <div class="ec-milestone-stages">
+                    <span class="stage-active">Deposit</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Deliver</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Release</span>
+                  </div>
+                </div>
+
+                <div class="escrow-contract-card">
+                  <div class="ec-top">
+                    <img class="ec-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                    <div class="ec-info">
+                      <div class="ec-name">Keepsake Lane Gifts</div>
+                      <div class="ec-amount">$450.00 · Escrowed</div>
+                    </div>
+                    <div class="ec-status-badge badge-purple">✓</div>
+                  </div>
+                  <div class="ec-milestone-stages">
+                    <span class="stage-active">Deposit</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Deliver</span>
+                    <span class="stage-line"></span>
+                    <span class="stage-pending">Release</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tokenized-footer-bar" onclick="openModal('modal-programmable')">
+                <span class="token-pulse-dot"></span>
+                <span>Data Tokenized · 4 Merchant Reputations Live</span>
+              </div>
+            </div>
+
+            <!-- STEP 7: Delivery Complete -->
+            <div class="screen-view" id="view-step-7">
+              <div class="screen-top-logos">
+                <span class="brand-visa">VISA</span>
+                <div class="ai-models-icons">
+                  <span class="chatgpt-icon">✦</span>
+                  <span class="sparkle-icon">✨</span>
+                </div>
+              </div>
+
+              <div class="delivery-done-header">
+                <div class="circle-check-big green">✓</div>
+                <div>
+                  <div class="dd-title">ALL READY BEFORE 2 PM</div>
+                  <div class="dd-sub">4 milestones completed · Escrow released</div>
+                </div>
+              </div>
+
+              <div class="reviews-list">
+                <div class="review-item-card">
+                  <img class="r-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  <div class="r-info">
+                    <div class="r-name">BrightCap Events</div>
+                    <div class="r-amount">$1,280.00</div>
+                    <div class="r-stars-row">
+                      <span class="stars">★★★★★</span>
+                      <span class="r-rating-tag gold">Outstanding</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="review-item-card">
+                  <img class="r-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  <div class="r-info">
+                    <div class="r-name">Harvest Table Catering</div>
+                    <div class="r-amount">$1,050.00</div>
+                    <div class="r-stars-row">
+                      <span class="stars">★★★★★</span>
+                      <span class="r-rating-tag gold">Outstanding</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="review-item-card">
+                  <img class="r-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  <div class="r-info">
+                    <div class="r-name">Golden Tassel Cakes</div>
+                    <div class="r-amount">$680.00</div>
+                    <div class="r-stars-row">
+                      <span class="stars">★★★★★</span>
+                      <span class="r-rating-tag gold">Outstanding</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="review-item-card">
+                  <img class="r-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  <div class="r-info">
+                    <div class="r-name">Keepsake Lane Gifts</div>
+                    <div class="r-amount">$450.00</div>
+                    <div class="r-stars-row">
+                      <span class="stars">★★★★★</span>
+                      <span class="r-rating-tag gold">Great</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdt-updated-card" onclick="openModal('modal-trust-loop')">
+                <div class="mdt-up-header">
+                  <span class="cube-icon">🏬</span>
+                  <span class="mdt-up-title">4 merchant reputations updated in Visa MDT</span>
+                </div>
+                <div class="mdt-up-desc">8-dimension scores recorded</div>
+              </div>
+
+              <div class="delivery-caption">
+                Your ratings improve AI commerce trust for everyone
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Home Indicator -->
+          <div class="phone-home-indicator"></div>
+        </div>
+      </section>
+
+      <!-- MIDDLE COLUMN: Protocol Layers -->
+      <section class="protocol-column">
+        <h3 class="column-section-title">PROTOCOL LAYERS</h3>
+        
+        <div class="protocols-stack">
+          <!-- Layer 1: VISA TAP -->
+          <div class="protocol-card" id="proto-tap" onclick="openModal('modal-ap2')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">VISA TAP</span>
+                <span class="proto-dot" id="dot-tap"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip visa">VISA</span>
+              </div>
+            </div>
+            <div class="proto-title">Visa Trusted Agent</div>
+            <div class="proto-desc">Agent Identity, verification, trust and reputation.</div>
+          </div>
+
+          <!-- Layer 2: AP2 -->
+          <div class="protocol-card" id="proto-ap2" onclick="openModal('modal-ap2')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">AP2</span>
+                <span class="proto-dot" id="dot-ap2"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip google">G</span>
+              </div>
+            </div>
+            <div class="proto-title">Agent Payments Protocol (AP2)</div>
+            <div class="proto-desc">Consumer authority with category scope, spend cap, and step-up threshold.</div>
+          </div>
+
+          <!-- Layer 3: UCP / ACP -->
+          <div class="protocol-card" id="proto-ucp" onclick="openModal('modal-mdt')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">UCP, ACP</span>
+                <span class="proto-dot" id="dot-ucp"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip openai">✦</span>
+                <span class="brand-chip stripe">stripe</span>
+                <span class="brand-chip google">G</span>
+                <span class="brand-chip shopify">🛍</span>
+              </div>
+            </div>
+            <div class="proto-title">Universal/Agentic Commerce Protocol</div>
+            <div class="proto-desc">Merchant Manifest, Offer, Quote, Negotiation, Transaction Coordination.</div>
+          </div>
+
+          <!-- Layer 4: VIC -->
+          <div class="protocol-card" id="proto-vic" onclick="openModal('modal-vic')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">VIC</span>
+                <span class="proto-dot" id="dot-vic"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip visa">VISA</span>
+              </div>
+            </div>
+            <div class="proto-title">Visa Intelligent Commerce (VIC)</div>
+            <div class="proto-desc">Network based authentication and transaction integrity with Programmable money control.</div>
+          </div>
+
+          <!-- Layer 5: VISA TRUSTPULSE MDT -->
+          <div class="protocol-card" id="proto-mdt" onclick="openModal('modal-trust-loop')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">VISA TRUSTPULSE MDT</span>
+                <span class="proto-dot" id="dot-mdt"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip new-tag">NEW</span>
+                <span class="brand-chip visa">VISA</span>
+              </div>
+            </div>
+            <div class="proto-title">Merchant Digital Twin Data Lake</div>
+            <div class="proto-desc">Visa 8 dimensions merchant reputation built from verified transaction outcomes.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: MDT Engine / Audit Trail & Network Event Log -->
+      <section class="right-panel-column">
+        
+        <!-- Top Tabbed Panel -->
+        <div class="glass-panel main-tab-panel">
+          <div class="tab-header-row">
+            <div class="tabs-switcher">
+              <button class="tab-btn active" id="tab-mdt" onclick="switchRightTab('mdt')">
+                <span class="tab-icon">🤖</span>
+                <span>MDT ENGINE</span>
+              </button>
+              <button class="tab-btn" id="tab-audit" onclick="switchRightTab('audit')">
+                <span class="tab-icon">📋</span>
+                <span>AUDIT TRAIL</span>
+              </button>
+            </div>
+            <div class="security-status-badge">
+              <span class="sec-dot"></span>
+              <span>SECURE</span>
+            </div>
+          </div>
+
+          <!-- TAB CONTENT 1: MDT ENGINE -->
+          <div class="tab-pane active" id="pane-mdt">
+            <div class="mdt-engine-header">
+              <div class="engine-icon">🏢</div>
+              <div>
+                <h4 class="engine-title">MERCHANT DIGITAL TWIN</h4>
+                <p class="engine-sub">8-dimensional trust evaluation engine</p>
+              </div>
+            </div>
+
+            <!-- Dimensions Grid / State A: Awaiting / Scanning -->
+            <div class="dimensions-scanner-box" id="mdt-scanner-box">
+              <div class="scanner-state-label" id="scanner-state-label">
+                <span class="state-dot">●</span>
+                <span id="scanner-state-text">AWAITING CANDIDATES</span>
+              </div>
+              
+              <div class="eight-dimensions-grid">
+                <div class="dim-node" id="dim-delivery">
+                  <div class="dim-icon-circle">🚚</div>
+                  <span class="dim-lbl">Delivery</span>
+                </div>
+                <div class="dim-node" id="dim-price">
+                  <div class="dim-icon-circle">🏷️</div>
+                  <span class="dim-lbl">Price</span>
+                </div>
+                <div class="dim-node" id="dim-contract">
+                  <div class="dim-icon-circle">📜</div>
+                  <span class="dim-lbl">Contract</span>
+                </div>
+                <div class="dim-node" id="dim-latency">
+                  <div class="dim-icon-circle">⏱️</div>
+                  <span class="dim-lbl">Latency</span>
+                </div>
+                <div class="dim-node" id="dim-dispute">
+                  <div class="dim-icon-circle">⚠️</div>
+                  <span class="dim-lbl">Dispute</span>
+                </div>
+                <div class="dim-node" id="dim-consistency">
+                  <div class="dim-icon-circle">🔄</div>
+                  <span class="dim-lbl">Consistency</span>
+                </div>
+                <div class="dim-node" id="dim-comms">
+                  <div class="dim-icon-circle">💬</div>
+                  <span class="dim-lbl">Comms</span>
+                </div>
+                <div class="dim-node" id="dim-resolution">
+                  <div class="dim-icon-circle">🤝</div>
+                  <span class="dim-lbl">Resolution</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scored Breakdown List (Shown during MDT score, payment, escrow, delivery) -->
+            <div class="mdt-evaluated-list hidden" id="mdt-evaluated-list">
+              <div class="eval-merchant-card">
+                <div class="eval-top">
+                  <img class="eval-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  <div class="eval-info">
+                    <div class="eval-name">BrightCap Events</div>
+                    <div class="eval-star">★ Delivery 0.95</div>
+                  </div>
+                  <div class="eval-overall green">0.93</div>
+                </div>
+                <div class="mini-bars-row">
+                  <div class="mini-bar"><span class="bar-tag">Del</span><div class="bar-line"><div class="bar-fill del-high"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Pri</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Lat</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Dis</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Com</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Res</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                </div>
+              </div>
+
+              <div class="eval-merchant-card">
+                <div class="eval-top">
+                  <img class="eval-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  <div class="eval-info">
+                    <div class="eval-name">Golden Tassel Cakes</div>
+                    <div class="eval-star">★ Consistency 0.93</div>
+                  </div>
+                  <div class="eval-overall green">0.89</div>
+                </div>
+                <div class="mini-bars-row">
+                  <div class="mini-bar"><span class="bar-tag">Del</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Pri</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Lat</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Dis</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-orange"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Com</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Res</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                </div>
+              </div>
+
+              <div class="eval-merchant-card">
+                <div class="eval-top">
+                  <img class="eval-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  <div class="eval-info">
+                    <div class="eval-name">Harvest Table Catering</div>
+                    <div class="eval-star">★ Delivery 0.92</div>
+                  </div>
+                  <div class="eval-overall green">0.87</div>
+                </div>
+                <div class="mini-bars-row">
+                  <div class="mini-bar"><span class="bar-tag">Del</span><div class="bar-line"><div class="bar-fill bg-orange"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Pri</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Lat</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Dis</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Com</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Res</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                </div>
+              </div>
+
+              <div class="eval-merchant-card">
+                <div class="eval-top">
+                  <img class="eval-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  <div class="eval-info">
+                    <div class="eval-name">Keepsake Lane Gifts</div>
+                    <div class="eval-star">★ Resolution 0.90</div>
+                  </div>
+                  <div class="eval-overall green">0.85</div>
+                </div>
+                <div class="mini-bars-row">
+                  <div class="mini-bar"><span class="bar-tag">Del</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Pri</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Lat</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Dis</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Con</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Com</span><div class="bar-line"><div class="bar-fill bg-green"></div></div></div>
+                  <div class="mini-bar"><span class="bar-tag">Res</span><div class="bar-line"><div class="bar-fill bg-orange"></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB CONTENT 2: AUDIT TRAIL -->
+          <div class="tab-pane" id="pane-audit">
+            <div class="audit-trail-header">
+              <div class="audit-icon-box">📋</div>
+              <div>
+                <h4 class="audit-title">AUDIT TRAIL</h4>
+                <p class="audit-sub">Protocol compliance verification</p>
+              </div>
+            </div>
+
+            <div class="audit-checklist">
+              <div class="audit-item" id="audit-item-1">
+                <div class="audit-status-icon"></div>
+                <div class="audit-item-text">
+                  <div class="audit-item-title">Saved Context Loaded</div>
+                  <div class="audit-item-desc">30 guests, style, priorities, and AP2 mandate</div>
+                </div>
+              </div>
+
+              <div class="audit-item" id="audit-item-2">
+                <div class="audit-status-icon"></div>
+                <div class="audit-item-text">
+                  <div class="audit-item-title">MDT Research Active</div>
+                  <div class="audit-item-desc">Scanning merchant digital twins across 4 categories</div>
+                </div>
+              </div>
+
+              <div class="audit-item" id="audit-item-3">
+                <div class="audit-status-icon"></div>
+                <div class="audit-item-text">
+                  <div class="audit-item-title">MDT Scoring Verified</div>
+                  <div class="audit-item-desc">4 merchants selected via 8-dimension evaluation</div>
+                </div>
+              </div>
+
+              <div class="audit-item" id="audit-item-4">
+                <div class="audit-status-icon"></div>
+                <div class="audit-item-text">
+                  <div class="audit-item-title">Payment Audit Passed</div>
+                  <div class="audit-item-desc">$3,460.00 within $3,500.00 budget — all under $1,500.00 cap</div>
+                </div>
+              </div>
+
+              <div class="audit-item" id="audit-item-5">
+                <div class="audit-status-icon"></div>
+                <div class="audit-item-text">
+                  <div class="audit-item-title">Smart Escrow Bound</div>
+                  <div class="audit-item-desc">4 contracts with milestone-based fund release</div>
+                </div>
+              </div>
+
+              <div class="audit-item" id="audit-item-6">
+                <div class="audit-status-icon"></div>
+                <div class="audit-item-text">
+                  <div class="audit-item-title">MDT Data Lake Updated</div>
+                  <div class="audit-item-desc">Ratings feed back into merchant trust network</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Panel: Network Event Log -->
+        <div class="glass-panel event-log-panel">
+          <div class="event-log-header">
+            <span class="log-title">NETWORK EVENT LOG</span>
+            <div class="live-indicator">
+              <span class="live-pulse"></span>
+              <span>LIVE</span>
+            </div>
+          </div>
+          <div class="log-console-body" id="log-console">
+            <div class="log-placeholder" id="log-placeholder">PRESS RUN DEMO TO BEGIN</div>
+            <div class="log-stream" id="log-stream"></div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Bottom App Footer -->
+    <footer class="bottom-footer">
+      <div class="footer-step-indicator" id="footer-step-indicator">
+        <span class="footer-dot green"></span>
+        <span id="footer-step-text">Awaiting Demo Start Step 0 / 7</span>
+      </div>
+      <div class="footer-slogan">
+        Visa TrustPulse — Autonomous decisions you can audit.
+      </div>
+    </footer>
+  </div>
+
+  <!-- INTERACTIVE MODALS -->
+
+  <!-- Modal 1: AP2 Payment Mandate -->
+  <div class="modal-overlay" id="modal-ap2">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('modal-ap2')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap green-shield">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div>
+          <h3 class="modal-title">AP2 Payment Mandate</h3>
+          <p class="modal-subtitle">Saved authority — the rails the agent operates within</p>
+        </div>
+      </div>
+
+      <div class="modal-grid-2x3">
+        <div class="m-stat-box">
+          <span class="m-stat-label">TOTAL BUDGET</span>
+          <span class="m-stat-value bold">$3,500.00</span>
+        </div>
+        <div class="m-stat-box">
+          <span class="m-stat-label">PER MERCHANT</span>
+          <span class="m-stat-value bold">$1,500.00</span>
+        </div>
+        <div class="m-stat-box">
+          <span class="m-stat-label">GUEST COUNT</span>
+          <span class="m-stat-value cyan">30</span>
+        </div>
+        <div class="m-stat-box">
+          <span class="m-stat-label">DEADLINE</span>
+          <span class="m-stat-value gold">Saturday 2 PM</span>
+        </div>
+        <div class="m-stat-box">
+          <span class="m-stat-label">CATEGORIES</span>
+          <span class="m-stat-value cyan">Setup, Cake, Food, Gifts</span>
+        </div>
+        <div class="m-stat-box">
+          <span class="m-stat-label">PRIORITY</span>
+          <span class="m-stat-value green">Quality & Delivery</span>
+        </div>
+      </div>
+
+      <div class="modal-callout-box">
+        <p>This mandate gives the Agent power to act on Emma's behalf, but <strong>only within the boundaries she's set</strong>. Emma is not approving every click — she's approving the rails.</p>
+        <div class="signed-badge">
+          <span class="check-icon">✓</span>
+          <span>Digitally Signed by Consumer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Merchant Digital Twin 8-Dimension Scoring -->
+  <div class="modal-overlay" id="modal-mdt">
+    <div class="modal-card modal-large">
+      <button class="modal-close-btn" onclick="closeModal('modal-mdt')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap">🏪</div>
+        <div>
+          <h3 class="modal-title">Merchant Digital Twin</h3>
+          <p class="modal-subtitle gold-text">8-DIMENSIONAL TRUST SCORING</p>
+        </div>
+      </div>
+
+      <p class="modal-desc-para">
+        Each Merchant Digital Twin gives the agent a verified view of what the merchant can actually do: capability, live availability, delivery promise, policy, trust history, quote support, and payment compatibility.
+      </p>
+
+      <div class="eight-dimensions-grid modal-dims">
+        <div class="dim-node"><div class="dim-icon-circle">🚚</div><span class="dim-lbl">DELIVERY</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">🏷️</div><span class="dim-lbl">PRICE</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">📜</div><span class="dim-lbl">CONTRACT</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">⏱️</div><span class="dim-lbl">LATENCY</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">⚠️</div><span class="dim-lbl">DISPUTE</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">🔄</div><span class="dim-lbl">CONSISTENCY</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">💬</div><span class="dim-lbl">COMMS</span></div>
+        <div class="dim-node"><div class="dim-icon-circle">🤝</div><span class="dim-lbl">RESOLUTION</span></div>
+      </div>
+
+      <div class="modal-section-title">
+        <span class="green-dot">●</span>
+        <span>SELECTED FOR PARTY — 4 MERCHANTS</span>
+      </div>
+
+      <div class="modal-merchants-breakdown">
+        <div class="m-breakdown-card">
+          <div class="mb-top">
+            <img class="mb-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+            <div class="mb-info">
+              <span class="mb-title">BrightCap Events</span>
+              <span class="mb-price">· $1,280.00</span>
+              <div class="mb-star">★ Best: Delivery (0.95)</div>
+            </div>
+            <div class="mb-score green">0.93</div>
+          </div>
+          <div class="mb-bars-pill-row">
+            <span class="bar-pill yellow">Del</span>
+            <span class="bar-pill green">Pri</span>
+            <span class="bar-pill green">Con</span>
+            <span class="bar-pill green">Lat</span>
+            <span class="bar-pill green">Dis</span>
+            <span class="bar-pill green">Con</span>
+            <span class="bar-pill green">Com</span>
+            <span class="bar-pill green">Res</span>
+          </div>
+        </div>
+
+        <div class="m-breakdown-card">
+          <div class="mb-top">
+            <img class="mb-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+            <div class="mb-info">
+              <span class="mb-title">Golden Tassel Cakes</span>
+              <span class="mb-price">· $680.00</span>
+              <div class="mb-star">★ Best: Consistency (0.93)</div>
+            </div>
+            <div class="mb-score green">0.89</div>
+          </div>
+          <div class="mb-bars-pill-row">
+            <span class="bar-pill green">Del</span>
+            <span class="bar-pill green">Pri</span>
+            <span class="bar-pill green">Con</span>
+            <span class="bar-pill green">Lat</span>
+            <span class="bar-pill green">Dis</span>
+            <span class="bar-pill yellow">Con</span>
+            <span class="bar-pill green">Com</span>
+            <span class="bar-pill green">Res</span>
+          </div>
+        </div>
+
+        <div class="m-breakdown-card">
+          <div class="mb-top">
+            <img class="mb-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+            <div class="mb-info">
+              <span class="mb-title">Harvest Table Catering</span>
+              <span class="mb-price">· $1,050.00</span>
+              <div class="mb-star">★ Best: Delivery (0.92)</div>
+            </div>
+            <div class="mb-score green">0.87</div>
+          </div>
+          <div class="mb-bars-pill-row">
+            <span class="bar-pill yellow">Del</span>
+            <span class="bar-pill green">Pri</span>
+            <span class="bar-pill green">Con</span>
+            <span class="bar-pill green">Lat</span>
+            <span class="bar-pill green">Dis</span>
+            <span class="bar-pill green">Con</span>
+            <span class="bar-pill green">Com</span>
+            <span class="bar-pill green">Res</span>
+          </div>
+        </div>
+
+        <div class="m-breakdown-card">
+          <div class="mb-top">
+            <img class="mb-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+            <div class="mb-info">
+              <span class="mb-title">Keepsake Lane Gifts</span>
+              <span class="mb-price">· $450.00</span>
+              <div class="mb-star">★ Best: Resolution (0.90)</div>
+            </div>
+            <div class="mb-score green">0.85</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: VIC Audit Trail -->
+  <div class="modal-overlay" id="modal-vic">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('modal-vic')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap red-clipboard">📋</div>
+        <div>
+          <h3 class="modal-title">VIC Audit Trail</h3>
+          <p class="modal-subtitle">Final review before payment authorization</p>
+        </div>
+      </div>
+
+      <div class="vic-audit-list">
+        <div class="vic-check-box">
+          <div class="check-circle green">✓</div>
+          <div>
+            <div class="v-title">Mandate Alignment</div>
+            <div class="v-desc">All 4 agent actions match signed mandate parameters</div>
+          </div>
+        </div>
+
+        <div class="vic-check-box">
+          <div class="check-circle green">✓</div>
+          <div>
+            <div class="v-title">Budget Compliance</div>
+            <div class="v-desc">$3,460.00 total within $3,500.00 budget; each merchant under $1,500.00 cap</div>
+          </div>
+        </div>
+
+        <div class="vic-check-box">
+          <div class="check-circle green">✓</div>
+          <div>
+            <div class="v-title">Category Match</div>
+            <div class="v-desc">Setup, Cake, Catering, Gifts — all in allowed categories</div>
+          </div>
+        </div>
+
+        <div class="vic-check-box">
+          <div class="check-circle green">✓</div>
+          <div>
+            <div class="v-title">Trust Score Threshold</div>
+            <div class="v-desc">All composites (0.93, 0.89, 0.87, 0.85) exceed minimum 0.70</div>
+          </div>
+        </div>
+
+        <div class="vic-check-box">
+          <div class="check-circle green">✓</div>
+          <div>
+            <div class="v-title">Delivery Verification</div>
+            <div class="v-desc">All 4 merchants confirmed delivery before Saturday 2 PM deadline</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vic-authorized-banner">
+        <div class="auth-btn-title">4 PAYMENTS AUTHORIZED</div>
+        <div class="auth-btn-sub">All checks passed — proceeding to smart contract binding</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Programmable Money / Smart Escrow -->
+  <div class="modal-overlay" id="modal-programmable">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('modal-programmable')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap blue-lightning">⚡</div>
+        <div>
+          <h3 class="modal-title">Programmable Money</h3>
+          <p class="modal-subtitle cyan-text">SMART ESCROW · 4 CONTRACTS</p>
+        </div>
+      </div>
+
+      <p class="modal-desc-para">
+        Each payment is bound to the selected merchant, signed quote, approved amount, and delivery condition. Funds only release on verified milestones:
+      </p>
+
+      <div class="milestones-steps-list">
+        <div class="m-step-card">
+          <div class="ms-top">
+            <span class="step-num green">1</span>
+            <div class="ms-titles">
+              <span class="ms-title">Order Confirmed</span>
+              <span class="ms-sub">Payment bound to signed quote</span>
+            </div>
+          </div>
+          <div class="ms-progress-bar"><div class="ms-fill p-33"></div></div>
+          <div class="ms-caption">Held in Escrow</div>
+        </div>
+
+        <div class="m-step-card">
+          <div class="ms-top">
+            <span class="step-num blue">2</span>
+            <div class="ms-titles">
+              <span class="ms-title">Production Complete</span>
+              <span class="ms-sub">Milestone verification</span>
+            </div>
+          </div>
+          <div class="ms-progress-bar"><div class="ms-fill p-66"></div></div>
+          <div class="ms-caption">Release on Confirmation</div>
+        </div>
+
+        <div class="m-step-card">
+          <div class="ms-top">
+            <span class="step-num cyan">3</span>
+            <div class="ms-titles">
+              <span class="ms-title">Delivery Verified</span>
+              <span class="ms-sub">Before Saturday 2 PM</span>
+            </div>
+          </div>
+          <div class="ms-progress-bar"><div class="ms-fill p-100"></div></div>
+          <div class="ms-caption">Final Release</div>
+        </div>
+      </div>
+
+      <div class="modal-data-token-box">
+        <div class="dt-title">Data Tokenization</div>
+        <div class="dt-desc">The full purchase cycle is tokenized as data points. Every outcome feeds back into the Merchant Digital Twin network, making it smarter for the next autonomous decision.</div>
+        <div class="dt-status">
+          <span class="blue-dot">●</span>
+          <span>Contributing to merchant trust ecosystem</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Closing the Trust Loop -->
+  <div class="modal-overlay" id="modal-trust-loop">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('modal-trust-loop')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap purple-loop">🔄</div>
+        <div>
+          <h3 class="modal-title">Closing the Trust Loop</h3>
+          <p class="modal-subtitle purple-text">MERCHANT DIGITAL TWIN DATA LAKE</p>
+        </div>
+      </div>
+
+      <p class="modal-desc-para">
+        By Saturday, everything is ready before 2 PM. Emma rates the vendors, and every outcome feeds back into the MDT network:
+      </p>
+
+      <div class="loop-steps-list">
+        <div class="loop-step-item">
+          <span class="loop-num purple">1</span>
+          <div class="loop-info">
+            <div class="loop-title">Delivery Monitoring</div>
+            <div class="loop-desc">Agent tracks all 4 deliveries against smart contract terms</div>
+          </div>
+        </div>
+
+        <div class="loop-step-item">
+          <span class="loop-num purple">2</span>
+          <div class="loop-info">
+            <div class="loop-title">Outcome Verification</div>
+            <div class="loop-desc">Each milestone generates a verified trust data token</div>
+          </div>
+        </div>
+
+        <div class="loop-step-item">
+          <span class="loop-num purple">3</span>
+          <div class="loop-info">
+            <div class="loop-title">Consumer Rating</div>
+            <div class="loop-desc">Emma rates vendors — transparent, contextual feedback</div>
+          </div>
+        </div>
+
+        <div class="loop-step-item">
+          <span class="loop-num green">4</span>
+          <div class="loop-info">
+            <div class="loop-title">Network Learning</div>
+            <div class="loop-desc">MDT scores updated network-wide for the next consumer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trustpulse-quote-card">
+        <p class="tq-quote">Emma gives the goal.</p>
+        <p class="tq-quote">ChatGPT brings the context.</p>
+        <p class="tq-quote">Visa TrustPulse verifies the decision.</p>
+        <p class="tq-final">VISA TRUSTPULSE — AUTONOMOUS DECISIONS YOU CAN AUDIT.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
