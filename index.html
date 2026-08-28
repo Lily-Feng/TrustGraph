@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visa TrustPulse — Autonomous Decisions You Can Audit</title>
-  <meta name="description" content="Visa TrustPulse interactive agentic commerce demo: Merchant Digital Twin (MDT), AP2 payment mandate, VIC verification, and programmable money escrow.">
+  <title>TrustGraph — Autonomous Decisions You Can Audit</title>
+  <meta name="description" content="TrustGraph interactive agentic commerce demo: Merchant Digital Twin (MDT), AP2 payment mandate, payment authentication, and programmable money escrow.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -83,7 +83,7 @@
             <!-- STEP 0: Intro / Awaiting Demo Start -->
             <div class="screen-view active" id="view-step-0">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -91,7 +91,7 @@
               </div>
               <div class="status-banner pulse-banner">
                 <span class="heart-pulse-emoji">💖</span>
-                <span>Visa TrustPulse enabled</span>
+                <span>TrustGraph enabled</span>
                 <span class="dot-online"></span>
               </div>
               <div class="intro-agent-hero">
@@ -101,16 +101,18 @@
                   </div>
                 </div>
                 <h2 class="agent-title">Shopping Agent</h2>
-                <p class="agent-subtitle">Powered by Visa TrustPulse</p>
+                <p class="agent-subtitle">Powered by TrustGraph</p>
               </div>
               
-              <div class="visa-card-mockup">
+              <div class="payment-card-mockup">
                 <div class="chip-row">
                   <span class="wifi-contactless">📶</span>
-                  <span class="card-visa-text">VISA</span>
+                  <span class="card-chip-icon">💳</span>
                 </div>
                 <div class="card-bottom">
-                  <span class="card-visa-white">VISA</span>
+                  <span class="card-network-badge">VISA</span>
+                  <span class="card-network-badge mastercard">Mastercard</span>
+                  <span class="card-network-badge stripe">stripe</span>
                 </div>
               </div>
 
@@ -123,7 +125,7 @@
             <!-- STEP 1: Prompt Input / Interpreting -->
             <div class="screen-view" id="view-step-1">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -133,7 +135,7 @@
                 <div class="mini-agent-avatar">💖</div>
                 <div>
                   <div class="mini-agent-title">Shopping Agent</div>
-                  <div class="mini-agent-status">● Visa TrustPulse Active</div>
+                  <div class="mini-agent-status">● TrustGraph Active</div>
                 </div>
               </div>
 
@@ -166,7 +168,7 @@
             <!-- STEP 2: Emma's Context & AP2 Mandate -->
             <div class="screen-view" id="view-step-2">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -246,7 +248,7 @@
             <!-- STEP 3: Research / Scanning MDTs -->
             <div class="screen-view" id="view-step-3">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -264,7 +266,7 @@
               <div class="candidates-grid">
                 <div class="candidate-card scanning-border">
                   <div class="candidate-img-box">
-                    <img src="assets/candidate_brightcap.jpg" alt="BrightCap Events" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>BrightCap</text></svg>'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/330px-Event_decorations2.jpg" alt="BrightCap Events" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>BrightCap</text></svg>'">
                   </div>
                   <div class="candidate-info">
                     <div class="c-name">BrightCap Events</div>
@@ -274,7 +276,7 @@
 
                 <div class="candidate-card scanning-border">
                   <div class="candidate-img-box">
-                    <img src="assets/candidate_goldentassel.jpg" alt="Golden Tassel Cakes" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Custom Cake</text></svg>'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/330px-Birthday_cake.jpg" alt="Golden Tassel Cakes" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Custom Cake</text></svg>'">
                   </div>
                   <div class="candidate-info">
                     <div class="c-name">Golden Tassel Cakes</div>
@@ -284,7 +286,7 @@
 
                 <div class="candidate-card scanning-border">
                   <div class="candidate-img-box">
-                    <img src="assets/candidate_harvesttable.jpg" alt="Harvest Table Catering" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Catering</text></svg>'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/330px-Buffet_Food_Platter.jpg" alt="Harvest Table Catering" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Catering</text></svg>'">
                   </div>
                   <div class="candidate-info">
                     <div class="c-name">Harvest Table Catering</div>
@@ -294,7 +296,7 @@
 
                 <div class="candidate-card scanning-border">
                   <div class="candidate-img-box">
-                    <img src="assets/candidate_keepsakelane.jpg" alt="Keepsake Lane Gifts" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Gifts</text></svg>'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/330px-Gift_box.jpg" alt="Keepsake Lane Gifts" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Gifts</text></svg>'">
                   </div>
                   <div class="candidate-info">
                     <div class="c-name">Keepsake Lane Gifts</div>
@@ -304,7 +306,7 @@
 
                 <div class="candidate-card dim-card">
                   <div class="candidate-img-box">
-                    <img src="assets/candidate_invitations.jpg" alt="Graduation Invitations" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Invitations</text></svg>'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Invitation_card.jpg/330px-Invitation_card.jpg" alt="Graduation Invitations" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Invitations</text></svg>'">
                   </div>
                   <div class="candidate-info">
                     <div class="c-name">Graduation Invitations</div>
@@ -314,7 +316,7 @@
 
                 <div class="candidate-card dim-card">
                   <div class="candidate-img-box">
-                    <img src="assets/candidate_decorations.jpg" alt="Decoration Bundle Store" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Party Supplies</text></svg>'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Happy_balloons.jpg/330px-Happy_balloons.jpg" alt="Decoration Bundle Store" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22><rect fill=%22%23223%22 width=%22100%22 height=%2280%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23aaa%22 font-size=%2210%22 text-anchor=%22middle%22>Party Supplies</text></svg>'">
                   </div>
                   <div class="candidate-info">
                     <div class="c-name">Decoration Bundle Store</div>
@@ -332,7 +334,7 @@
             <!-- STEP 4: MDT Score Complete -->
             <div class="screen-view" id="view-step-4">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -347,7 +349,7 @@
               <div class="selected-merchants-list">
                 <div class="merchant-score-card">
                   <div class="m-thumb-wrap">
-                    <img src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/120px-Event_decorations2.jpg" alt="BrightCap">
                   </div>
                   <div class="m-details">
                     <div class="m-title">BrightCap Events</div>
@@ -362,7 +364,7 @@
 
                 <div class="merchant-score-card">
                   <div class="m-thumb-wrap">
-                    <img src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/120px-Birthday_cake.jpg" alt="Golden Tassel">
                   </div>
                   <div class="m-details">
                     <div class="m-title">Golden Tassel Ca...</div>
@@ -377,7 +379,7 @@
 
                 <div class="merchant-score-card">
                   <div class="m-thumb-wrap">
-                    <img src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/120px-Buffet_Food_Platter.jpg" alt="Harvest Table">
                   </div>
                   <div class="m-details">
                     <div class="m-title">Harvest Table Cat...</div>
@@ -392,7 +394,7 @@
 
                 <div class="merchant-score-card">
                   <div class="m-thumb-wrap">
-                    <img src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/120px-Gift_box.jpg" alt="Keepsake Lane">
                   </div>
                   <div class="m-details">
                     <div class="m-title">Keepsake Lane Gi...</div>
@@ -414,7 +416,7 @@
             <!-- STEP 5: Payment Verified -->
             <div class="screen-view" id="view-step-5">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -433,7 +435,7 @@
 
               <div class="payment-auth-list">
                 <div class="payment-auth-item">
-                  <img class="p-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  <img class="p-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/120px-Event_decorations2.jpg" alt="BrightCap">
                   <div class="p-mid">
                     <div class="p-name">BrightCap Events</div>
                     <div class="p-desc">Graduation Setup</div>
@@ -445,7 +447,7 @@
                 </div>
 
                 <div class="payment-auth-item">
-                  <img class="p-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  <img class="p-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/120px-Buffet_Food_Platter.jpg" alt="Harvest Table">
                   <div class="p-mid">
                     <div class="p-name">Harvest Table ...</div>
                     <div class="p-desc">Catering</div>
@@ -457,7 +459,7 @@
                 </div>
 
                 <div class="payment-auth-item">
-                  <img class="p-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  <img class="p-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/120px-Birthday_cake.jpg" alt="Golden Tassel">
                   <div class="p-mid">
                     <div class="p-name">Golden Tassel Ca...</div>
                     <div class="p-desc">Custom Cake</div>
@@ -469,7 +471,7 @@
                 </div>
 
                 <div class="payment-auth-item">
-                  <img class="p-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  <img class="p-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/120px-Gift_box.jpg" alt="Keepsake Lane">
                   <div class="p-mid">
                     <div class="p-name">Keepsake Lane G...</div>
                     <div class="p-desc">Personalized Gifts</div>
@@ -489,16 +491,20 @@
                 </div>
               </div>
 
-              <div class="vic-processing-card">
-                <div class="mini-visa-rect">VISA</div>
-                <span class="vic-proc-text">Processing via VIC</span>
+              <div class="payment-processing-card">
+                <div class="provider-logo stripe">stripe</div>
+                <span class="payment-proc-text">Processing via Stripe</span>
+                <div class="proc-network-badges">
+                  <span class="mini-network">VISA</span>
+                  <span class="mini-network mastercard">MC</span>
+                </div>
               </div>
             </div>
 
             <!-- STEP 6: Escrow Secured -->
             <div class="screen-view" id="view-step-6">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -516,7 +522,7 @@
               <div class="escrow-contracts-list">
                 <div class="escrow-contract-card">
                   <div class="ec-top">
-                    <img class="ec-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                    <img class="ec-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/120px-Event_decorations2.jpg" alt="BrightCap">
                     <div class="ec-info">
                       <div class="ec-name">BrightCap Events</div>
                       <div class="ec-amount">$1,280.00 · Escrowed</div>
@@ -534,7 +540,7 @@
 
                 <div class="escrow-contract-card">
                   <div class="ec-top">
-                    <img class="ec-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                    <img class="ec-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/120px-Buffet_Food_Platter.jpg" alt="Harvest Table">
                     <div class="ec-info">
                       <div class="ec-name">Harvest Table Catering</div>
                       <div class="ec-amount">$1,050.00 · Escrowed</div>
@@ -552,7 +558,7 @@
 
                 <div class="escrow-contract-card">
                   <div class="ec-top">
-                    <img class="ec-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                    <img class="ec-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/120px-Birthday_cake.jpg" alt="Golden Tassel">
                     <div class="ec-info">
                       <div class="ec-name">Golden Tassel Cakes</div>
                       <div class="ec-amount">$680.00 · Escrowed</div>
@@ -570,7 +576,7 @@
 
                 <div class="escrow-contract-card">
                   <div class="ec-top">
-                    <img class="ec-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                    <img class="ec-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/120px-Gift_box.jpg" alt="Keepsake Lane">
                     <div class="ec-info">
                       <div class="ec-name">Keepsake Lane Gifts</div>
                       <div class="ec-amount">$450.00 · Escrowed</div>
@@ -596,7 +602,7 @@
             <!-- STEP 7: Delivery Complete -->
             <div class="screen-view" id="view-step-7">
               <div class="screen-top-logos">
-                <span class="brand-visa">VISA</span>
+                <span class="brand-trustgraph">TrustGraph</span>
                 <div class="ai-models-icons">
                   <span class="chatgpt-icon">✦</span>
                   <span class="sparkle-icon">✨</span>
@@ -613,7 +619,7 @@
 
               <div class="reviews-list">
                 <div class="review-item-card">
-                  <img class="r-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  <img class="r-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/120px-Event_decorations2.jpg" alt="BrightCap">
                   <div class="r-info">
                     <div class="r-name">BrightCap Events</div>
                     <div class="r-amount">$1,280.00</div>
@@ -625,7 +631,7 @@
                 </div>
 
                 <div class="review-item-card">
-                  <img class="r-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  <img class="r-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/120px-Buffet_Food_Platter.jpg" alt="Harvest Table">
                   <div class="r-info">
                     <div class="r-name">Harvest Table Catering</div>
                     <div class="r-amount">$1,050.00</div>
@@ -637,7 +643,7 @@
                 </div>
 
                 <div class="review-item-card">
-                  <img class="r-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  <img class="r-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/120px-Birthday_cake.jpg" alt="Golden Tassel">
                   <div class="r-info">
                     <div class="r-name">Golden Tassel Cakes</div>
                     <div class="r-amount">$680.00</div>
@@ -649,7 +655,7 @@
                 </div>
 
                 <div class="review-item-card">
-                  <img class="r-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  <img class="r-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/120px-Gift_box.jpg" alt="Keepsake Lane">
                   <div class="r-info">
                     <div class="r-name">Keepsake Lane Gifts</div>
                     <div class="r-amount">$450.00</div>
@@ -664,7 +670,7 @@
               <div class="mdt-updated-card" onclick="openModal('modal-trust-loop')">
                 <div class="mdt-up-header">
                   <span class="cube-icon">🏬</span>
-                  <span class="mdt-up-title">4 merchant reputations updated in Visa MDT</span>
+                  <span class="mdt-up-title">4 merchant reputations updated in TrustGraph MDT</span>
                 </div>
                 <div class="mdt-up-desc">8-dimension scores recorded</div>
               </div>
@@ -683,25 +689,43 @@
 
       <!-- MIDDLE COLUMN: Protocol Layers -->
       <section class="protocol-column">
-        <h3 class="column-section-title">PROTOCOL LAYERS</h3>
-        
+        <h3 class="column-section-title">AGENTIC PAYMENTS STACK</h3>
+
         <div class="protocols-stack">
-          <!-- Layer 1: VISA TAP -->
-          <div class="protocol-card" id="proto-tap" onclick="openModal('modal-ap2')">
+          <!-- Layer 1: Communication & Discovery -->
+          <div class="protocol-card" id="proto-comm" onclick="openModal('modal-comm')">
             <div class="proto-top-row">
               <div class="proto-badge-pill">
-                <span class="proto-tag">VISA TAP</span>
-                <span class="proto-dot" id="dot-tap"></span>
+                <span class="proto-tag">A2A · MCP</span>
+                <span class="proto-dot" id="dot-comm"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip google">G</span>
+                <span class="brand-chip anthropic">A</span>
+              </div>
+            </div>
+            <div class="proto-title">Agent Communication & Discovery</div>
+            <div class="proto-desc">How agents find each other, tools, data, and capabilities.</div>
+          </div>
+
+          <!-- Layer 2: Identity, Trust & Reputation -->
+          <div class="protocol-card" id="proto-identity" onclick="openModal('modal-identity')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">DID · VC</span>
+                <span class="proto-dot" id="dot-identity"></span>
               </div>
               <div class="proto-brand-badges">
                 <span class="brand-chip visa">VISA</span>
+                <span class="brand-chip mastercard">MC</span>
+                <span class="brand-chip ethereum">ETH</span>
               </div>
             </div>
-            <div class="proto-title">Visa Trusted Agent</div>
-            <div class="proto-desc">Agent Identity, verification, trust and reputation.</div>
+            <div class="proto-title">Agent Identity, Trust & Reputation</div>
+            <div class="proto-desc">Who is this agent, and should I trust it?</div>
           </div>
 
-          <!-- Layer 2: AP2 -->
+          <!-- Layer 3: Mandate, Consent & Policy -->
           <div class="protocol-card" id="proto-ap2" onclick="openModal('modal-ap2')">
             <div class="proto-top-row">
               <div class="proto-badge-pill">
@@ -712,15 +736,15 @@
                 <span class="brand-chip google">G</span>
               </div>
             </div>
-            <div class="proto-title">Agent Payments Protocol (AP2)</div>
-            <div class="proto-desc">Consumer authority with category scope, spend cap, and step-up threshold.</div>
+            <div class="proto-title">Mandate, Consent & Policy</div>
+            <div class="proto-desc">Delegated payment authority through signed mandates and spending controls.</div>
           </div>
 
-          <!-- Layer 3: UCP / ACP -->
+          <!-- Layer 4: Offer, Quote & Transaction Coordination -->
           <div class="protocol-card" id="proto-ucp" onclick="openModal('modal-mdt')">
             <div class="proto-top-row">
               <div class="proto-badge-pill">
-                <span class="proto-tag">UCP, ACP</span>
+                <span class="proto-tag">UCP · ACP</span>
                 <span class="proto-dot" id="dot-ucp"></span>
               </div>
               <div class="proto-brand-badges">
@@ -730,39 +754,72 @@
                 <span class="brand-chip shopify">🛍</span>
               </div>
             </div>
-            <div class="proto-title">Universal/Agentic Commerce Protocol</div>
-            <div class="proto-desc">Merchant Manifest, Offer, Quote, Negotiation, Transaction Coordination.</div>
+            <div class="proto-title">Offer, Quote & Transaction Coordination</div>
+            <div class="proto-desc">Merchant manifests, offers, quotes, negotiation, and cart coordination.</div>
           </div>
 
-          <!-- Layer 4: VIC -->
-          <div class="protocol-card" id="proto-vic" onclick="openModal('modal-vic')">
+          <!-- Layer 5: Payment Authentication, Risk & Compliance -->
+          <div class="protocol-card" id="proto-risk" onclick="openModal('modal-risk')">
             <div class="proto-top-row">
               <div class="proto-badge-pill">
-                <span class="proto-tag">VIC</span>
-                <span class="proto-dot" id="dot-vic"></span>
+                <span class="proto-tag">TRUSTGRAPH</span>
+                <span class="proto-dot" id="dot-risk"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip trustgraph">TG</span>
+                <span class="brand-chip mastercard">MC</span>
+              </div>
+            </div>
+            <div class="proto-title">Payment Authentication, Risk & Compliance</div>
+            <div class="proto-desc">Network-backed authentication, fraud scoring, AML/KYC, and transaction integrity.</div>
+          </div>
+
+          <!-- Layer 6: Machine-Speed Payment Protocols -->
+          <div class="protocol-card" id="proto-payment" onclick="openModal('modal-programmable')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">x402 · MPP · Stripe</span>
+                <span class="proto-dot" id="dot-payment"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip stripe">stripe</span>
+                <span class="brand-chip coinbase">₿</span>
+              </div>
+            </div>
+            <div class="proto-title">Machine-Speed Payment Protocols</div>
+            <div class="proto-desc">Agent-native, programmatic payments and paid tool calls at machine speed.</div>
+          </div>
+
+          <!-- Layer 7: Settlement Rails -->
+          <div class="protocol-card" id="proto-settlement" onclick="openModal('modal-programmable')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">CARDS · ACH · WIRE</span>
+                <span class="proto-dot" id="dot-settlement"></span>
               </div>
               <div class="proto-brand-badges">
                 <span class="brand-chip visa">VISA</span>
+                <span class="brand-chip mastercard">MC</span>
+                <span class="brand-chip stripe">stripe</span>
               </div>
             </div>
-            <div class="proto-title">Visa Intelligent Commerce (VIC)</div>
-            <div class="proto-desc">Network based authentication and transaction integrity with Programmable money control.</div>
+            <div class="proto-title">Settlement Rails</div>
+            <div class="proto-desc">How value moves and settles across cards, ACH, wires, and stablecoins.</div>
           </div>
 
-          <!-- Layer 5: VISA TRUSTPULSE MDT -->
-          <div class="protocol-card" id="proto-mdt" onclick="openModal('modal-trust-loop')">
+          <!-- Layer 8: Post-Transaction Lifecycle -->
+          <div class="protocol-card" id="proto-lifecycle" onclick="openModal('modal-trust-loop')">
             <div class="proto-top-row">
               <div class="proto-badge-pill">
-                <span class="proto-tag">VISA TRUSTPULSE MDT</span>
-                <span class="proto-dot" id="dot-mdt"></span>
+                <span class="proto-tag">ESCROW · DISPUTES</span>
+                <span class="proto-dot" id="dot-lifecycle"></span>
               </div>
               <div class="proto-brand-badges">
-                <span class="brand-chip new-tag">NEW</span>
-                <span class="brand-chip visa">VISA</span>
+                <span class="brand-chip trustgraph">TG</span>
               </div>
             </div>
-            <div class="proto-title">Merchant Digital Twin Data Lake</div>
-            <div class="proto-desc">Visa 8 dimensions merchant reputation built from verified transaction outcomes.</div>
+            <div class="proto-title">Post-Transaction Lifecycle</div>
+            <div class="proto-desc">Receipts, fulfillment, refunds, disputes, chargebacks, and reputation feedback.</div>
           </div>
         </div>
       </section>
@@ -846,7 +903,7 @@
             <div class="mdt-evaluated-list hidden" id="mdt-evaluated-list">
               <div class="eval-merchant-card">
                 <div class="eval-top">
-                  <img class="eval-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+                  <img class="eval-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/120px-Event_decorations2.jpg" alt="BrightCap">
                   <div class="eval-info">
                     <div class="eval-name">BrightCap Events</div>
                     <div class="eval-star">★ Delivery 0.95</div>
@@ -867,7 +924,7 @@
 
               <div class="eval-merchant-card">
                 <div class="eval-top">
-                  <img class="eval-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+                  <img class="eval-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/120px-Birthday_cake.jpg" alt="Golden Tassel">
                   <div class="eval-info">
                     <div class="eval-name">Golden Tassel Cakes</div>
                     <div class="eval-star">★ Consistency 0.93</div>
@@ -888,7 +945,7 @@
 
               <div class="eval-merchant-card">
                 <div class="eval-top">
-                  <img class="eval-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+                  <img class="eval-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/120px-Buffet_Food_Platter.jpg" alt="Harvest Table">
                   <div class="eval-info">
                     <div class="eval-name">Harvest Table Catering</div>
                     <div class="eval-star">★ Delivery 0.92</div>
@@ -909,7 +966,7 @@
 
               <div class="eval-merchant-card">
                 <div class="eval-top">
-                  <img class="eval-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+                  <img class="eval-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/120px-Gift_box.jpg" alt="Keepsake Lane">
                   <div class="eval-info">
                     <div class="eval-name">Keepsake Lane Gifts</div>
                     <div class="eval-star">★ Resolution 0.90</div>
@@ -1019,7 +1076,7 @@
         <span id="footer-step-text">Awaiting Demo Start Step 0 / 7</span>
       </div>
       <div class="footer-slogan">
-        Visa TrustPulse — Autonomous decisions you can audit.
+        TrustGraph — Autonomous decisions you can audit.
       </div>
     </footer>
   </div>
@@ -1077,6 +1134,86 @@
     </div>
   </div>
 
+  <!-- Modal: Agent Communication & Discovery -->
+  <div class="modal-overlay" id="modal-comm">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('modal-comm')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap blue-lightning">🌐</div>
+        <div>
+          <h3 class="modal-title">Agent Communication & Discovery</h3>
+          <p class="modal-subtitle cyan-text">A2A · MCP · AGENT CARDS</p>
+        </div>
+      </div>
+      <p class="modal-desc-para">
+        Agents discover each other, tools, data, and capabilities through open, interoperable protocols.
+      </p>
+      <div class="loop-steps-list">
+        <div class="loop-step-item">
+          <span class="loop-num cyan">1</span>
+          <div class="loop-info">
+            <div class="loop-title">Agent Cards / Manifests</div>
+            <div class="loop-desc">Publish capabilities, endpoints, and metadata.</div>
+          </div>
+        </div>
+        <div class="loop-step-item">
+          <span class="loop-num cyan">2</span>
+          <div class="loop-info">
+            <div class="loop-title">A2A & MCP</div>
+            <div class="loop-desc">Agent-to-agent and model-context-protocol messaging.</div>
+          </div>
+        </div>
+        <div class="loop-step-item">
+          <span class="loop-num cyan">3</span>
+          <div class="loop-info">
+            <div class="loop-title">Discovery Protocols</div>
+            <div class="loop-desc">Find agents, tools, and services across networks.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Agent Identity, Trust & Reputation -->
+  <div class="modal-overlay" id="modal-identity">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('modal-identity')">✕</button>
+      <div class="modal-header-row">
+        <div class="modal-icon-wrap green-shield">🛡️</div>
+        <div>
+          <h3 class="modal-title">Agent Identity, Trust & Reputation</h3>
+          <p class="modal-subtitle">DID · VERIFIABLE CREDENTIALS · REPUTATION NETWORKS</p>
+        </div>
+      </div>
+      <p class="modal-desc-para">
+        Before an agent acts on your behalf, you need to know who it is and whether it can be trusted.
+      </p>
+      <div class="loop-steps-list">
+        <div class="loop-step-item">
+          <span class="loop-num purple">1</span>
+          <div class="loop-info">
+            <div class="loop-title">Decentralized Identity</div>
+            <div class="loop-desc">Cryptographic identity and attestations via DID/VCs.</div>
+          </div>
+        </div>
+        <div class="loop-step-item">
+          <span class="loop-num purple">2</span>
+          <div class="loop-info">
+            <div class="loop-title">Network Verification</div>
+            <div class="loop-desc">Card networks and blockchains verify payment credentials and identity.</div>
+          </div>
+        </div>
+        <div class="loop-step-item">
+          <span class="loop-num purple">3</span>
+          <div class="loop-info">
+            <div class="loop-title">Reputation Scores</div>
+            <div class="loop-desc">Behavior, reviews, and outcomes build trust over time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal 2: Merchant Digital Twin 8-Dimension Scoring -->
   <div class="modal-overlay" id="modal-mdt">
     <div class="modal-card modal-large">
@@ -1112,7 +1249,7 @@
       <div class="modal-merchants-breakdown">
         <div class="m-breakdown-card">
           <div class="mb-top">
-            <img class="mb-thumb" src="assets/merchant_brightcap.jpg" alt="BrightCap">
+            <img class="mb-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Event_decorations2.jpg/120px-Event_decorations2.jpg" alt="BrightCap">
             <div class="mb-info">
               <span class="mb-title">BrightCap Events</span>
               <span class="mb-price">· $1,280.00</span>
@@ -1134,7 +1271,7 @@
 
         <div class="m-breakdown-card">
           <div class="mb-top">
-            <img class="mb-thumb" src="assets/merchant_goldentassel.jpg" alt="Golden Tassel">
+            <img class="mb-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Birthday_cake.jpg/120px-Birthday_cake.jpg" alt="Golden Tassel">
             <div class="mb-info">
               <span class="mb-title">Golden Tassel Cakes</span>
               <span class="mb-price">· $680.00</span>
@@ -1156,7 +1293,7 @@
 
         <div class="m-breakdown-card">
           <div class="mb-top">
-            <img class="mb-thumb" src="assets/merchant_harvesttable.jpg" alt="Harvest Table">
+            <img class="mb-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Buffet_Food_Platter.jpg/120px-Buffet_Food_Platter.jpg" alt="Harvest Table">
             <div class="mb-info">
               <span class="mb-title">Harvest Table Catering</span>
               <span class="mb-price">· $1,050.00</span>
@@ -1178,7 +1315,7 @@
 
         <div class="m-breakdown-card">
           <div class="mb-top">
-            <img class="mb-thumb" src="assets/merchant_keepsakelane.jpg" alt="Keepsake Lane">
+            <img class="mb-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/120px-Gift_box.jpg" alt="Keepsake Lane">
             <div class="mb-info">
               <span class="mb-title">Keepsake Lane Gifts</span>
               <span class="mb-price">· $450.00</span>
@@ -1191,61 +1328,61 @@
     </div>
   </div>
 
-  <!-- Modal 3: VIC Audit Trail -->
-  <div class="modal-overlay" id="modal-vic">
+  <!-- Modal 3: Risk & Compliance Audit Trail -->
+  <div class="modal-overlay" id="modal-risk">
     <div class="modal-card">
-      <button class="modal-close-btn" onclick="closeModal('modal-vic')">✕</button>
+      <button class="modal-close-btn" onclick="closeModal('modal-risk')">✕</button>
       <div class="modal-header-row">
         <div class="modal-icon-wrap red-clipboard">📋</div>
         <div>
-          <h3 class="modal-title">VIC Audit Trail</h3>
+          <h3 class="modal-title">Risk & Compliance Audit</h3>
           <p class="modal-subtitle">Final review before payment authorization</p>
         </div>
       </div>
 
-      <div class="vic-audit-list">
-        <div class="vic-check-box">
+      <div class="risk-audit-list">
+        <div class="risk-check-box">
           <div class="check-circle green">✓</div>
           <div>
-            <div class="v-title">Mandate Alignment</div>
-            <div class="v-desc">All 4 agent actions match signed mandate parameters</div>
+            <div class="r-title">Mandate Alignment</div>
+            <div class="r-desc">All 4 agent actions match signed mandate parameters</div>
           </div>
         </div>
 
-        <div class="vic-check-box">
+        <div class="risk-check-box">
           <div class="check-circle green">✓</div>
           <div>
-            <div class="v-title">Budget Compliance</div>
-            <div class="v-desc">$3,460.00 total within $3,500.00 budget; each merchant under $1,500.00 cap</div>
+            <div class="r-title">Budget Compliance</div>
+            <div class="r-desc">$3,460.00 total within $3,500.00 budget; each merchant under $1,500.00 cap</div>
           </div>
         </div>
 
-        <div class="vic-check-box">
+        <div class="risk-check-box">
           <div class="check-circle green">✓</div>
           <div>
-            <div class="v-title">Category Match</div>
-            <div class="v-desc">Setup, Cake, Catering, Gifts — all in allowed categories</div>
+            <div class="r-title">Category Match</div>
+            <div class="r-desc">Setup, Cake, Catering, Gifts — all in allowed categories</div>
           </div>
         </div>
 
-        <div class="vic-check-box">
+        <div class="risk-check-box">
           <div class="check-circle green">✓</div>
           <div>
-            <div class="v-title">Trust Score Threshold</div>
-            <div class="v-desc">All composites (0.93, 0.89, 0.87, 0.85) exceed minimum 0.70</div>
+            <div class="r-title">Trust Score Threshold</div>
+            <div class="r-desc">All composites (0.93, 0.89, 0.87, 0.85) exceed minimum 0.70</div>
           </div>
         </div>
 
-        <div class="vic-check-box">
+        <div class="risk-check-box">
           <div class="check-circle green">✓</div>
           <div>
-            <div class="v-title">Delivery Verification</div>
-            <div class="v-desc">All 4 merchants confirmed delivery before Saturday 2 PM deadline</div>
+            <div class="r-title">Delivery Verification</div>
+            <div class="r-desc">All 4 merchants confirmed delivery before Saturday 2 PM deadline</div>
           </div>
         </div>
       </div>
 
-      <div class="vic-authorized-banner">
+      <div class="risk-authorized-banner">
         <div class="auth-btn-title">4 PAYMENTS AUTHORIZED</div>
         <div class="auth-btn-sub">All checks passed — proceeding to smart contract binding</div>
       </div>
@@ -1370,8 +1507,8 @@
       <div class="trustpulse-quote-card">
         <p class="tq-quote">Emma gives the goal.</p>
         <p class="tq-quote">ChatGPT brings the context.</p>
-        <p class="tq-quote">Visa TrustPulse verifies the decision.</p>
-        <p class="tq-final">VISA TRUSTPULSE — AUTONOMOUS DECISIONS YOU CAN AUDIT.</p>
+        <p class="tq-quote">TrustGraph verifies the decision.</p>
+        <p class="tq-final">TRUSTGRAPH — AUTONOMOUS DECISIONS YOU CAN AUDIT.</p>
       </div>
     </div>
   </div>

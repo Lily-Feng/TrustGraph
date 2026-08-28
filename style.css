@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Visa TrustPulse Web Application Stylesheet
+   TrustGraph Web Application Stylesheet
    Modern, Dark Mode, High-Tech Glassmorphism Design System
    ========================================================================== */
 
@@ -406,12 +406,14 @@ body {
   margin-bottom: 12px;
 }
 
-.brand-visa {
+.brand-trustgraph {
   font-size: 1.1rem;
   font-weight: 900;
-  font-style: italic;
   letter-spacing: -0.02em;
-  color: #1434cb;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .ai-models-icons {
@@ -482,12 +484,12 @@ body {
   margin-top: 4px;
 }
 
-.visa-card-mockup {
+.payment-card-mockup {
   width: 170px;
   height: 105px;
-  background: linear-gradient(135deg, #1a365d 0%, #1e40af 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   border-radius: 12px;
-  box-shadow: 0 15px 30px -5px rgba(30, 64, 175, 0.4);
+  box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.4);
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -500,15 +502,35 @@ body {
 .chip-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.75rem;
   font-weight: bold;
 }
 
-.card-visa-white {
-  font-size: 0.95rem;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.02em;
+.card-chip-icon {
+  font-size: 1.1rem;
+}
+
+.card-bottom {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.card-network-badge {
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.card-network-badge.mastercard {
+  background: #eb001b;
+}
+
+.card-network-badge.stripe {
+  background: #635bff;
 }
 
 .intro-footer-text .bold-note {
@@ -1151,7 +1173,7 @@ body {
   margin-left: 4px;
 }
 
-.vic-processing-card {
+.payment-processing-card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1160,15 +1182,39 @@ body {
   font-size: 0.72rem;
   font-weight: 700;
   color: #2563eb;
+  flex-wrap: wrap;
 }
 
-.mini-visa-rect {
-  background: #1434cb;
+.provider-logo {
+  background: #635bff;
   color: #fff;
   font-size: 0.6rem;
   font-weight: 900;
   padding: 2px 6px;
   border-radius: 3px;
+}
+
+.provider-logo.stripe {
+  background: #635bff;
+}
+
+.proc-network-badges {
+  display: flex;
+  gap: 4px;
+}
+
+.mini-network {
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.mini-network.mastercard {
+  background: rgba(235, 0, 27, 0.12);
+  color: #c0001a;
 }
 
 /* Step 6 - Escrow Secured */
@@ -1492,10 +1538,14 @@ body {
   color: #f43f5e;
 }
 
+#proto-comm .proto-tag { color: #f43f5e; }
+#proto-identity .proto-tag { color: #f97316; }
 #proto-ap2 .proto-tag { color: #38bdf8; }
 #proto-ucp .proto-tag { color: #fbbf24; }
-#proto-vic .proto-tag { color: #ec4899; }
-#proto-mdt .proto-tag { color: #a78bfa; }
+#proto-risk .proto-tag { color: #ec4899; }
+#proto-payment .proto-tag { color: #a78bfa; }
+#proto-settlement .proto-tag { color: #2dd4bf; }
+#proto-lifecycle .proto-tag { color: #34d399; }
 
 .proto-dot {
   width: 6px;
@@ -1529,9 +1579,20 @@ body {
   font-style: italic;
 }
 
+.brand-chip.mastercard {
+  background: #eb001b;
+  color: #fff;
+  font-size: 0.55rem;
+}
+
 .brand-chip.google {
   background: #334155;
   color: #38bdf8;
+}
+
+.brand-chip.anthropic {
+  background: #d97757;
+  color: #fff;
 }
 
 .brand-chip.openai {
@@ -1540,7 +1601,7 @@ body {
 }
 
 .brand-chip.stripe {
-  background: #4f46e5;
+  background: #635bff;
   color: #fff;
 }
 
@@ -1549,11 +1610,20 @@ body {
   color: #fff;
 }
 
-.brand-chip.new-tag {
-  background: #f59e0b;
-  color: #000;
+.brand-chip.ethereum {
+  background: #627eea;
+  color: #fff;
+}
+
+.brand-chip.trustgraph {
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+  color: #fff;
   font-size: 0.55rem;
-  font-weight: 900;
+}
+
+.brand-chip.coinbase {
+  background: #0052ff;
+  color: #fff;
 }
 
 .proto-title {
@@ -1982,11 +2052,13 @@ body {
 }
 
 .log-time { color: var(--text-dim); }
-.log-tap { color: #f43f5e; font-weight: 600; }
+.log-comm { color: #f43f5e; font-weight: 600; }
 .log-ap2 { color: #38bdf8; font-weight: 600; }
 .log-ucp { color: #fbbf24; font-weight: 600; }
-.log-vic { color: #ec4899; font-weight: 600; }
-.log-lake { color: #a78bfa; font-weight: 600; }
+.log-risk { color: #ec4899; font-weight: 600; }
+.log-pay { color: #a78bfa; font-weight: 600; }
+.log-settle { color: #2dd4bf; font-weight: 600; }
+.log-life { color: #34d399; font-weight: 600; }
 .log-text { color: #e2e8f0; }
 
 /* ==========================================================================
@@ -2281,15 +2353,15 @@ body {
 .bar-pill.green { background: #065f46; color: #a7f3d0; }
 .bar-pill.yellow { background: #78350f; color: #fde68a; }
 
-/* VIC Audit Modal */
-.vic-audit-list {
+/* Risk & Compliance Audit Modal */
+.risk-audit-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.vic-check-box {
+.risk-check-box {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -2299,18 +2371,18 @@ body {
   padding: 8px 12px;
 }
 
-.v-title {
+.r-title {
   font-size: 0.78rem;
   font-weight: 700;
   color: #fff;
 }
 
-.v-desc {
+.r-desc {
   font-size: 0.68rem;
   color: var(--text-muted);
 }
 
-.vic-authorized-banner {
+.risk-authorized-banner {
   background: rgba(16, 185, 129, 0.15);
   border: 1px solid var(--primary-green);
   border-radius: 10px;
@@ -2467,6 +2539,8 @@ body {
 
 .loop-num.purple { background: #8b5cf6; }
 .loop-num.green { background: #10b981; }
+.loop-num.cyan { background: #06b6d4; }
+.loop-num.blue { background: #0284c7; }
 
 .loop-title {
   font-size: 0.78rem;

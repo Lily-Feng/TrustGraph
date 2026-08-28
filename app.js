@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Visa TrustPulse Web Application Logic
+   TrustGraph Web Application Logic
    Interactive state machine, auto-demo controller, Web Audio SFX, logs
    ========================================================================== */
 
@@ -30,15 +30,15 @@
       id: 1,
       name: 'Prompt',
       navId: 'step-nav-1',
-      protocolActive: 'proto-tap',
+      protocolActive: 'proto-comm',
       auditPassedCount: 0,
       scannerText: 'AWAITING CANDIDATES',
       scannerState: 'idle',
       showEvaluatedList: false,
       log: {
-        tag: 'TAP',
-        class: 'log-tap',
-        text: 'AGENT_INIT: Shopping Agent with Visa TrustPulse activated...'
+        tag: 'A2A',
+        class: 'log-comm',
+        text: 'AGENT_INIT: Shopping Agent with TrustGraph activated...'
       }
     },
     {
@@ -75,14 +75,14 @@
       id: 4,
       name: 'MDT Score',
       navId: 'step-nav-4',
-      protocolActive: 'proto-ucp',
+      protocolActive: 'proto-risk',
       auditPassedCount: 3,
       scannerText: 'EVALUATION COMPLETE',
       scannerState: 'scored',
       showEvaluatedList: true,
       log: {
-        tag: 'UCP',
-        class: 'log-ucp',
+        tag: 'RISK',
+        class: 'log-risk',
         text: 'MDT_EVAL: 4 merchants selected — BrightCap Events (0.93), Golden Tassel (0.89)...'
       }
     },
@@ -90,14 +90,14 @@
       id: 5,
       name: 'Payment',
       navId: 'step-nav-5',
-      protocolActive: 'proto-vic',
+      protocolActive: 'proto-payment',
       auditPassedCount: 4,
       scannerText: 'PAYMENT AUDIT VERIFIED',
       scannerState: 'scored',
       showEvaluatedList: true,
       log: {
-        tag: 'VIC',
-        class: 'log-vic',
+        tag: 'PAY',
+        class: 'log-pay',
         text: 'AUDIT_PASS: 4 payments authorized — BrightCap $1,280.00, Harvest Table $1,050.00...'
       }
     },
@@ -105,14 +105,14 @@
       id: 6,
       name: 'Escrow',
       navId: 'step-nav-6',
-      protocolActive: 'proto-vic',
+      protocolActive: 'proto-settlement',
       auditPassedCount: 5,
       scannerText: 'SMART ESCROW BOUND',
       scannerState: 'scored',
       showEvaluatedList: true,
       log: {
-        tag: 'VIC',
-        class: 'log-vic',
+        tag: 'SETTLE',
+        class: 'log-settle',
         text: 'ESCROW_BIND: 4 smart contracts active with milestone protection & tokenization.'
       }
     },
@@ -120,14 +120,14 @@
       id: 7,
       name: 'Delivery',
       navId: 'step-nav-7',
-      protocolActive: 'proto-mdt',
+      protocolActive: 'proto-lifecycle',
       auditPassedCount: 6,
       scannerText: 'TRUST LOOP CLOSED',
       scannerState: 'scored',
       showEvaluatedList: true,
       log: {
-        tag: 'MDT_LAKE',
-        class: 'log-lake',
+        tag: 'LIFE',
+        class: 'log-life',
         text: 'MDT_RECORD: All deliveries confirmed before 2 PM, ratings fed back to data lake.'
       }
     }
@@ -407,13 +407,19 @@
     }
 
     // 3. Protocol Stack Glow & Active Dot
-    const allProtos = ['proto-tap', 'proto-ap2', 'proto-ucp', 'proto-vic', 'proto-mdt'];
+    const allProtos = [
+      'proto-comm', 'proto-identity', 'proto-ap2', 'proto-ucp',
+      'proto-risk', 'proto-payment', 'proto-settlement', 'proto-lifecycle'
+    ];
     allProtos.forEach((id) => {
       const el = document.getElementById(id);
       if (el) el.classList.remove('active');
     });
 
-    const allDots = ['dot-tap', 'dot-ap2', 'dot-ucp', 'dot-vic', 'dot-mdt'];
+    const allDots = [
+      'dot-comm', 'dot-identity', 'dot-ap2', 'dot-ucp',
+      'dot-risk', 'dot-payment', 'dot-settlement', 'dot-lifecycle'
+    ];
     allDots.forEach((id) => {
       const el = document.getElementById(id);
       if (el) el.classList.remove('active');
@@ -424,11 +430,14 @@
       if (activeEl) activeEl.classList.add('active');
 
       const dotMap = {
-        'proto-tap': 'dot-tap',
+        'proto-comm': 'dot-comm',
+        'proto-identity': 'dot-identity',
         'proto-ap2': 'dot-ap2',
         'proto-ucp': 'dot-ucp',
-        'proto-vic': 'dot-vic',
-        'proto-mdt': 'dot-mdt'
+        'proto-risk': 'dot-risk',
+        'proto-payment': 'dot-payment',
+        'proto-settlement': 'dot-settlement',
+        'proto-lifecycle': 'dot-lifecycle'
       };
       const dotEl = document.getElementById(dotMap[config.protocolActive]);
       if (dotEl) dotEl.classList.add('active');
