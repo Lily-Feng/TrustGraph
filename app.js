@@ -469,10 +469,13 @@
     }
 
     // Auto-switch tabs to show the most relevant context
-    if (stepIndex === 2 || stepIndex === 5) {
-      switchRightTab('audit');
-    } else if (stepIndex === 3 || stepIndex === 4 || stepIndex === 7) {
-      switchRightTab('mdt');
+    const rightCol = document.querySelector('.right-panel-column');
+    if (!rightCol || !rightCol.classList.contains('full-log-mode')) {
+      if (stepIndex === 2 || stepIndex === 5) {
+        switchRightTab('audit');
+      } else if (stepIndex === 3 || stepIndex === 4 || stepIndex === 7) {
+        switchRightTab('mdt');
+      }
     }
 
     // 5. Audit Checklist Progress
@@ -534,19 +537,47 @@
     rightTab = tabName;
     const tabMdt = document.getElementById('tab-mdt');
     const tabAudit = document.getElementById('tab-audit');
+    const tabLog = document.getElementById('tab-log');
     const paneMdt = document.getElementById('pane-mdt');
     const paneAudit = document.getElementById('pane-audit');
+    const rightCol = document.querySelector('.right-panel-column');
 
     if (tabName === 'mdt') {
-      tabMdt.classList.add('active');
-      tabAudit.classList.remove('active');
-      paneMdt.classList.add('active');
-      paneAudit.classList.remove('active');
-    } else {
-      tabAudit.classList.add('active');
-      tabMdt.classList.remove('active');
-      paneAudit.classList.add('active');
-      paneMdt.classList.remove('active');
+      if (tabMdt) tabMdt.classList.add('active');
+      if (tabAudit) tabAudit.classList.remove('active');
+      if (tabLog) tabLog.classList.remove('active');
+      if (paneMdt) paneMdt.classList.add('active');
+      if (paneAudit) paneAudit.classList.remove('active');
+      if (rightCol) rightCol.classList.remove('full-log-mode');
+    } else if (tabName === 'audit') {
+      if (tabAudit) tabAudit.classList.add('active');
+      if (tabMdt) tabMdt.classList.remove('active');
+      if (tabLog) tabLog.classList.remove('active');
+      if (paneAudit) paneAudit.classList.add('active');
+      if (paneMdt) paneMdt.classList.remove('active');
+      if (rightCol) rightCol.classList.remove('full-log-mode');
+    } else if (tabName === 'log') {
+      if (tabLog) tabLog.classList.add('active');
+      if (tabMdt) tabMdt.classList.remove('active');
+      if (tabAudit) tabAudit.classList.remove('active');
+      if (rightCol) rightCol.classList.add('full-log-mode');
+    }
+  };
+
+  window.toggleLogExpand = function () {
+    const rightCol = document.querySelector('.right-panel-column');
+    if (rightCol) {
+      const isFull = rightCol.classList.toggle('full-log-mode');
+      const tabLog = document.getElementById('tab-log');
+      const tabMdt = document.getElementById('tab-mdt');
+      const tabAudit = document.getElementById('tab-audit');
+      if (isFull) {
+        if (tabLog) tabLog.classList.add('active');
+        if (tabMdt) tabMdt.classList.remove('active');
+        if (tabAudit) tabAudit.classList.remove('active');
+      } else {
+        switchRightTab('mdt');
+      }
     }
   };
 

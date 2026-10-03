@@ -60,7 +60,144 @@
     <!-- Main Content 3-Column Layout -->
     <main class="main-layout">
       
-      <!-- LEFT COLUMN: Phone Frame Mockup -->
+      <!-- LEFT COLUMN: Protocol Layers (Agentic Payments Stack) -->
+      <section class="protocol-column">
+        <h3 class="column-section-title">AGENTIC PAYMENTS STACK</h3>
+
+        <div class="protocols-stack">
+          <!-- Layer 1: Communication & Discovery -->
+          <div class="protocol-card" id="proto-comm" onclick="openModal('modal-comm')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">A2A · MCP</span>
+                <span class="proto-dot" id="dot-comm"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip google">G</span>
+                <span class="brand-chip anthropic">A</span>
+              </div>
+            </div>
+            <div class="proto-title">Agent Communication & Discovery</div>
+            <div class="proto-desc">How agents find each other, tools, data, and capabilities.</div>
+          </div>
+
+          <!-- Layer 2: Identity, Trust & Reputation -->
+          <div class="protocol-card" id="proto-identity" onclick="openModal('modal-identity')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">DID · VC</span>
+                <span class="proto-dot" id="dot-identity"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip visa">VISA</span>
+                <span class="brand-chip mastercard">MC</span>
+                <span class="brand-chip ethereum">ETH</span>
+              </div>
+            </div>
+            <div class="proto-title">Agent Identity, Trust & Reputation</div>
+            <div class="proto-desc">Who is this agent, and should I trust it?</div>
+          </div>
+
+          <!-- Layer 3: Mandate, Consent & Policy -->
+          <div class="protocol-card" id="proto-ap2" onclick="openModal('modal-ap2')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">AP2</span>
+                <span class="proto-dot" id="dot-ap2"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip google">G</span>
+              </div>
+            </div>
+            <div class="proto-title">Mandate, Consent & Policy</div>
+            <div class="proto-desc">Delegated payment authority through signed mandates and spending controls.</div>
+          </div>
+
+          <!-- Layer 4: Offer, Quote & Transaction Coordination -->
+          <div class="protocol-card" id="proto-ucp" onclick="openModal('modal-mdt')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">UCP · ACP</span>
+                <span class="proto-dot" id="dot-ucp"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip openai">✦</span>
+                <span class="brand-chip stripe">stripe</span>
+                <span class="brand-chip google">G</span>
+                <span class="brand-chip shopify">🛍</span>
+              </div>
+            </div>
+            <div class="proto-title">Offer, Quote & Transaction Coordination</div>
+            <div class="proto-desc">Merchant manifests, offers, quotes, negotiation, and cart coordination.</div>
+          </div>
+
+          <!-- Layer 5: Payment Authentication, Risk & Compliance -->
+          <div class="protocol-card" id="proto-risk" onclick="openModal('modal-risk')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">TRUSTGRAPH</span>
+                <span class="proto-dot" id="dot-risk"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip trustgraph">TG</span>
+                <span class="brand-chip mastercard">MC</span>
+              </div>
+            </div>
+            <div class="proto-title">Payment Authentication, Risk & Compliance</div>
+            <div class="proto-desc">Network-backed authentication, fraud scoring, AML/KYC, and transaction integrity.</div>
+          </div>
+
+          <!-- Layer 6: Machine-Speed Payment Protocols -->
+          <div class="protocol-card" id="proto-payment" onclick="openModal('modal-programmable')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">x402 · MPP · Stripe</span>
+                <span class="proto-dot" id="dot-payment"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip stripe">stripe</span>
+                <span class="brand-chip coinbase">₿</span>
+              </div>
+            </div>
+            <div class="proto-title">Machine-Speed Payment Protocols</div>
+            <div class="proto-desc">Agent-native, programmatic payments and paid tool calls at machine speed.</div>
+          </div>
+
+          <!-- Layer 7: Settlement Rails -->
+          <div class="protocol-card" id="proto-settlement" onclick="openModal('modal-programmable')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">CARDS · ACH · WIRE</span>
+                <span class="proto-dot" id="dot-settlement"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip visa">VISA</span>
+                <span class="brand-chip mastercard">MC</span>
+                <span class="brand-chip stripe">stripe</span>
+              </div>
+            </div>
+            <div class="proto-title">Settlement Rails</div>
+            <div class="proto-desc">How value moves and settles across cards, ACH, wires, and stablecoins.</div>
+          </div>
+
+          <!-- Layer 8: Post-Transaction Lifecycle -->
+          <div class="protocol-card" id="proto-lifecycle" onclick="openModal('modal-trust-loop')">
+            <div class="proto-top-row">
+              <div class="proto-badge-pill">
+                <span class="proto-tag">ESCROW · DISPUTES</span>
+                <span class="proto-dot" id="dot-lifecycle"></span>
+              </div>
+              <div class="proto-brand-badges">
+                <span class="brand-chip trustgraph">TG</span>
+              </div>
+            </div>
+            <div class="proto-title">Post-Transaction Lifecycle</div>
+            <div class="proto-desc">Receipts, fulfillment, refunds, disputes, chargebacks, and reputation feedback.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CENTER COLUMN: Phone Frame Mockup -->
       <section class="phone-column">
         <div class="phone-frame">
           <div class="phone-speaker-island">
@@ -687,143 +824,6 @@
         </div>
       </section>
 
-      <!-- MIDDLE COLUMN: Protocol Layers -->
-      <section class="protocol-column">
-        <h3 class="column-section-title">AGENTIC PAYMENTS STACK</h3>
-
-        <div class="protocols-stack">
-          <!-- Layer 1: Communication & Discovery -->
-          <div class="protocol-card" id="proto-comm" onclick="openModal('modal-comm')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">A2A · MCP</span>
-                <span class="proto-dot" id="dot-comm"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip google">G</span>
-                <span class="brand-chip anthropic">A</span>
-              </div>
-            </div>
-            <div class="proto-title">Agent Communication & Discovery</div>
-            <div class="proto-desc">How agents find each other, tools, data, and capabilities.</div>
-          </div>
-
-          <!-- Layer 2: Identity, Trust & Reputation -->
-          <div class="protocol-card" id="proto-identity" onclick="openModal('modal-identity')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">DID · VC</span>
-                <span class="proto-dot" id="dot-identity"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip visa">VISA</span>
-                <span class="brand-chip mastercard">MC</span>
-                <span class="brand-chip ethereum">ETH</span>
-              </div>
-            </div>
-            <div class="proto-title">Agent Identity, Trust & Reputation</div>
-            <div class="proto-desc">Who is this agent, and should I trust it?</div>
-          </div>
-
-          <!-- Layer 3: Mandate, Consent & Policy -->
-          <div class="protocol-card" id="proto-ap2" onclick="openModal('modal-ap2')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">AP2</span>
-                <span class="proto-dot" id="dot-ap2"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip google">G</span>
-              </div>
-            </div>
-            <div class="proto-title">Mandate, Consent & Policy</div>
-            <div class="proto-desc">Delegated payment authority through signed mandates and spending controls.</div>
-          </div>
-
-          <!-- Layer 4: Offer, Quote & Transaction Coordination -->
-          <div class="protocol-card" id="proto-ucp" onclick="openModal('modal-mdt')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">UCP · ACP</span>
-                <span class="proto-dot" id="dot-ucp"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip openai">✦</span>
-                <span class="brand-chip stripe">stripe</span>
-                <span class="brand-chip google">G</span>
-                <span class="brand-chip shopify">🛍</span>
-              </div>
-            </div>
-            <div class="proto-title">Offer, Quote & Transaction Coordination</div>
-            <div class="proto-desc">Merchant manifests, offers, quotes, negotiation, and cart coordination.</div>
-          </div>
-
-          <!-- Layer 5: Payment Authentication, Risk & Compliance -->
-          <div class="protocol-card" id="proto-risk" onclick="openModal('modal-risk')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">TRUSTGRAPH</span>
-                <span class="proto-dot" id="dot-risk"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip trustgraph">TG</span>
-                <span class="brand-chip mastercard">MC</span>
-              </div>
-            </div>
-            <div class="proto-title">Payment Authentication, Risk & Compliance</div>
-            <div class="proto-desc">Network-backed authentication, fraud scoring, AML/KYC, and transaction integrity.</div>
-          </div>
-
-          <!-- Layer 6: Machine-Speed Payment Protocols -->
-          <div class="protocol-card" id="proto-payment" onclick="openModal('modal-programmable')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">x402 · MPP · Stripe</span>
-                <span class="proto-dot" id="dot-payment"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip stripe">stripe</span>
-                <span class="brand-chip coinbase">₿</span>
-              </div>
-            </div>
-            <div class="proto-title">Machine-Speed Payment Protocols</div>
-            <div class="proto-desc">Agent-native, programmatic payments and paid tool calls at machine speed.</div>
-          </div>
-
-          <!-- Layer 7: Settlement Rails -->
-          <div class="protocol-card" id="proto-settlement" onclick="openModal('modal-programmable')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">CARDS · ACH · WIRE</span>
-                <span class="proto-dot" id="dot-settlement"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip visa">VISA</span>
-                <span class="brand-chip mastercard">MC</span>
-                <span class="brand-chip stripe">stripe</span>
-              </div>
-            </div>
-            <div class="proto-title">Settlement Rails</div>
-            <div class="proto-desc">How value moves and settles across cards, ACH, wires, and stablecoins.</div>
-          </div>
-
-          <!-- Layer 8: Post-Transaction Lifecycle -->
-          <div class="protocol-card" id="proto-lifecycle" onclick="openModal('modal-trust-loop')">
-            <div class="proto-top-row">
-              <div class="proto-badge-pill">
-                <span class="proto-tag">ESCROW · DISPUTES</span>
-                <span class="proto-dot" id="dot-lifecycle"></span>
-              </div>
-              <div class="proto-brand-badges">
-                <span class="brand-chip trustgraph">TG</span>
-              </div>
-            </div>
-            <div class="proto-title">Post-Transaction Lifecycle</div>
-            <div class="proto-desc">Receipts, fulfillment, refunds, disputes, chargebacks, and reputation feedback.</div>
-          </div>
-        </div>
-      </section>
-
       <!-- RIGHT COLUMN: MDT Engine / Audit Trail & Network Event Log -->
       <section class="right-panel-column">
         
@@ -838,6 +838,10 @@
               <button class="tab-btn" id="tab-audit" onclick="switchRightTab('audit')">
                 <span class="tab-icon">📋</span>
                 <span>AUDIT TRAIL</span>
+              </button>
+              <button class="tab-btn" id="tab-log" onclick="switchRightTab('log')">
+                <span class="tab-icon">⚡</span>
+                <span>EVENT LOG</span>
               </button>
             </div>
             <div class="security-status-badge">
@@ -1054,9 +1058,12 @@
         <div class="glass-panel event-log-panel">
           <div class="event-log-header">
             <span class="log-title">NETWORK EVENT LOG</span>
-            <div class="live-indicator">
-              <span class="live-pulse"></span>
-              <span>LIVE</span>
+            <div class="log-header-right">
+              <button class="log-expand-btn" id="btn-expand-log" onclick="toggleLogExpand()" title="Toggle full height log">⤢</button>
+              <div class="live-indicator">
+                <span class="live-pulse"></span>
+                <span>LIVE</span>
+              </div>
             </div>
           </div>
           <div class="log-console-body" id="log-console">
