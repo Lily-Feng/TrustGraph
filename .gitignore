@@ -1,8 +1,1 @@
-# macOS metadata
-.DS_Store
-**/.DS_Store
-
-# Local environments and keys
-.env
-.env.*
-*.local
+*/.DS_Store
