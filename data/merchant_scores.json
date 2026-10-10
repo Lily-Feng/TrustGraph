@@ -1,0 +1,5557 @@
+{
+ "meta": {
+  "generated_at": "2026-10-10T05:32:05.455079+00:00",
+  "sources": [
+   {
+    "name": "Olist Brazilian E-Commerce",
+    "kind": "real",
+    "note": "Public marketplace data 2016-2018; merchant dimensions are computed from it. Sellers are anonymised."
+   },
+   {
+    "name": "CFPB Consumer Complaints",
+    "kind": "real",
+    "note": "Daily incremental feed; used only as an external dispute/resolution benchmark, not joined to merchants."
+   },
+   {
+    "name": "Frankfurter FX (ECB)",
+    "kind": "real",
+    "note": "BRL->USD conversion of ticket sizes."
+   },
+   {
+    "name": "Stripe-shaped agent payment events",
+    "kind": "synthetic",
+    "note": "Generated to spec/data-contract.md; payment_risk fields are synthetic."
+   }
+  ],
+  "dimensions": {
+   "delivery": "Share of delivered orders arriving on or before the promised date.",
+   "price": "Item price vs category median (cheaper = higher).",
+   "contract": "Severity of broken delivery promises (mean days late).",
+   "latency": "Days from payment approval to carrier handoff.",
+   "dispute": "Share of orders cancelled/unavailable or rated <=2 stars (inverted).",
+   "consistency": "Spread of delivery delay (lower variance = higher).",
+   "comms": "PROXY: share of orders handed to carrier before the seller's own ship-by date.",
+   "resolution": "PROXY: share of late orders that still ended with a >=4 star review."
+  },
+  "scoring": "Each dimension in [0,1], Bayesian-smoothed toward marketplace mean (m=10); mdt_score = equal-weight mean.",
+  "eligible_min_orders": 20,
+  "tier_counts": {
+   "watch": 440,
+   "risk": 342,
+   "trusted": 36
+  }
+ },
+ "merchants": [
+  {
+   "merchant_id": "116ccb1a1604bc88e4d234a8c23f33de",
+   "name": "Seller 116cc \u00b7 Sao Bernardo Do Campo, SP",
+   "state": "SP",
+   "orders": 61,
+   "mdt_score": 0.8247,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9624,
+    "price": 1.0,
+    "contract": 0.9817,
+    "latency": 0.784,
+    "dispute": 0.8372,
+    "consistency": 0.5728,
+    "comms": 0.9873,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.6393,
+   "avg_ticket_usd": 9.5778,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 1958.8,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0509040ea3fe50071181bbc359eb7738",
+   "name": "Seller 05090 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 89,
+   "mdt_score": 0.8247,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9519,
+    "price": 0.9942,
+    "contract": 0.9675,
+    "latency": 0.7265,
+    "dispute": 0.9169,
+    "consistency": 0.6117,
+    "comms": 0.9505,
+    "resolution": 0.4781
+   },
+   "avg_review": 4.4828,
+   "avg_ticket_usd": 12.736,
+   "payment_risk": {
+    "payments": 25,
+    "volume_usd": 7649.84,
+    "agent_share": 0.36,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3504c0cb71d7fa48d967e0e4c94d59d9",
+   "name": "Seller 3504c \u00b7 Maua, SP",
+   "state": "SP",
+   "orders": 53,
+   "mdt_score": 0.8085,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9894,
+    "price": 1.0,
+    "contract": 0.9839,
+    "latency": 0.7431,
+    "dispute": 0.8166,
+    "consistency": 0.6891,
+    "comms": 0.9857,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4151,
+   "avg_ticket_usd": 13.9713,
+   "payment_risk": {
+    "payments": 15,
+    "volume_usd": 1236.15,
+    "agent_share": 0.2667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "18e694e0e48ed6f7aa3f24aade5fd697",
+   "name": "Seller 18e69 \u00b7 Varzea Paulista, SP",
+   "state": "SP",
+   "orders": 31,
+   "mdt_score": 0.8071,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9593,
+    "price": 1.0,
+    "contract": 0.9718,
+    "latency": 0.7842,
+    "dispute": 0.8807,
+    "consistency": 0.4991,
+    "comms": 0.978,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.6774,
+   "avg_ticket_usd": 5.8304,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 1020.96,
+    "agent_share": 0.0909,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6df688df543f90e9b38f4319e75a9d88",
+   "name": "Seller 6df68 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 40,
+   "mdt_score": 0.8041,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9863,
+    "price": 1.0,
+    "contract": 0.9793,
+    "latency": 0.7588,
+    "dispute": 0.8355,
+    "consistency": 0.6302,
+    "comms": 0.982,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.575,
+   "avg_ticket_usd": 15.2519,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 556.94,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6cd68b3ed6d59aaa9fece558ad360c0a",
+   "name": "Seller 6cd68 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 149,
+   "mdt_score": 0.7977,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9832,
+    "price": 0.7173,
+    "contract": 0.9765,
+    "latency": 0.753,
+    "dispute": 0.8644,
+    "consistency": 0.6207,
+    "comms": 0.9943,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.4564,
+   "avg_ticket_usd": 23.4418,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2424.62,
+    "agent_share": 0.4167,
+    "dispute_rate": 0.0833,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6b15924333bd1a741595fe981ea04822",
+   "name": "Seller 6b159 \u00b7 Sao Caetano Do Sul, SP",
+   "state": "SP",
+   "orders": 21,
+   "mdt_score": 0.7964,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9784,
+    "price": 1.0,
+    "contract": 0.9673,
+    "latency": 0.7521,
+    "dispute": 0.8422,
+    "consistency": 0.5994,
+    "comms": 0.971,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6667,
+   "avg_ticket_usd": 9.1552,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 862.76,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "718539d38d07dd351c76db862760e2e2",
+   "name": "Seller 71853 \u00b7 Campinas, SP",
+   "state": "SP",
+   "orders": 37,
+   "mdt_score": 0.7885,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9851,
+    "price": 1.0,
+    "contract": 0.9775,
+    "latency": 0.7118,
+    "dispute": 0.6832,
+    "consistency": 0.7096,
+    "comms": 0.98,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4324,
+   "avg_ticket_usd": 11.1757,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": 1493.65,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "325f3178fb58e2a9778334621eecdbf9",
+   "name": "Seller 325f3 \u00b7 Taboao Da Serra, SP",
+   "state": "SP",
+   "orders": 36,
+   "mdt_score": 0.7877,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9854,
+    "price": 1.0,
+    "contract": 0.978,
+    "latency": 0.7232,
+    "dispute": 0.6763,
+    "consistency": 0.6977,
+    "comms": 0.9804,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4444,
+   "avg_ticket_usd": 8.5442,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2604.82,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "41c2bad7229b0c25e6becf179ebf63ff",
+   "name": "Seller 41c2b \u00b7 Natal, RN",
+   "state": "RN",
+   "orders": 20,
+   "mdt_score": 0.7851,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9777,
+    "price": 0.7428,
+    "contract": 0.9662,
+    "latency": 0.7528,
+    "dispute": 0.837,
+    "consistency": 0.7737,
+    "comms": 0.97,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.95,
+   "avg_ticket_usd": 11.9738,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 808.94,
+    "agent_share": 0.5385,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "080102cd0a76b09e0dcf55fcacc60e05",
+   "name": "Seller 08010 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 124,
+   "mdt_score": 0.7829,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9571,
+    "price": 0.9194,
+    "contract": 0.9598,
+    "latency": 0.8264,
+    "dispute": 0.8142,
+    "consistency": 0.4698,
+    "comms": 0.9857,
+    "resolution": 0.3303
+   },
+   "avg_review": 4.4758,
+   "avg_ticket_usd": 13.0752,
+   "payment_risk": {
+    "payments": 21,
+    "volume_usd": 2950.52,
+    "agent_share": 0.381,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "fc906263ca5083d09dce42fe02247800",
+   "name": "Seller fc906 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 114,
+   "mdt_score": 0.7788,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9945,
+    "price": 0.9868,
+    "contract": 0.9917,
+    "latency": 0.739,
+    "dispute": 0.638,
+    "consistency": 0.6354,
+    "comms": 0.9847,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.3509,
+   "avg_ticket_usd": 12.3628,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 292.49,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d9a84e1403de8da0c3aa531d6d108ba6",
+   "name": "Seller d9a84 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 54,
+   "mdt_score": 0.7704,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9418,
+    "price": 1.0,
+    "contract": 0.9136,
+    "latency": 0.8182,
+    "dispute": 0.7153,
+    "consistency": 0.3755,
+    "comms": 0.9859,
+    "resolution": 0.4129
+   },
+   "avg_review": 4.5185,
+   "avg_ticket_usd": 7.4673,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 199.8,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "25cf099de44674fde97473224f9d59ab",
+   "name": "Seller 25cf0 \u00b7 Cotia, SP",
+   "state": "SP",
+   "orders": 50,
+   "mdt_score": 0.7696,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9555,
+    "price": 1.0,
+    "contract": 0.9593,
+    "latency": 0.7676,
+    "dispute": 0.6407,
+    "consistency": 0.5195,
+    "comms": 0.985,
+    "resolution": 0.329
+   },
+   "avg_review": 4.3265,
+   "avg_ticket_usd": 9.8665,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2089.4,
+    "agent_share": 0.1667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b4ffb71f0cb1b1c3d63fad021ecf93e1",
+   "name": "Seller b4ffb \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 144,
+   "mdt_score": 0.7661,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.976,
+    "price": 1.0,
+    "contract": 0.97,
+    "latency": 0.8001,
+    "dispute": 0.6003,
+    "consistency": 0.5132,
+    "comms": 0.9812,
+    "resolution": 0.2879
+   },
+   "avg_review": 4.2014,
+   "avg_ticket_usd": 13.6608,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 869.24,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5f3ae9136c875522250f8184f253413a",
+   "name": "Seller 5f3ae \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 43,
+   "mdt_score": 0.7658,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9487,
+    "price": 1.0,
+    "contract": 0.964,
+    "latency": 0.767,
+    "dispute": 0.8448,
+    "consistency": 0.3842,
+    "comms": 0.8887,
+    "resolution": 0.329
+   },
+   "avg_review": 4.6429,
+   "avg_ticket_usd": 7.6917,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 695.44,
+    "agent_share": 0.3636,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "113e3a788b935f48aad63e1c41dac1bd",
+   "name": "Seller 113e3 \u00b7 Aparecida, SP",
+   "state": "SP",
+   "orders": 39,
+   "mdt_score": 0.7646,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9455,
+    "price": 1.0,
+    "contract": 0.9327,
+    "latency": 0.6663,
+    "dispute": 0.7641,
+    "consistency": 0.3959,
+    "comms": 0.9408,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.3158,
+   "avg_ticket_usd": 6.3229,
+   "payment_risk": {
+    "payments": 16,
+    "volume_usd": 1485.49,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d12c926d74ceff0a90a21184466ce161",
+   "name": "Seller d12c9 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 78,
+   "mdt_score": 0.7636,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9806,
+    "price": 0.9044,
+    "contract": 0.9816,
+    "latency": 0.7966,
+    "dispute": 0.6793,
+    "consistency": 0.5713,
+    "comms": 0.9782,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.2949,
+   "avg_ticket_usd": 15.6964,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 779.2,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8a130737016f838139d31878787a39c9",
+   "name": "Seller 8a130 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 56,
+   "mdt_score": 0.7629,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9293,
+    "price": 0.7642,
+    "contract": 0.9565,
+    "latency": 0.7118,
+    "dispute": 0.7744,
+    "consistency": 0.5483,
+    "comms": 0.9409,
+    "resolution": 0.4781
+   },
+   "avg_review": 4.4464,
+   "avg_ticket_usd": 21.8803,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 2115.25,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8c16d1f32a54d92897cc437244442e1b",
+   "name": "Seller 8c16d \u00b7 Blumenau, SC",
+   "state": "SC",
+   "orders": 108,
+   "mdt_score": 0.7613,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9859,
+    "price": 0.9493,
+    "contract": 0.9805,
+    "latency": 0.7708,
+    "dispute": 0.7326,
+    "consistency": 0.4788,
+    "comms": 0.9754,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.3551,
+   "avg_ticket_usd": 15.9074,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 256.09,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "808d4348b916efa08e766ebad39f61eb",
+   "name": "Seller 808d4 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 21,
+   "mdt_score": 0.7603,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9444,
+    "price": 1.0,
+    "contract": 0.9471,
+    "latency": 0.692,
+    "dispute": 0.6272,
+    "consistency": 0.5844,
+    "comms": 0.9033,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.4286,
+   "avg_ticket_usd": 8.9886,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 1153.44,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "709e16e2b25c7474d980076c6bfc4806",
+   "name": "Seller 709e1 \u00b7 Birigui, SP",
+   "state": "SP",
+   "orders": 60,
+   "mdt_score": 0.7597,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9619,
+    "price": 0.6236,
+    "contract": 0.959,
+    "latency": 0.767,
+    "dispute": 0.8825,
+    "consistency": 0.4529,
+    "comms": 0.9586,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.5167,
+   "avg_ticket_usd": 24.4101,
+   "payment_risk": {
+    "payments": 14,
+    "volume_usd": 1345.07,
+    "agent_share": 0.7143,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d1ef48b38baca7e831711c4a0aeb398f",
+   "name": "Seller d1ef4 \u00b7 Apucarana, PR",
+   "state": "PR",
+   "orders": 29,
+   "mdt_score": 0.7593,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9298,
+    "price": 0.8213,
+    "contract": 0.9545,
+    "latency": 0.7328,
+    "dispute": 0.7891,
+    "consistency": 0.4236,
+    "comms": 0.9513,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.4483,
+   "avg_ticket_usd": 13.8647,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 488.27,
+    "agent_share": 0.8,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1da3aeb70d7989d1e6d9b0e887f97c23",
+   "name": "Seller 1da3a \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 265,
+   "mdt_score": 0.7592,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9532,
+    "price": 1.0,
+    "contract": 0.9399,
+    "latency": 0.7728,
+    "dispute": 0.5822,
+    "consistency": 0.4905,
+    "comms": 0.9639,
+    "resolution": 0.3708
+   },
+   "avg_review": 4.1635,
+   "avg_ticket_usd": 9.9927,
+   "payment_risk": {
+    "payments": 17,
+    "volume_usd": 2960.31,
+    "agent_share": 0.4706,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0bae85eb84b9fb3bd773911e89288d54",
+   "name": "Seller 0bae8 \u00b7 Itajai, SP",
+   "state": "SP",
+   "orders": 137,
+   "mdt_score": 0.7584,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9886,
+    "price": 0.7149,
+    "contract": 0.9891,
+    "latency": 0.8348,
+    "dispute": 0.74,
+    "consistency": 0.5891,
+    "comms": 0.9939,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.2701,
+   "avg_ticket_usd": 16.6184,
+   "payment_risk": {
+    "payments": 16,
+    "volume_usd": 1988.26,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "10076e5788b8ee532724bcd460baf762",
+   "name": "Seller 10076 \u00b7 Batatais, SP",
+   "state": "SP",
+   "orders": 23,
+   "mdt_score": 0.7583,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9494,
+    "price": 1.0,
+    "contract": 0.9087,
+    "latency": 0.7429,
+    "dispute": 0.7508,
+    "consistency": 0.5249,
+    "comms": 0.9727,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.5652,
+   "avg_ticket_usd": 10.7752,
+   "payment_risk": {
+    "payments": 24,
+    "volume_usd": 2566.99,
+    "agent_share": 0.625,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1838dd9b8977065acf51d95e0053ea7a",
+   "name": "Seller 1838d \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 64,
+   "mdt_score": 0.7582,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9629,
+    "price": 0.7844,
+    "contract": 0.978,
+    "latency": 0.7942,
+    "dispute": 0.5285,
+    "consistency": 0.5579,
+    "comms": 0.9878,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.2656,
+   "avg_ticket_usd": 13.0685,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 1621.18,
+    "agent_share": 0.5385,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d8c7ba53e7e38711eaef8c2849d6d2e1",
+   "name": "Seller d8c7b \u00b7 Floresta, PR",
+   "state": "PR",
+   "orders": 22,
+   "mdt_score": 0.7569,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9791,
+    "price": 0.8118,
+    "contract": 0.9683,
+    "latency": 0.7525,
+    "dispute": 0.8472,
+    "consistency": 0.4636,
+    "comms": 0.9719,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.5,
+   "avg_ticket_usd": 14.1993,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 339.52,
+    "agent_share": 0.5556,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9b00ed88b7fdb95d6ff76e27c1b52d16",
+   "name": "Seller 9b00e \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 47,
+   "mdt_score": 0.7554,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9345,
+    "price": 1.0,
+    "contract": 0.9411,
+    "latency": 0.6931,
+    "dispute": 0.6803,
+    "consistency": 0.5585,
+    "comms": 0.9482,
+    "resolution": 0.2879
+   },
+   "avg_review": 4.4681,
+   "avg_ticket_usd": 10.4265,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 922.75,
+    "agent_share": 0.5714,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7e26c750b4cb9f6766f58265ff9ebe95",
+   "name": "Seller 7e26c \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 23,
+   "mdt_score": 0.7554,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9797,
+    "price": 0.8002,
+    "contract": 0.9693,
+    "latency": 0.6731,
+    "dispute": 0.7508,
+    "consistency": 0.637,
+    "comms": 0.9727,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4348,
+   "avg_ticket_usd": 18.569,
+   "payment_risk": {
+    "payments": 15,
+    "volume_usd": 2332.62,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0667,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "febab0275244b9a49a623f0bd613ca2f",
+   "name": "Seller febab \u00b7 Pedreira, SP",
+   "state": "SP",
+   "orders": 109,
+   "mdt_score": 0.7553,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9597,
+    "price": 0.5107,
+    "contract": 0.9728,
+    "latency": 0.7836,
+    "dispute": 0.6788,
+    "consistency": 0.572,
+    "comms": 0.9756,
+    "resolution": 0.5892
+   },
+   "avg_review": 4.3761,
+   "avg_ticket_usd": 20.2277,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 527.88,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "729b2d09b2a0bdab221076327f13d050",
+   "name": "Seller 729b2 \u00b7 Mineiros Do Tiete, SP",
+   "state": "SP",
+   "orders": 49,
+   "mdt_score": 0.755,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.954,
+    "price": 1.0,
+    "contract": 0.9431,
+    "latency": 0.5662,
+    "dispute": 0.7476,
+    "consistency": 0.457,
+    "comms": 0.9,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.4898,
+   "avg_ticket_usd": 10.7553,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1174.91,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d4e12e7884759a14fa0f5f896c791cae",
+   "name": "Seller d4e12 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 29,
+   "mdt_score": 0.754,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9316,
+    "price": 0.9539,
+    "contract": 0.941,
+    "latency": 0.7277,
+    "dispute": 0.7037,
+    "consistency": 0.4686,
+    "comms": 0.9769,
+    "resolution": 0.329
+   },
+   "avg_review": 4.6207,
+   "avg_ticket_usd": 14.0827,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 407.34,
+    "agent_share": 0.3,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "520b493b57809f446cb0a233bb3e25c7",
+   "name": "Seller 520b4 \u00b7 Santos, SP",
+   "state": "SP",
+   "orders": 63,
+   "mdt_score": 0.753,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9771,
+    "price": 0.7358,
+    "contract": 0.9568,
+    "latency": 0.7461,
+    "dispute": 0.659,
+    "consistency": 0.605,
+    "comms": 0.9603,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.2857,
+   "avg_ticket_usd": 18.3813,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 695.53,
+    "agent_share": 0.3636,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "916748bc99315c2d202898ae58b1617e",
+   "name": "Seller 91674 \u00b7 Sorocaba, SP",
+   "state": "SP",
+   "orders": 25,
+   "mdt_score": 0.7528,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9809,
+    "price": 1.0,
+    "contract": 0.971,
+    "latency": 0.4786,
+    "dispute": 0.6698,
+    "consistency": 0.7732,
+    "comms": 0.8886,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.28,
+   "avg_ticket_usd": 4.6593,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1302.56,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "537eb890efff034a88679788b647c564",
+   "name": "Seller 537eb \u00b7 Rio De Janeiro, RJ",
+   "state": "RJ",
+   "orders": 160,
+   "mdt_score": 0.7514,
+   "tier": "trusted",
+   "dimensions": {
+    "delivery": 0.9603,
+    "price": 1.0,
+    "contract": 0.9514,
+    "latency": 0.792,
+    "dispute": 0.6771,
+    "consistency": 0.4325,
+    "comms": 0.9888,
+    "resolution": 0.2094
+   },
+   "avg_review": 4.2188,
+   "avg_ticket_usd": 8.6001,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 846.11,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0d33a55da925bbf1ff02af5f6059fc7f",
+   "name": "Seller 0d33a \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.749,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9478,
+    "price": 1.0,
+    "contract": 0.946,
+    "latency": 0.74,
+    "dispute": 0.6388,
+    "consistency": 0.395,
+    "comms": 0.9406,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.4545,
+   "avg_ticket_usd": 7.0852,
+   "payment_risk": {
+    "payments": 20,
+    "volume_usd": 2678.74,
+    "agent_share": 0.55,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9646c3513289980f17226a2fc4720dbd",
+   "name": "Seller 9646c \u00b7 Sao Jose Dos Campos, SP",
+   "state": "SP",
+   "orders": 71,
+   "mdt_score": 0.7487,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9662,
+    "price": 1.0,
+    "contract": 0.9546,
+    "latency": 0.7029,
+    "dispute": 0.6927,
+    "consistency": 0.5113,
+    "comms": 0.9759,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.3521,
+   "avg_ticket_usd": 13.4314,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 342.23,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "2ff97219cb8622eaf3cd89b7d9c09824",
+   "name": "Seller 2ff97 \u00b7 Salto, SP",
+   "state": "SP",
+   "orders": 89,
+   "mdt_score": 0.7483,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9622,
+    "price": 0.8357,
+    "contract": 0.9233,
+    "latency": 0.8189,
+    "dispute": 0.8159,
+    "consistency": 0.4975,
+    "comms": 0.9704,
+    "resolution": 0.1629
+   },
+   "avg_review": 4.5281,
+   "avg_ticket_usd": 13.9609,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1069.42,
+    "agent_share": 0.1111,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "c013e57c075a06e5b5c48ee03c525719",
+   "name": "Seller c013e \u00b7 Sao Carlos, SP",
+   "state": "SP",
+   "orders": 42,
+   "mdt_score": 0.7481,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9487,
+    "price": 1.0,
+    "contract": 0.9475,
+    "latency": 0.7911,
+    "dispute": 0.6495,
+    "consistency": 0.4983,
+    "comms": 0.9635,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.2381,
+   "avg_ticket_usd": 12.7862,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 1715.58,
+    "agent_share": 0.4615,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "e63e8bfa530fb16910dd6956e592bb81",
+   "name": "Seller e63e8 \u00b7 Guarulhos, SP",
+   "state": "SP",
+   "orders": 42,
+   "mdt_score": 0.7468,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9477,
+    "price": 0.9939,
+    "contract": 0.9521,
+    "latency": 0.7175,
+    "dispute": 0.5854,
+    "consistency": 0.5042,
+    "comms": 0.9442,
+    "resolution": 0.329
+   },
+   "avg_review": 4.2381,
+   "avg_ticket_usd": 9.2466,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 934.1,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d566c37fa119d5e66c4e9052e83ee4ea",
+   "name": "Seller d566c \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 65,
+   "mdt_score": 0.7466,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9911,
+    "price": 0.5582,
+    "contract": 0.9865,
+    "latency": 0.8306,
+    "dispute": 0.8459,
+    "consistency": 0.5252,
+    "comms": 0.9747,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6875,
+   "avg_ticket_usd": 21.7675,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1518.29,
+    "agent_share": 0.1429,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4200ddf1967c5e41e48db62bc6d4b5ac",
+   "name": "Seller 4200d \u00b7 Sao Bernardo Do Campo, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.7461,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9478,
+    "price": 1.0,
+    "contract": 0.9504,
+    "latency": 0.7066,
+    "dispute": 0.6388,
+    "consistency": 0.5365,
+    "comms": 0.9719,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.2632,
+   "avg_ticket_usd": 10.3812,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 1080.48,
+    "agent_share": 0.1818,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0ea22c1cfbdc755f86b9b54b39c16043",
+   "name": "Seller 0ea22 \u00b7 Sete Lagoas, MG",
+   "state": "MG",
+   "orders": 237,
+   "mdt_score": 0.7457,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9891,
+    "price": 0.7154,
+    "contract": 0.9859,
+    "latency": 0.7776,
+    "dispute": 0.7778,
+    "consistency": 0.4146,
+    "comms": 0.976,
+    "resolution": 0.329
+   },
+   "avg_review": 4.3932,
+   "avg_ticket_usd": 13.946,
+   "payment_risk": {
+    "payments": 24,
+    "volume_usd": 1543.16,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0417
+   }
+  },
+  {
+   "merchant_id": "c8417879a15366a17c30af34c798c332",
+   "name": "Seller c8417 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 26,
+   "mdt_score": 0.7447,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9523,
+    "price": 0.8349,
+    "contract": 0.9669,
+    "latency": 0.7593,
+    "dispute": 0.679,
+    "consistency": 0.5731,
+    "comms": 0.975,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.28,
+   "avg_ticket_usd": 21.6,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1196.78,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "31561f325664a8a7aba4c8d0c3a9b3db",
+   "name": "Seller 31561 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 36,
+   "mdt_score": 0.744,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9854,
+    "price": 0.6339,
+    "contract": 0.978,
+    "latency": 0.7329,
+    "dispute": 0.8212,
+    "consistency": 0.603,
+    "comms": 0.9369,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6389,
+   "avg_ticket_usd": 19.6439,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 2166.74,
+    "agent_share": 0.4,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "671585f5a2af58b6e276bc01003c0d2b",
+   "name": "Seller 67158 \u00b7 Curitiba, PR",
+   "state": "PR",
+   "orders": 27,
+   "mdt_score": 0.7435,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9819,
+    "price": 0.7295,
+    "contract": 0.9726,
+    "latency": 0.7848,
+    "dispute": 0.7777,
+    "consistency": 0.4652,
+    "comms": 0.9757,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.7037,
+   "avg_ticket_usd": 11.7527,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1471.06,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d98eec89afa3380e14463da2aabaea72",
+   "name": "Seller d98ee \u00b7 Porto Alegre, RS",
+   "state": "RS",
+   "orders": 168,
+   "mdt_score": 0.7427,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9738,
+    "price": 0.9278,
+    "contract": 0.9365,
+    "latency": 0.6823,
+    "dispute": 0.7291,
+    "consistency": 0.3808,
+    "comms": 0.9444,
+    "resolution": 0.367
+   },
+   "avg_review": 4.3353,
+   "avg_ticket_usd": 12.6466,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 303.85,
+    "agent_share": 0.6,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4992e76a42cb3aad7a7047e0d3d7e729",
+   "name": "Seller 4992e \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 57,
+   "mdt_score": 0.7427,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9444,
+    "price": 1.0,
+    "contract": 0.9587,
+    "latency": 0.803,
+    "dispute": 0.4295,
+    "consistency": 0.5614,
+    "comms": 0.9567,
+    "resolution": 0.2879
+   },
+   "avg_review": 3.9123,
+   "avg_ticket_usd": 11.5464,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 172.16,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3586b8580d9c917874e053a1bb37b5ff",
+   "name": "Seller 3586b \u00b7 Araraquara, SP",
+   "state": "SP",
+   "orders": 36,
+   "mdt_score": 0.7422,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9637,
+    "price": 1.0,
+    "contract": 0.9158,
+    "latency": 0.7381,
+    "dispute": 0.7488,
+    "consistency": 0.3734,
+    "comms": 0.9804,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.4167,
+   "avg_ticket_usd": 12.914,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 3563.86,
+    "agent_share": 0.4615,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7722b1df1b0e383e000397b2c11e3e19",
+   "name": "Seller 7722b \u00b7 Sao Bernardo Do Campo, SP",
+   "state": "SP",
+   "orders": 134,
+   "mdt_score": 0.7409,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9673,
+    "price": 0.7021,
+    "contract": 0.9769,
+    "latency": 0.7183,
+    "dispute": 0.6188,
+    "consistency": 0.604,
+    "comms": 0.9729,
+    "resolution": 0.367
+   },
+   "avg_review": 4.2256,
+   "avg_ticket_usd": 16.1355,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 2769.8,
+    "agent_share": 0.4444,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1dc2de47ee26a0a5b12dc14fd6dc0dea",
+   "name": "Seller 1dc2d \u00b7 Ibitinga, SP",
+   "state": "SP",
+   "orders": 25,
+   "mdt_score": 0.7407,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9523,
+    "price": 0.7197,
+    "contract": 0.9669,
+    "latency": 0.6674,
+    "dispute": 0.765,
+    "consistency": 0.5533,
+    "comms": 0.9171,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.56,
+   "avg_ticket_usd": 18.9143,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 92.46,
+    "agent_share": 0.4545,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6426d21aca402a131fc0a5d0960a3c90",
+   "name": "Seller 6426d \u00b7 Ribeirao Preto, SP",
+   "state": "SP",
+   "orders": 23,
+   "mdt_score": 0.7403,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9797,
+    "price": 0.785,
+    "contract": 0.9693,
+    "latency": 0.7822,
+    "dispute": 0.6498,
+    "consistency": 0.5231,
+    "comms": 0.9727,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.1739,
+   "avg_ticket_usd": 16.5352,
+   "payment_risk": {
+    "payments": 2,
+    "volume_usd": 107.8,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0bb738e4d789e63e2267697c42d35a2d",
+   "name": "Seller 0bb73 \u00b7 Sao Roque, SP",
+   "state": "SP",
+   "orders": 30,
+   "mdt_score": 0.7397,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9561,
+    "price": 0.6259,
+    "contract": 0.9395,
+    "latency": 0.6214,
+    "dispute": 0.8777,
+    "consistency": 0.5619,
+    "comms": 0.9513,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.6,
+   "avg_ticket_usd": 23.989,
+   "payment_risk": {
+    "payments": 19,
+    "volume_usd": 1593.9,
+    "agent_share": 0.2632,
+    "dispute_rate": 0.0526,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6481e96574816ead57975da2c0f6d80d",
+   "name": "Seller 6481e \u00b7 Sorocaba, SP",
+   "state": "SP",
+   "orders": 32,
+   "mdt_score": 0.7394,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9603,
+    "price": 0.8418,
+    "contract": 0.9724,
+    "latency": 0.7154,
+    "dispute": 0.6455,
+    "consistency": 0.4409,
+    "comms": 0.9548,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.1875,
+   "avg_ticket_usd": 30.8458,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 876.01,
+    "agent_share": 0.2,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "bf00385a5f7fc1ef39a13c2e9ee50a5f",
+   "name": "Seller bf003 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 29,
+   "mdt_score": 0.7376,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9824,
+    "price": 0.7525,
+    "contract": 0.9733,
+    "latency": 0.7298,
+    "dispute": 0.6182,
+    "consistency": 0.633,
+    "comms": 0.9513,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.3103,
+   "avg_ticket_usd": 7.7381,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 2251.1,
+    "agent_share": 0.4444,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "20cb7c2fde3e5bf10f0bbe7394e1c6a9",
+   "name": "Seller 20cb7 \u00b7 Andira-pr, PR",
+   "state": "PR",
+   "orders": 32,
+   "mdt_score": 0.7374,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9105,
+    "price": 1.0,
+    "contract": 0.93,
+    "latency": 0.6909,
+    "dispute": 0.4867,
+    "consistency": 0.5134,
+    "comms": 0.9548,
+    "resolution": 0.4129
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 8.2873,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 1538.41,
+    "agent_share": 0.4167,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "86ccac0b835037332a596a33b6949ee1",
+   "name": "Seller 86cca \u00b7 Blumenau, SC",
+   "state": "SC",
+   "orders": 180,
+   "mdt_score": 0.7367,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9752,
+    "price": 0.8525,
+    "contract": 0.9619,
+    "latency": 0.6487,
+    "dispute": 0.5708,
+    "consistency": 0.5436,
+    "comms": 0.9741,
+    "resolution": 0.367
+   },
+   "avg_review": 4.1844,
+   "avg_ticket_usd": 28.7718,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1547.67,
+    "agent_share": 0.5556,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "259f7b5e6e482c230e5bfaa670b6bb8f",
+   "name": "Seller 259f7 \u00b7 Poa, SP",
+   "state": "SP",
+   "orders": 138,
+   "mdt_score": 0.7355,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9817,
+    "price": 0.809,
+    "contract": 0.9735,
+    "latency": 0.7897,
+    "dispute": 0.6066,
+    "consistency": 0.5506,
+    "comms": 0.9871,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.2993,
+   "avg_ticket_usd": 18.6999,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 1836.96,
+    "agent_share": 0.4167,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d57e18d5f73c7ccb7f7339b61166898d",
+   "name": "Seller d57e1 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 61,
+   "mdt_score": 0.7352,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9906,
+    "price": 0.5689,
+    "contract": 0.9857,
+    "latency": 0.7766,
+    "dispute": 0.6964,
+    "consistency": 0.6297,
+    "comms": 0.9732,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4262,
+   "avg_ticket_usd": 15.4613,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1021.7,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "ffc470761de7d0232558ba5e786e57b7",
+   "name": "Seller ffc47 \u00b7 Guarulhos, SP",
+   "state": "SP",
+   "orders": 28,
+   "mdt_score": 0.7351,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9549,
+    "price": 0.7563,
+    "contract": 0.9417,
+    "latency": 0.7861,
+    "dispute": 0.7836,
+    "consistency": 0.4644,
+    "comms": 0.9763,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.4444,
+   "avg_ticket_usd": 16.6326,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 671.36,
+    "agent_share": 0.125,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b76dba6c951ab00dc4edf0a1aa88037e",
+   "name": "Seller b76db \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 159,
+   "mdt_score": 0.735,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9661,
+    "price": 1.0,
+    "contract": 0.9512,
+    "latency": 0.7481,
+    "dispute": 0.616,
+    "consistency": 0.303,
+    "comms": 0.9651,
+    "resolution": 0.3303
+   },
+   "avg_review": 4.1783,
+   "avg_ticket_usd": 4.8474,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": 117.06,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9f505651f4a6abe901a56cdc21508025",
+   "name": "Seller 9f505 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 397,
+   "mdt_score": 0.7343,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9586,
+    "price": 0.7106,
+    "contract": 0.9333,
+    "latency": 0.8638,
+    "dispute": 0.6604,
+    "consistency": 0.4066,
+    "comms": 0.9929,
+    "resolution": 0.3478
+   },
+   "avg_review": 4.3401,
+   "avg_ticket_usd": 18.566,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 39.18,
+    "agent_share": 0.8,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4da0e408c99d2fdc2126dc9fce518060",
+   "name": "Seller 4da0e \u00b7 Cornelio Procopio, PR",
+   "state": "PR",
+   "orders": 44,
+   "mdt_score": 0.7334,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9876,
+    "price": 0.7195,
+    "contract": 0.9812,
+    "latency": 0.7579,
+    "dispute": 0.7242,
+    "consistency": 0.4714,
+    "comms": 0.9648,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4091,
+   "avg_ticket_usd": 20.8371,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": null,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1d4587203296c8f4ad134dc286fa6db0",
+   "name": "Seller 1d458 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 42,
+   "mdt_score": 0.7329,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9666,
+    "price": 0.9267,
+    "contract": 0.9111,
+    "latency": 0.788,
+    "dispute": 0.6495,
+    "consistency": 0.4406,
+    "comms": 0.9635,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.2857,
+   "avg_ticket_usd": 15.6715,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 769.72,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "725c32fa80c2faacc4fc88450d27314e",
+   "name": "Seller 725c3 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 89,
+   "mdt_score": 0.7326,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9831,
+    "price": 0.4428,
+    "contract": 0.9595,
+    "latency": 0.8585,
+    "dispute": 0.8833,
+    "consistency": 0.5256,
+    "comms": 0.9909,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.5172,
+   "avg_ticket_usd": 26.8159,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 109.64,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "516e7738bd8f735ac19a010ee5450d8d",
+   "name": "Seller 516e7 \u00b7 Rio De Janeiro, RJ",
+   "state": "RJ",
+   "orders": 76,
+   "mdt_score": 0.7323,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9682,
+    "price": 0.4555,
+    "contract": 0.9726,
+    "latency": 0.8011,
+    "dispute": 0.8269,
+    "consistency": 0.373,
+    "comms": 0.9895,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.5658,
+   "avg_ticket_usd": 23.2795,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1917.1,
+    "agent_share": 0.1111,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "dbc22125167c298ef99da25668e1011f",
+   "name": "Seller dbc22 \u00b7 Borda Da Mata, MG",
+   "state": "MG",
+   "orders": 406,
+   "mdt_score": 0.7318,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9736,
+    "price": 0.6089,
+    "contract": 0.9565,
+    "latency": 0.8449,
+    "dispute": 0.6838,
+    "consistency": 0.5141,
+    "comms": 0.9857,
+    "resolution": 0.2869
+   },
+   "avg_review": 4.2691,
+   "avg_ticket_usd": 25.0882,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 0.34,
+    "agent_share": 0.4,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "42b729f859728f5079499127a9c2ef37",
+   "name": "Seller 42b72 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 104,
+   "mdt_score": 0.7315,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9233,
+    "price": 1.0,
+    "contract": 0.919,
+    "latency": 0.5941,
+    "dispute": 0.7524,
+    "consistency": 0.5134,
+    "comms": 0.8956,
+    "resolution": 0.2541
+   },
+   "avg_review": 4.466,
+   "avg_ticket_usd": 10.997,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2217.22,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "cb8bcce248bb1fb274ba762d8b971456",
+   "name": "Seller cb8bc \u00b7 Santa Rita Do Sapucai, MG",
+   "state": "MG",
+   "orders": 68,
+   "mdt_score": 0.73,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.978,
+    "price": 0.4059,
+    "contract": 0.9791,
+    "latency": 0.758,
+    "dispute": 0.7236,
+    "consistency": 0.636,
+    "comms": 0.9756,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.25,
+   "avg_ticket_usd": 42.2841,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 886.81,
+    "agent_share": 0.2,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "fa40cc5b934574b62717c68f3d678b6d",
+   "name": "Seller fa40c \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 307,
+   "mdt_score": 0.7296,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9469,
+    "price": 0.9206,
+    "contract": 0.8985,
+    "latency": 0.6561,
+    "dispute": 0.7427,
+    "consistency": 0.422,
+    "comms": 0.9497,
+    "resolution": 0.3001
+   },
+   "avg_review": 4.4721,
+   "avg_ticket_usd": 16.2463,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 74.74,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "093805f8f2aeb63881444571e1f48f30",
+   "name": "Seller 09380 \u00b7 Osasco, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.7274,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9478,
+    "price": 0.9288,
+    "contract": 0.9371,
+    "latency": 0.6987,
+    "dispute": 0.5347,
+    "consistency": 0.5834,
+    "comms": 0.9719,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.1818,
+   "avg_ticket_usd": 17.1852,
+   "payment_risk": {
+    "payments": 24,
+    "volume_usd": 2568.09,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "a17f621c590ea0fab3d5d883e1630ec6",
+   "name": "Seller a17f6 \u00b7 Sorocaba, SP",
+   "state": "SP",
+   "orders": 65,
+   "mdt_score": 0.7267,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.936,
+    "price": 1.0,
+    "contract": 0.9352,
+    "latency": 0.755,
+    "dispute": 0.4459,
+    "consistency": 0.5256,
+    "comms": 0.9603,
+    "resolution": 0.2559
+   },
+   "avg_review": 4.0635,
+   "avg_ticket_usd": 13.2593,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 2146.49,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "e9511df20ccd82658a30c37b7fb343af",
+   "name": "Seller e9511 \u00b7 Bauru, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.7265,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9791,
+    "price": 0.7045,
+    "contract": 0.9683,
+    "latency": 0.7484,
+    "dispute": 0.6388,
+    "consistency": 0.5407,
+    "comms": 0.9719,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.3182,
+   "avg_ticket_usd": 27.1006,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 563.9,
+    "agent_share": 0.2,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "01fd077212124329bac32490e8ef80d9",
+   "name": "Seller 01fd0 \u00b7 Ribeirao Preto / Sao Paulo, SP",
+   "state": "SP",
+   "orders": 31,
+   "mdt_score": 0.7265,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9593,
+    "price": 1.0,
+    "contract": 0.9439,
+    "latency": 0.7897,
+    "dispute": 0.4742,
+    "consistency": 0.4497,
+    "comms": 0.978,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.1613,
+   "avg_ticket_usd": 10.3858,
+   "payment_risk": {
+    "payments": 38,
+    "volume_usd": 6001.87,
+    "agent_share": 0.4474,
+    "dispute_rate": 0.1053,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1464afc72f696af775557a821c2e253f",
+   "name": "Seller 1464a \u00b7 Nova Friburgo, RJ",
+   "state": "RJ",
+   "orders": 29,
+   "mdt_score": 0.7256,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9572,
+    "price": 1.0,
+    "contract": 0.8751,
+    "latency": 0.8272,
+    "dispute": 0.6182,
+    "consistency": 0.3327,
+    "comms": 0.9769,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.2414,
+   "avg_ticket_usd": 10.9743,
+   "payment_risk": {
+    "payments": 20,
+    "volume_usd": 1398.98,
+    "agent_share": 0.35,
+    "dispute_rate": 0.05,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4830e40640734fc1c52cd21127c341d4",
+   "name": "Seller 4830e \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 210,
+   "mdt_score": 0.7255,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9501,
+    "price": 0.853,
+    "contract": 0.9532,
+    "latency": 0.7571,
+    "dispute": 0.5838,
+    "consistency": 0.5135,
+    "comms": 0.9728,
+    "resolution": 0.2202
+   },
+   "avg_review": 4.1483,
+   "avg_ticket_usd": 13.805,
+   "payment_risk": {
+    "payments": 16,
+    "volume_usd": 3248.81,
+    "agent_share": 0.375,
+    "dispute_rate": 0.25,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "db4350fd57ae30082dec7acbaacc17f9",
+   "name": "Seller db435 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 137,
+   "mdt_score": 0.725,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9612,
+    "price": 0.8393,
+    "contract": 0.9568,
+    "latency": 0.7399,
+    "dispute": 0.5812,
+    "consistency": 0.4175,
+    "comms": 0.9735,
+    "resolution": 0.3303
+   },
+   "avg_review": 4.1397,
+   "avg_ticket_usd": 7.4219,
+   "payment_risk": {
+    "payments": 2,
+    "volume_usd": 679.48,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b2a6d334e2833acea353624840e25a0e",
+   "name": "Seller b2a6d \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 25,
+   "mdt_score": 0.7246,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9809,
+    "price": 0.8157,
+    "contract": 0.971,
+    "latency": 0.7068,
+    "dispute": 0.6698,
+    "consistency": 0.4466,
+    "comms": 0.9457,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.48,
+   "avg_ticket_usd": 20.5476,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 54.71,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3bdff180c7e1f6551a643b99c265a120",
+   "name": "Seller 3bdff \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 59,
+   "mdt_score": 0.7241,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9747,
+    "price": 0.8829,
+    "contract": 0.9673,
+    "latency": 0.7302,
+    "dispute": 0.5426,
+    "consistency": 0.5057,
+    "comms": 0.9725,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.0862,
+   "avg_ticket_usd": 16.4659,
+   "payment_risk": {
+    "payments": 14,
+    "volume_usd": 2460.77,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0714,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3785b653b1b82de85ab47dd139938091",
+   "name": "Seller 3785b \u00b7 Ampere, PR",
+   "state": "PR",
+   "orders": 21,
+   "mdt_score": 0.7239,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9784,
+    "price": 0.3953,
+    "contract": 0.9673,
+    "latency": 0.7374,
+    "dispute": 0.8422,
+    "consistency": 0.639,
+    "comms": 0.971,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.7143,
+   "avg_ticket_usd": 21.787,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1595.29,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8bb48dc19fccaa8613b6229bf7f452a2",
+   "name": "Seller 8bb48 \u00b7 Assis, SP",
+   "state": "SP",
+   "orders": 82,
+   "mdt_score": 0.7229,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.971,
+    "price": 0.5437,
+    "contract": 0.9797,
+    "latency": 0.7197,
+    "dispute": 0.6932,
+    "consistency": 0.5787,
+    "comms": 0.9685,
+    "resolution": 0.329
+   },
+   "avg_review": 4.4146,
+   "avg_ticket_usd": 15.2045,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": 371.05,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "f8db351d8c4c4c22c6835c19a46f01b0",
+   "name": "Seller f8db3 \u00b7 Salto, SP",
+   "state": "SP",
+   "orders": 667,
+   "mdt_score": 0.7226,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9571,
+    "price": 0.6212,
+    "contract": 0.9543,
+    "latency": 0.8128,
+    "dispute": 0.653,
+    "consistency": 0.5207,
+    "comms": 0.9794,
+    "resolution": 0.2819
+   },
+   "avg_review": 4.2383,
+   "avg_ticket_usd": 22.7536,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1647.23,
+    "agent_share": 0.75,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9616352088dcf83a7c06637f4ebf1c80",
+   "name": "Seller 96163 \u00b7 Umuarama, PR",
+   "state": "PR",
+   "orders": 92,
+   "mdt_score": 0.722,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9934,
+    "price": 0.7554,
+    "contract": 0.99,
+    "latency": 0.5478,
+    "dispute": 0.6906,
+    "consistency": 0.5864,
+    "comms": 0.952,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.2935,
+   "avg_ticket_usd": 19.1427,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1219.98,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3f995f07c49d0d55a99d5c54957f7d81",
+   "name": "Seller 3f995 \u00b7 Itapecerica Da Serra, SP",
+   "state": "SP",
+   "orders": 43,
+   "mdt_score": 0.7216,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9685,
+    "price": 0.4149,
+    "contract": 0.9593,
+    "latency": 0.7675,
+    "dispute": 0.6562,
+    "consistency": 0.6395,
+    "comms": 0.983,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.2093,
+   "avg_ticket_usd": 27.9616,
+   "payment_risk": {
+    "payments": 20,
+    "volume_usd": 1698.33,
+    "agent_share": 0.45,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1b8356dabde1d35e17cef975c3f82730",
+   "name": "Seller 1b835 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 56,
+   "mdt_score": 0.7211,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9743,
+    "price": 0.704,
+    "contract": 0.9514,
+    "latency": 0.7639,
+    "dispute": 0.6229,
+    "consistency": 0.5491,
+    "comms": 0.9864,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.1607,
+   "avg_ticket_usd": 19.2929,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 2291.57,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1127b7f2594683f2510f1c2c834a486b",
+   "name": "Seller 1127b \u00b7 Campinas, SP",
+   "state": "SP",
+   "orders": 114,
+   "mdt_score": 0.7202,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9778,
+    "price": 0.6272,
+    "contract": 0.9796,
+    "latency": 0.6951,
+    "dispute": 0.4229,
+    "consistency": 0.6201,
+    "comms": 0.9675,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.0877,
+   "avg_ticket_usd": 18.1819,
+   "payment_risk": {
+    "payments": 20,
+    "volume_usd": 2855.52,
+    "agent_share": 0.2,
+    "dispute_rate": 0.05,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "66922902710d126a0e7d26b0e3805106",
+   "name": "Seller 66922 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 151,
+   "mdt_score": 0.7195,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9271,
+    "price": 0.473,
+    "contract": 0.9365,
+    "latency": 0.6106,
+    "dispute": 0.7833,
+    "consistency": 0.5242,
+    "comms": 0.9199,
+    "resolution": 0.5814
+   },
+   "avg_review": 4.4733,
+   "avg_ticket_usd": 28.1868,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 594.34,
+    "agent_share": 0.5714,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "bf100ecb7997df312b285358fb32f92c",
+   "name": "Seller bf100 \u00b7 Sao Jose Dos Pinhais, PR",
+   "state": "PR",
+   "orders": 20,
+   "mdt_score": 0.7192,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9777,
+    "price": 0.5996,
+    "contract": 0.9662,
+    "latency": 0.6473,
+    "dispute": 0.837,
+    "consistency": 0.5289,
+    "comms": 0.9367,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4444,
+   "avg_ticket_usd": 31.5931,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 2895.44,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b8555308bfdb4ca1ed54325a58da9a97",
+   "name": "Seller b8555 \u00b7 Sao Bernardo Do Campo, SP",
+   "state": "SP",
+   "orders": 26,
+   "mdt_score": 0.7192,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9259,
+    "price": 0.742,
+    "contract": 0.9361,
+    "latency": 0.7274,
+    "dispute": 0.5864,
+    "consistency": 0.5319,
+    "comms": 0.975,
+    "resolution": 0.329
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 33.5844,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 1083.45,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6560211a19b47992c3666cc44a7e94c0",
+   "name": "Seller 65602 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 1854,
+   "mdt_score": 0.7187,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9471,
+    "price": 0.8932,
+    "contract": 0.9414,
+    "latency": 0.8273,
+    "dispute": 0.4269,
+    "consistency": 0.45,
+    "comms": 0.9936,
+    "resolution": 0.2703
+   },
+   "avg_review": 3.9342,
+   "avg_ticket_usd": 19.443,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 1607.89,
+    "agent_share": 0.2727,
+    "dispute_rate": 0.0909,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "e26901d5ab434ce92fd9b5c256820a4e",
+   "name": "Seller e2690 \u00b7 Maua, SP",
+   "state": "SP",
+   "orders": 202,
+   "mdt_score": 0.7176,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9823,
+    "price": 0.7001,
+    "contract": 0.9806,
+    "latency": 0.6489,
+    "dispute": 0.5838,
+    "consistency": 0.5808,
+    "comms": 0.9764,
+    "resolution": 0.2879
+   },
+   "avg_review": 4.1238,
+   "avg_ticket_usd": 18.5594,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 1082.04,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8a32e327fe2c1b3511609d81aaf9f042",
+   "name": "Seller 8a32e \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 132,
+   "mdt_score": 0.717,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9657,
+    "price": 0.9045,
+    "contract": 0.9873,
+    "latency": 0.7034,
+    "dispute": 0.3787,
+    "consistency": 0.4719,
+    "comms": 0.9572,
+    "resolution": 0.367
+   },
+   "avg_review": 3.8321,
+   "avg_ticket_usd": 15.273,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 1461.66,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6c7d50c24b3ccd2fd83b44d8bb34e073",
+   "name": "Seller 6c7d5 \u00b7 Presidente Prudente, SP",
+   "state": "SP",
+   "orders": 114,
+   "mdt_score": 0.7167,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9781,
+    "price": 0.4693,
+    "contract": 0.9776,
+    "latency": 0.6744,
+    "dispute": 0.7186,
+    "consistency": 0.5937,
+    "comms": 0.9927,
+    "resolution": 0.329
+   },
+   "avg_review": 4.3894,
+   "avg_ticket_usd": 23.4613,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 242.53,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "013900e863eace745d3ec7614cab5b1a",
+   "name": "Seller 01390 \u00b7 Curitiba, PR",
+   "state": "PR",
+   "orders": 23,
+   "mdt_score": 0.7167,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9797,
+    "price": 0.6677,
+    "contract": 0.9693,
+    "latency": 0.5593,
+    "dispute": 0.7508,
+    "consistency": 0.6338,
+    "comms": 0.9121,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6957,
+   "avg_ticket_usd": 21.6869,
+   "payment_risk": {
+    "payments": 44,
+    "volume_usd": 5313.89,
+    "agent_share": 0.3636,
+    "dispute_rate": 0.0227,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6b90f847357d8981edd79a1eb1bf0acb",
+   "name": "Seller 6b90f \u00b7 Guarulhos, SP",
+   "state": "SP",
+   "orders": 45,
+   "mdt_score": 0.7164,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9878,
+    "price": 0.4074,
+    "contract": 0.9816,
+    "latency": 0.8261,
+    "dispute": 0.7293,
+    "consistency": 0.5547,
+    "comms": 0.9836,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.3556,
+   "avg_ticket_usd": 19.2325,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 461.76,
+    "agent_share": 0.1429,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "138dbe45fc62f1e244378131a6801526",
+   "name": "Seller 138db \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 49,
+   "mdt_score": 0.7163,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9717,
+    "price": 1.0,
+    "contract": 0.9755,
+    "latency": 0.7671,
+    "dispute": 0.4651,
+    "consistency": 0.3656,
+    "comms": 0.9678,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.0816,
+   "avg_ticket_usd": 6.0396,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 2912.93,
+    "agent_share": 0.3846,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5f1dc28029d2c244352a68107ec2b542",
+   "name": "Seller 5f1dc \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 62,
+   "mdt_score": 0.7161,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9768,
+    "price": 0.9587,
+    "contract": 0.972,
+    "latency": 0.5567,
+    "dispute": 0.7469,
+    "consistency": 0.3966,
+    "comms": 0.9042,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.4262,
+   "avg_ticket_usd": 13.9016,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 2497.28,
+    "agent_share": 0.2727,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "cfe94489ddd337d1e29e12f2a7205d10",
+   "name": "Seller cfe94 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 20,
+   "mdt_score": 0.7161,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9444,
+    "price": 0.6945,
+    "contract": 0.9424,
+    "latency": 0.6816,
+    "dispute": 0.7259,
+    "consistency": 0.6198,
+    "comms": 0.9033,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.3,
+   "avg_ticket_usd": 32.4668,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 905.99,
+    "agent_share": 0.75,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "30a2f535bb48308f991d0b9ad4a8c4bb",
+   "name": "Seller 30a2f \u00b7 Santa Barbara D'oeste, SP",
+   "state": "SP",
+   "orders": 71,
+   "mdt_score": 0.7156,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.967,
+    "price": 0.6789,
+    "contract": 0.9646,
+    "latency": 0.7835,
+    "dispute": 0.5693,
+    "consistency": 0.5864,
+    "comms": 0.9889,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.2817,
+   "avg_ticket_usd": 20.545,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 2577.54,
+    "agent_share": 0.3846,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "f7720c4fa8e3aba4546301ab80ea1f1b",
+   "name": "Seller f7720 \u00b7 Curitiba, PR",
+   "state": "PR",
+   "orders": 60,
+   "mdt_score": 0.7155,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9468,
+    "price": 1.0,
+    "contract": 0.8859,
+    "latency": 0.6927,
+    "dispute": 0.692,
+    "consistency": 0.3848,
+    "comms": 0.9586,
+    "resolution": 0.1629
+   },
+   "avg_review": 4.2,
+   "avg_ticket_usd": 10.3103,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 1479.53,
+    "agent_share": 0.2727,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "951e8cef368f09bb3f3d03c00ca4702c",
+   "name": "Seller 951e8 \u00b7 Ibitinga, SP",
+   "state": "SP",
+   "orders": 64,
+   "mdt_score": 0.7153,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9351,
+    "price": 0.7602,
+    "contract": 0.9363,
+    "latency": 0.7457,
+    "dispute": 0.5285,
+    "consistency": 0.4749,
+    "comms": 0.9743,
+    "resolution": 0.367
+   },
+   "avg_review": 4.082,
+   "avg_ticket_usd": 16.9584,
+   "payment_risk": {
+    "payments": 14,
+    "volume_usd": 602.44,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7008613ea464bad5cb9b83456e1e6a8f",
+   "name": "Seller 70086 \u00b7 Canoinhas, SC",
+   "state": "SC",
+   "orders": 127,
+   "mdt_score": 0.7152,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9499,
+    "price": 0.85,
+    "contract": 0.9408,
+    "latency": 0.6571,
+    "dispute": 0.721,
+    "consistency": 0.4292,
+    "comms": 0.9642,
+    "resolution": 0.2094
+   },
+   "avg_review": 4.2619,
+   "avg_ticket_usd": 19.0475,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 377.81,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8f119a0aee85c0c8fc534629734e94fd",
+   "name": "Seller 8f119 \u00b7 Barueri, SP",
+   "state": "SP",
+   "orders": 77,
+   "mdt_score": 0.7123,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9568,
+    "price": 0.9198,
+    "contract": 0.9561,
+    "latency": 0.5425,
+    "dispute": 0.6373,
+    "consistency": 0.5128,
+    "comms": 0.8849,
+    "resolution": 0.2879
+   },
+   "avg_review": 4.2468,
+   "avg_ticket_usd": 14.7333,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 600.55,
+    "agent_share": 0.75,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "bf3c6d2a28b2b5501e6c15448982dcc9",
+   "name": "Seller bf3c6 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 35,
+   "mdt_score": 0.7122,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9629,
+    "price": 0.1918,
+    "contract": 0.9743,
+    "latency": 0.779,
+    "dispute": 0.8172,
+    "consistency": 0.6086,
+    "comms": 0.98,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.6,
+   "avg_ticket_usd": 35.1221,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 490.84,
+    "agent_share": 0.2,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "fd386aa7bed2af3c7035c65506c9b4a3",
+   "name": "Seller fd386 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 69,
+   "mdt_score": 0.7109,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9029,
+    "price": 1.0,
+    "contract": 0.8769,
+    "latency": 0.8305,
+    "dispute": 0.5162,
+    "consistency": 0.3352,
+    "comms": 0.9506,
+    "resolution": 0.2752
+   },
+   "avg_review": 4.3478,
+   "avg_ticket_usd": 9.0443,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 1009.9,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8d956fec2e4337affcb520f56fd8cbfd",
+   "name": "Seller 8d956 \u00b7 Sao Bernardo Do Campo, SP",
+   "state": "SP",
+   "orders": 211,
+   "mdt_score": 0.7106,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9379,
+    "price": 0.5957,
+    "contract": 0.9473,
+    "latency": 0.7992,
+    "dispute": 0.6611,
+    "consistency": 0.4384,
+    "comms": 0.9552,
+    "resolution": 0.3502
+   },
+   "avg_review": 4.1991,
+   "avg_ticket_usd": 14.7811,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 4228.25,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d13e50eaa47b4cbe9eb81465865d8cfc",
+   "name": "Seller d13e5 \u00b7 Santo Andre, SP",
+   "state": "SP",
+   "orders": 67,
+   "mdt_score": 0.7103,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9122,
+    "price": 0.0,
+    "contract": 0.9641,
+    "latency": 0.7981,
+    "dispute": 0.8499,
+    "consistency": 0.6228,
+    "comms": 0.8714,
+    "resolution": 0.6639
+   },
+   "avg_review": 4.8209,
+   "avg_ticket_usd": 27.1941,
+   "payment_risk": {
+    "payments": 2,
+    "volume_usd": 0.46,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "643214e62b870443ccbe55ab29a4dccf",
+   "name": "Seller 64321 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 66,
+   "mdt_score": 0.7099,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8977,
+    "price": 0.4995,
+    "contract": 0.9484,
+    "latency": 0.7132,
+    "dispute": 0.8041,
+    "consistency": 0.4668,
+    "comms": 0.908,
+    "resolution": 0.4419
+   },
+   "avg_review": 4.4091,
+   "avg_ticket_usd": 14.4114,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 1829.3,
+    "agent_share": 0.3846,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "57c764b4a836300be881e2ff86e449f9",
+   "name": "Seller 57c76 \u00b7 Ribeirao Preto, SP",
+   "state": "SP",
+   "orders": 29,
+   "mdt_score": 0.7084,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8771,
+    "price": 0.91,
+    "contract": 0.9056,
+    "latency": 0.6624,
+    "dispute": 0.5327,
+    "consistency": 0.4357,
+    "comms": 0.9763,
+    "resolution": 0.367
+   },
+   "avg_review": 4.1429,
+   "avg_ticket_usd": 13.0945,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 166.6,
+    "agent_share": 0.4545,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0c7533c71df861ec58ad7ff999ed0e8d",
+   "name": "Seller 0c753 \u00b7 Valinhos, SP",
+   "state": "SP",
+   "orders": 61,
+   "mdt_score": 0.7075,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9483,
+    "price": 1.0,
+    "contract": 0.9193,
+    "latency": 0.6209,
+    "dispute": 0.5086,
+    "consistency": 0.5144,
+    "comms": 0.8606,
+    "resolution": 0.2879
+   },
+   "avg_review": 4.1475,
+   "avg_ticket_usd": 15.0437,
+   "payment_risk": {
+    "payments": 22,
+    "volume_usd": 5184.53,
+    "agent_share": 0.3182,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "376a891762bbdecbc02b4b6adec3fdda",
+   "name": "Seller 376a8 \u00b7 Goiania, GO",
+   "state": "GO",
+   "orders": 57,
+   "mdt_score": 0.7071,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9602,
+    "price": 0.214,
+    "contract": 0.9571,
+    "latency": 0.7997,
+    "dispute": 0.8773,
+    "consistency": 0.5331,
+    "comms": 0.9866,
+    "resolution": 0.329
+   },
+   "avg_review": 4.6667,
+   "avg_ticket_usd": 34.5149,
+   "payment_risk": {
+    "payments": 17,
+    "volume_usd": 1350.46,
+    "agent_share": 0.4118,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "57e632711dec9ec14ca7546769483e7e",
+   "name": "Seller 57e63 \u00b7 Navegantes, SC",
+   "state": "SC",
+   "orders": 62,
+   "mdt_score": 0.7067,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9907,
+    "price": 0.2686,
+    "contract": 0.9859,
+    "latency": 0.7891,
+    "dispute": 0.7932,
+    "consistency": 0.578,
+    "comms": 0.9875,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4194,
+   "avg_ticket_usd": 31.1284,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1029.08,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8cbac7e12637ed9cffa18c7875207478",
+   "name": "Seller 8cbac \u00b7 Jaragua Do Sul, SC",
+   "state": "SC",
+   "orders": 67,
+   "mdt_score": 0.7066,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9386,
+    "price": 1.0,
+    "contract": 0.9359,
+    "latency": 0.6851,
+    "dispute": 0.5902,
+    "consistency": 0.311,
+    "comms": 0.9364,
+    "resolution": 0.2559
+   },
+   "avg_review": 4.1194,
+   "avg_ticket_usd": 13.6706,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 2930.49,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "efcd8d2104f1a05d028af7bad20d974b",
+   "name": "Seller efcd8 \u00b7 Aracatuba, SP",
+   "state": "SP",
+   "orders": 47,
+   "mdt_score": 0.7063,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9702,
+    "price": 0.534,
+    "contract": 0.9666,
+    "latency": 0.7453,
+    "dispute": 0.6803,
+    "consistency": 0.5879,
+    "comms": 0.9491,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.1702,
+   "avg_ticket_usd": 15.8574,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 1465.48,
+    "agent_share": 0.1667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6338ea67c41078a46ad99cc009654956",
+   "name": "Seller 6338e \u00b7 Farroupilha, RS",
+   "state": "RS",
+   "orders": 37,
+   "mdt_score": 0.7062,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9858,
+    "price": 0.8579,
+    "contract": 0.9784,
+    "latency": 0.4738,
+    "dispute": 0.7541,
+    "consistency": 0.5281,
+    "comms": 0.8106,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6,
+   "avg_ticket_usd": 19.1616,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 2139.55,
+    "agent_share": 0.1667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4371b634e0efc0e22b09b52907d9d469",
+   "name": "Seller 4371b \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 102,
+   "mdt_score": 0.7059,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9309,
+    "price": 0.5554,
+    "contract": 0.9278,
+    "latency": 0.7755,
+    "dispute": 0.7182,
+    "consistency": 0.4991,
+    "comms": 0.9652,
+    "resolution": 0.2752
+   },
+   "avg_review": 4.4455,
+   "avg_ticket_usd": 23.9149,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 2739.2,
+    "agent_share": 0.3,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7299e27ed73d2ad986de7f7c77d919fa",
+   "name": "Seller 7299e \u00b7 Araguari, MG",
+   "state": "MG",
+   "orders": 338,
+   "mdt_score": 0.7057,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9575,
+    "price": 0.1005,
+    "contract": 0.9424,
+    "latency": 0.827,
+    "dispute": 0.7656,
+    "consistency": 0.4221,
+    "comms": 0.983,
+    "resolution": 0.6475
+   },
+   "avg_review": 4.4201,
+   "avg_ticket_usd": 29.9398,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 2039.35,
+    "agent_share": 0.4545,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "289cdb325fb7e7f891c38608bf9e0962",
+   "name": "Seller 289cd \u00b7 Belo Horizonte, SP",
+   "state": "SP",
+   "orders": 110,
+   "mdt_score": 0.7057,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9776,
+    "price": 0.1802,
+    "contract": 0.9759,
+    "latency": 0.8159,
+    "dispute": 0.7926,
+    "consistency": 0.5903,
+    "comms": 0.9842,
+    "resolution": 0.329
+   },
+   "avg_review": 4.5727,
+   "avg_ticket_usd": 32.7493,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 1456.52,
+    "agent_share": 0.4545,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1c129092bf23f28a5930387c980c0dfc",
+   "name": "Seller 1c129 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 201,
+   "mdt_score": 0.7053,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.954,
+    "price": 0.9496,
+    "contract": 0.9564,
+    "latency": 0.4859,
+    "dispute": 0.5977,
+    "consistency": 0.5613,
+    "comms": 0.7588,
+    "resolution": 0.3788
+   },
+   "avg_review": 4.235,
+   "avg_ticket_usd": 14.3599,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 1902.17,
+    "agent_share": 0.4,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "dee656f0f566ed1aa85bd137c943f08f",
+   "name": "Seller dee65 \u00b7 Cruzeiro, SP",
+   "state": "SP",
+   "orders": 93,
+   "mdt_score": 0.7053,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9542,
+    "price": 0.6918,
+    "contract": 0.9074,
+    "latency": 0.7908,
+    "dispute": 0.726,
+    "consistency": 0.3445,
+    "comms": 0.9718,
+    "resolution": 0.2559
+   },
+   "avg_review": 4.3696,
+   "avg_ticket_usd": 19.1733,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 1362.79,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "52f9db5cfb423382a2fa5c9e39303202",
+   "name": "Seller 52f9d \u00b7 Echapora, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.7051,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9784,
+    "price": 0.6494,
+    "contract": 0.9673,
+    "latency": 0.7813,
+    "dispute": 0.5347,
+    "consistency": 0.4974,
+    "comms": 0.9719,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.1364,
+   "avg_ticket_usd": 16.6223,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 417.21,
+    "agent_share": 0.3636,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "594f9aaa48e5bf431f011ddc5669b0d5",
+   "name": "Seller 594f9 \u00b7 Contagem, MG",
+   "state": "MG",
+   "orders": 37,
+   "mdt_score": 0.7044,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9645,
+    "price": 0.3901,
+    "contract": 0.9693,
+    "latency": 0.8247,
+    "dispute": 0.825,
+    "consistency": 0.2972,
+    "comms": 0.9808,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.5946,
+   "avg_ticket_usd": 23.2388,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 672.24,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "f262cbc1c910c83959f849465454ddd3",
+   "name": "Seller f262c \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 192,
+   "mdt_score": 0.7035,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9263,
+    "price": 0.6783,
+    "contract": 0.926,
+    "latency": 0.8141,
+    "dispute": 0.4972,
+    "consistency": 0.526,
+    "comms": 0.9807,
+    "resolution": 0.2791
+   },
+   "avg_review": 4.1414,
+   "avg_ticket_usd": 16.4342,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1515.95,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "640e21a7d01df7614a3b4923e990d40c",
+   "name": "Seller 640e2 \u00b7 Ibitinga, SP",
+   "state": "SP",
+   "orders": 116,
+   "mdt_score": 0.7034,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9546,
+    "price": 0.8047,
+    "contract": 0.8456,
+    "latency": 0.8108,
+    "dispute": 0.6966,
+    "consistency": 0.1233,
+    "comms": 0.9611,
+    "resolution": 0.4303
+   },
+   "avg_review": 4.3017,
+   "avg_ticket_usd": 17.5174,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 467.43,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "715bbd5ba4e6b74cb0d2f29eb45058b0",
+   "name": "Seller 715bb \u00b7 Serra Negra, SP",
+   "state": "SP",
+   "orders": 62,
+   "mdt_score": 0.7032,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9213,
+    "price": 0.7721,
+    "contract": 0.8966,
+    "latency": 0.778,
+    "dispute": 0.7469,
+    "consistency": 0.3208,
+    "comms": 0.9597,
+    "resolution": 0.2303
+   },
+   "avg_review": 4.4677,
+   "avg_ticket_usd": 18.5324,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2248.53,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3d5d0dc7073a299e31fa718ce1bc00b6",
+   "name": "Seller 3d5d0 \u00b7 Rio De Janeiro, RJ",
+   "state": "RJ",
+   "orders": 23,
+   "mdt_score": 0.703,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9461,
+    "price": 1.0,
+    "contract": 0.9627,
+    "latency": 0.752,
+    "dispute": 0.4478,
+    "consistency": 0.3575,
+    "comms": 0.9406,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.3043,
+   "avg_ticket_usd": 9.0058,
+   "payment_risk": {
+    "payments": 14,
+    "volume_usd": 2169.79,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5160d23075764e18e07c1f4a87fad743",
+   "name": "Seller 5160d \u00b7 Sao Bernardo Do Campo, SP",
+   "state": "SP",
+   "orders": 34,
+   "mdt_score": 0.7027,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9844,
+    "price": 0.6755,
+    "contract": 0.9764,
+    "latency": 0.6053,
+    "dispute": 0.5858,
+    "consistency": 0.6009,
+    "comms": 0.9326,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.3824,
+   "avg_ticket_usd": 22.4709,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 1475.46,
+    "agent_share": 0.2,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4b9750c8ad28220fe6702d4ecb7c898f",
+   "name": "Seller 4b975 \u00b7 Limeira, SP",
+   "state": "SP",
+   "orders": 218,
+   "mdt_score": 0.7024,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9398,
+    "price": 0.5906,
+    "contract": 0.8753,
+    "latency": 0.725,
+    "dispute": 0.7593,
+    "consistency": 0.2692,
+    "comms": 0.9434,
+    "resolution": 0.5168
+   },
+   "avg_review": 4.3624,
+   "avg_ticket_usd": 20.4146,
+   "payment_risk": {
+    "payments": 19,
+    "volume_usd": 3505.09,
+    "agent_share": 0.4737,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "ef2fbc2b607d8492bcffe657a4645434",
+   "name": "Seller ef2fb \u00b7 Rio De Janeiro, RJ",
+   "state": "RJ",
+   "orders": 20,
+   "mdt_score": 0.7023,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.908,
+    "price": 0.9114,
+    "contract": 0.9453,
+    "latency": 0.791,
+    "dispute": 0.2814,
+    "consistency": 0.4822,
+    "comms": 0.97,
+    "resolution": 0.329
+   },
+   "avg_review": 3.85,
+   "avg_ticket_usd": 12.4467,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 796.43,
+    "agent_share": 0.6,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0432ead42b6c8a0bdf68154add917fdf",
+   "name": "Seller 0432e \u00b7 Maua, SP",
+   "state": "SP",
+   "orders": 85,
+   "mdt_score": 0.7019,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.971,
+    "price": 0.4122,
+    "contract": 0.961,
+    "latency": 0.7913,
+    "dispute": 0.6327,
+    "consistency": 0.5388,
+    "comms": 0.9793,
+    "resolution": 0.329
+   },
+   "avg_review": 4.4588,
+   "avg_ticket_usd": 28.5302,
+   "payment_risk": {
+    "payments": 33,
+    "volume_usd": 2983.96,
+    "agent_share": 0.4545,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7c5b05cbdb5542049f38d90d7815b97d",
+   "name": "Seller 7c5b0 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.6997,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9461,
+    "price": 0.847,
+    "contract": 0.935,
+    "latency": 0.6641,
+    "dispute": 0.5347,
+    "consistency": 0.5472,
+    "comms": 0.9064,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.3636,
+   "avg_ticket_usd": 12.5663,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2548.88,
+    "agent_share": 0.1667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7f7b8245c336066a1f9933c359f11d77",
+   "name": "Seller 7f7b8 \u00b7 Mogi Mirim, SP",
+   "state": "SP",
+   "orders": 38,
+   "mdt_score": 0.6987,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9652,
+    "price": 0.8374,
+    "contract": 0.9491,
+    "latency": 0.5962,
+    "dispute": 0.6898,
+    "consistency": 0.3744,
+    "comms": 0.9604,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.5526,
+   "avg_ticket_usd": 14.9555,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1293.52,
+    "agent_share": 0.5714,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8a432f4e5b471f8da497d7dc517666e2",
+   "name": "Seller 8a432 \u00b7 Presidente Prudente, SP",
+   "state": "SP",
+   "orders": 95,
+   "mdt_score": 0.6986,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9746,
+    "price": 0.5696,
+    "contract": 0.9686,
+    "latency": 0.8557,
+    "dispute": 0.5725,
+    "consistency": 0.4799,
+    "comms": 0.9819,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.1915,
+   "avg_ticket_usd": 21.2702,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 10.59,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "0885aaf116795758dfeb5f1032487bcd",
+   "name": "Seller 0885a \u00b7 Ferraz De Vasconcelos, SP",
+   "state": "SP",
+   "orders": 28,
+   "mdt_score": 0.6983,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9819,
+    "price": 0.3878,
+    "contract": 0.9726,
+    "latency": 0.8137,
+    "dispute": 0.6081,
+    "consistency": 0.5853,
+    "comms": 0.9763,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.2143,
+   "avg_ticket_usd": 26.2488,
+   "payment_risk": {
+    "payments": 32,
+    "volume_usd": 7550.73,
+    "agent_share": 0.3125,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "ac3508719a1d8f5b7614b798f70af136",
+   "name": "Seller ac350 \u00b7 Canoas, RS",
+   "state": "RS",
+   "orders": 103,
+   "mdt_score": 0.698,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.976,
+    "price": 0.0,
+    "contract": 0.9741,
+    "latency": 0.805,
+    "dispute": 0.8387,
+    "consistency": 0.535,
+    "comms": 0.9832,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.604,
+   "avg_ticket_usd": 37.8381,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 623.92,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b1ac6ea7895bc3dd6f0f6f4abbdd2821",
+   "name": "Seller b1ac6 \u00b7 Canoas, RS",
+   "state": "RS",
+   "orders": 40,
+   "mdt_score": 0.6976,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9861,
+    "price": 0.5128,
+    "contract": 0.9789,
+    "latency": 0.5851,
+    "dispute": 0.7022,
+    "consistency": 0.6147,
+    "comms": 0.9408,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.35,
+   "avg_ticket_usd": 24.5536,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 128.95,
+    "agent_share": 0.4286,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6edacfd9f9074789dad6d62ba7950b9c",
+   "name": "Seller 6edac \u00b7 Guarulhos, SP",
+   "state": "SP",
+   "orders": 208,
+   "mdt_score": 0.6968,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.955,
+    "price": 0.5817,
+    "contract": 0.9687,
+    "latency": 0.7469,
+    "dispute": 0.6565,
+    "consistency": 0.5324,
+    "comms": 0.9683,
+    "resolution": 0.1645
+   },
+   "avg_review": 4.3527,
+   "avg_ticket_usd": 19.216,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 419.0,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "c9aafcd0621b2207c10e32c649cada4d",
+   "name": "Seller c9aaf \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 44,
+   "mdt_score": 0.6965,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9266,
+    "price": 0.7216,
+    "contract": 0.9626,
+    "latency": 0.6373,
+    "dispute": 0.4156,
+    "consistency": 0.5008,
+    "comms": 0.8698,
+    "resolution": 0.5379
+   },
+   "avg_review": 4.0227,
+   "avg_ticket_usd": 17.5359,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 1120.34,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1eade46fba20122dc4aefb379f8c636b",
+   "name": "Seller 1eade \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 58,
+   "mdt_score": 0.6964,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8872,
+    "price": 0.7828,
+    "contract": 0.8023,
+    "latency": 0.7544,
+    "dispute": 0.683,
+    "consistency": 0.3998,
+    "comms": 0.9868,
+    "resolution": 0.2752
+   },
+   "avg_review": 4.431,
+   "avg_ticket_usd": 18.6123,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 135.31,
+    "agent_share": 0.4545,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b74d1c09cb380e1d03a6f859c6f4224b",
+   "name": "Seller b74d1 \u00b7 Rio De Janeiro, RJ",
+   "state": "RJ",
+   "orders": 31,
+   "mdt_score": 0.6964,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8833,
+    "price": 0.625,
+    "contract": 0.9389,
+    "latency": 0.7936,
+    "dispute": 0.6368,
+    "consistency": 0.3482,
+    "comms": 0.978,
+    "resolution": 0.367
+   },
+   "avg_review": 4.2581,
+   "avg_ticket_usd": 20.3308,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 2489.8,
+    "agent_share": 0.1429,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b6d44737c043328708f6749c2dbe50bd",
+   "name": "Seller b6d44 \u00b7 Santo Andre, SP",
+   "state": "SP",
+   "orders": 62,
+   "mdt_score": 0.6962,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9342,
+    "price": 0.3797,
+    "contract": 0.9495,
+    "latency": 0.7606,
+    "dispute": 0.6543,
+    "consistency": 0.4404,
+    "comms": 0.9732,
+    "resolution": 0.4781
+   },
+   "avg_review": 4.4677,
+   "avg_ticket_usd": 25.3881,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 413.43,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "d673a59aac7a70d8b01e6902bf090a11",
+   "name": "Seller d673a \u00b7 Ibitinga, SP",
+   "state": "SP",
+   "orders": 79,
+   "mdt_score": 0.6954,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9251,
+    "price": 0.8907,
+    "contract": 0.8602,
+    "latency": 0.7221,
+    "dispute": 0.4956,
+    "consistency": 0.2091,
+    "comms": 0.9786,
+    "resolution": 0.4821
+   },
+   "avg_review": 3.9114,
+   "avg_ticket_usd": 14.2957,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 709.03,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4ebdc7e6cd6102a022dadc49156d4ea8",
+   "name": "Seller 4ebdc \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 29,
+   "mdt_score": 0.6951,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9572,
+    "price": 1.0,
+    "contract": 0.9557,
+    "latency": 0.464,
+    "dispute": 0.3618,
+    "consistency": 0.5636,
+    "comms": 0.8744,
+    "resolution": 0.3838
+   },
+   "avg_review": 3.7931,
+   "avg_ticket_usd": 9.9277,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1092.08,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5c853bb56f70f4d14218944bae111d7a",
+   "name": "Seller 5c853 \u00b7 Cotia, SP",
+   "state": "SP",
+   "orders": 23,
+   "mdt_score": 0.695,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9797,
+    "price": 1.0,
+    "contract": 0.9693,
+    "latency": 0.5595,
+    "dispute": 0.3468,
+    "consistency": 0.5021,
+    "comms": 0.9424,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 3.1012,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1781.29,
+    "agent_share": 0.4444,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3f3486b61f45078d4f31ee5e43d8c5bb",
+   "name": "Seller 3f348 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 40,
+   "mdt_score": 0.6949,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9047,
+    "price": 0.472,
+    "contract": 0.9122,
+    "latency": 0.7555,
+    "dispute": 0.7022,
+    "consistency": 0.3924,
+    "comms": 0.942,
+    "resolution": 0.4781
+   },
+   "avg_review": 4.325,
+   "avg_ticket_usd": 27.3849,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 2567.08,
+    "agent_share": 0.5833,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "20d83f3ef0e6925fd74bfd59170babf7",
+   "name": "Seller 20d83 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 40,
+   "mdt_score": 0.6945,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9466,
+    "price": 0.3672,
+    "contract": 0.9569,
+    "latency": 0.7579,
+    "dispute": 0.7022,
+    "consistency": 0.5146,
+    "comms": 0.982,
+    "resolution": 0.329
+   },
+   "avg_review": 4.4,
+   "avg_ticket_usd": 21.8777,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 3406.66,
+    "agent_share": 0.5556,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "acce39e832338debb07b02385cde5967",
+   "name": "Seller acce3 \u00b7 Contagem, MG",
+   "state": "MG",
+   "orders": 44,
+   "mdt_score": 0.6942,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9876,
+    "price": 0.2508,
+    "contract": 0.9812,
+    "latency": 0.8094,
+    "dispute": 0.7242,
+    "consistency": 0.5567,
+    "comms": 0.9833,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4773,
+   "avg_ticket_usd": 27.8402,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 1018.06,
+    "agent_share": 0.5455,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5debea795b07621e1f90532e18f96145",
+   "name": "Seller 5debe \u00b7 Apucarana, PR",
+   "state": "PR",
+   "orders": 25,
+   "mdt_score": 0.694,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9809,
+    "price": 0.7725,
+    "contract": 0.971,
+    "latency": 0.6732,
+    "dispute": 0.6698,
+    "consistency": 0.307,
+    "comms": 0.9171,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.36,
+   "avg_ticket_usd": 22.566,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 2408.39,
+    "agent_share": 0.6,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "822166ed1e47908f7cfb49946d03c726",
+   "name": "Seller 82216 \u00b7 Tres Rios, RJ",
+   "state": "RJ",
+   "orders": 69,
+   "mdt_score": 0.6937,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9789,
+    "price": 0.9589,
+    "contract": 0.9691,
+    "latency": 0.5766,
+    "dispute": 0.3896,
+    "consistency": 0.585,
+    "comms": 0.8747,
+    "resolution": 0.2171
+   },
+   "avg_review": 3.9853,
+   "avg_ticket_usd": 16.5452,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 1259.75,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3df020b72d3d44b3af9d110fa3940b65",
+   "name": "Seller 3df02 \u00b7 Jales, SP",
+   "state": "SP",
+   "orders": 55,
+   "mdt_score": 0.6935,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9128,
+    "price": 0.7381,
+    "contract": 0.9404,
+    "latency": 0.7431,
+    "dispute": 0.5145,
+    "consistency": 0.4984,
+    "comms": 0.9708,
+    "resolution": 0.2303
+   },
+   "avg_review": 4.0545,
+   "avg_ticket_usd": 27.127,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 761.31,
+    "agent_share": 0.625,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9674754b5a0cb32b638cec001178f799",
+   "name": "Seller 96747 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 86,
+   "mdt_score": 0.6928,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9716,
+    "price": 0.6854,
+    "contract": 0.9755,
+    "latency": 0.7234,
+    "dispute": 0.4282,
+    "consistency": 0.6342,
+    "comms": 0.9379,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.0465,
+   "avg_ticket_usd": 17.8598,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 516.18,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "e38db885400cd35c71dfd162f2c1dbcf",
+   "name": "Seller e38db \u00b7 Brasilia, DF",
+   "state": "DF",
+   "orders": 30,
+   "mdt_score": 0.6926,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9083,
+    "price": 0.6832,
+    "contract": 0.9532,
+    "latency": 0.6196,
+    "dispute": 0.7111,
+    "consistency": 0.4747,
+    "comms": 0.9025,
+    "resolution": 0.2879
+   },
+   "avg_review": 4.4667,
+   "avg_ticket_usd": 20.1873,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1141.47,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "cc419e0650a3c5ba77189a1882b7556a",
+   "name": "Seller cc419 \u00b7 Santo Andre, SP",
+   "state": "SP",
+   "orders": 1706,
+   "mdt_score": 0.6925,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9472,
+    "price": 0.7731,
+    "contract": 0.9406,
+    "latency": 0.6594,
+    "dispute": 0.496,
+    "consistency": 0.4677,
+    "comms": 0.9918,
+    "resolution": 0.2642
+   },
+   "avg_review": 4.0648,
+   "avg_ticket_usd": 18.705,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": 108.83,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9b013e03b2ab786505a1d3b5c0756754",
+   "name": "Seller 9b013 \u00b7 Vicente De Carvalho, SP",
+   "state": "SP",
+   "orders": 174,
+   "mdt_score": 0.6922,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9574,
+    "price": 0.8277,
+    "contract": 0.9467,
+    "latency": 0.6785,
+    "dispute": 0.5386,
+    "consistency": 0.5238,
+    "comms": 0.9566,
+    "resolution": 0.1086
+   },
+   "avg_review": 4.1561,
+   "avg_ticket_usd": 14.8986,
+   "payment_risk": {
+    "payments": 4,
+    "volume_usd": 132.6,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "cac876b37d3abcd6bd76caca30277996",
+   "name": "Seller cac87 \u00b7 Cascavel, PR",
+   "state": "PR",
+   "orders": 27,
+   "mdt_score": 0.6921,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9819,
+    "price": 0.3561,
+    "contract": 0.9726,
+    "latency": 0.7542,
+    "dispute": 0.7777,
+    "consistency": 0.4576,
+    "comms": 0.9757,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.4615,
+   "avg_ticket_usd": 23.2217,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 691.62,
+    "agent_share": 0.3636,
+    "dispute_rate": 0.1818,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "95ec4458365c4d11f452ccf538377619",
+   "name": "Seller 95ec4 \u00b7 Limeira, SP",
+   "state": "SP",
+   "orders": 27,
+   "mdt_score": 0.6913,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9549,
+    "price": 0.5636,
+    "contract": 0.9649,
+    "latency": 0.6651,
+    "dispute": 0.7777,
+    "consistency": 0.4652,
+    "comms": 0.9216,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.6154,
+   "avg_ticket_usd": 18.9005,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 1275.61,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "48efc9d94a9834137efd9ea76b065a38",
+   "name": "Seller 48efc \u00b7 Curitiba, PR",
+   "state": "PR",
+   "orders": 33,
+   "mdt_score": 0.6912,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9844,
+    "price": 1.0,
+    "contract": 0.9764,
+    "latency": 0.461,
+    "dispute": 0.8863,
+    "consistency": 0.6333,
+    "comms": 0.3279,
+    "resolution": 0.2606
+   },
+   "avg_review": 5.0,
+   "avg_ticket_usd": 3.271,
+   "payment_risk": {
+    "payments": 13,
+    "volume_usd": 2455.41,
+    "agent_share": 0.5385,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "33a6f4b1e7cdc205511e76ba1b6e0186",
+   "name": "Seller 33a6f \u00b7 Guarulhos, SP",
+   "state": "SP",
+   "orders": 105,
+   "mdt_score": 0.6901,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9768,
+    "price": 0.4683,
+    "contract": 0.9651,
+    "latency": 0.7796,
+    "dispute": 0.6966,
+    "consistency": 0.4738,
+    "comms": 0.9748,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.4095,
+   "avg_ticket_usd": 27.9949,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 2417.2,
+    "agent_share": 0.2222,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "bccf933e006e9b94a6184af782963e77",
+   "name": "Seller bccf9 \u00b7 Assis, SP",
+   "state": "SP",
+   "orders": 45,
+   "mdt_score": 0.6896,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9696,
+    "price": 0.384,
+    "contract": 0.9686,
+    "latency": 0.7236,
+    "dispute": 0.7293,
+    "consistency": 0.5588,
+    "comms": 0.9654,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.5227,
+   "avg_ticket_usd": 27.8668,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 872.31,
+    "agent_share": 0.2,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5cf13accae3222c70a9cac40818ae839",
+   "name": "Seller 5cf13 \u00b7 Patos De Minas, MG",
+   "state": "MG",
+   "orders": 149,
+   "mdt_score": 0.6892,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9768,
+    "price": 0.472,
+    "contract": 0.9701,
+    "latency": 0.7524,
+    "dispute": 0.7177,
+    "consistency": 0.474,
+    "comms": 0.988,
+    "resolution": 0.1629
+   },
+   "avg_review": 4.4527,
+   "avg_ticket_usd": 28.1813,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": 1181.45,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "562fc2f2c2863ab7e79a9e4388a58a14",
+   "name": "Seller 562fc \u00b7 Campinas, SP",
+   "state": "SP",
+   "orders": 260,
+   "mdt_score": 0.6888,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9673,
+    "price": 0.4084,
+    "contract": 0.9509,
+    "latency": 0.7872,
+    "dispute": 0.6486,
+    "consistency": 0.4462,
+    "comms": 0.9707,
+    "resolution": 0.331
+   },
+   "avg_review": 4.2171,
+   "avg_ticket_usd": 9.6873,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 806.63,
+    "agent_share": 0.3,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "c68fb906c8f4b4b946d8386bfa6e5467",
+   "name": "Seller c68fb \u00b7 Jaboticabal, SP",
+   "state": "SP",
+   "orders": 45,
+   "mdt_score": 0.6887,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9696,
+    "price": 0.2131,
+    "contract": 0.9764,
+    "latency": 0.8149,
+    "dispute": 0.7293,
+    "consistency": 0.6054,
+    "comms": 0.9836,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.5227,
+   "avg_ticket_usd": 30.3604,
+   "payment_risk": {
+    "payments": 15,
+    "volume_usd": 844.3,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6860153b69cc696d5dcfe1cdaaafcf62",
+   "name": "Seller 68601 \u00b7 Capivari, SP",
+   "state": "SP",
+   "orders": 74,
+   "mdt_score": 0.6886,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9206,
+    "price": 0.9535,
+    "contract": 0.8587,
+    "latency": 0.7847,
+    "dispute": 0.5053,
+    "consistency": 0.2997,
+    "comms": 0.9774,
+    "resolution": 0.2094
+   },
+   "avg_review": 4.0959,
+   "avg_ticket_usd": 14.1185,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 1227.52,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "dfa0c4c6229ab200a4a1336b4d7128ff",
+   "name": "Seller dfa0c \u00b7 Florianopolis, SC",
+   "state": "SC",
+   "orders": 77,
+   "mdt_score": 0.6886,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9808,
+    "price": 0.6857,
+    "contract": 0.9522,
+    "latency": 0.8728,
+    "dispute": 0.4074,
+    "consistency": 0.4146,
+    "comms": 0.9782,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 16.319,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 849.53,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4c18691b6037662be2df78a765d98ab5",
+   "name": "Seller 4c186 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 63,
+   "mdt_score": 0.6886,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.936,
+    "price": 0.7269,
+    "contract": 0.9372,
+    "latency": 0.7476,
+    "dispute": 0.4307,
+    "consistency": 0.403,
+    "comms": 0.9603,
+    "resolution": 0.367
+   },
+   "avg_review": 3.873,
+   "avg_ticket_usd": 13.8445,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 403.1,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "870d0118f7a9d85960f29ad89d5d989a",
+   "name": "Seller 870d0 \u00b7 Pocos De Caldas, MG",
+   "state": "MG",
+   "orders": 45,
+   "mdt_score": 0.6883,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9515,
+    "price": 0.814,
+    "contract": 0.8647,
+    "latency": 0.6743,
+    "dispute": 0.6687,
+    "consistency": 0.4182,
+    "comms": 0.9291,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.0444,
+   "avg_ticket_usd": 20.9777,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 887.36,
+    "agent_share": 0.1667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "960945e1a9535cbc0cd6ddd35fbe7ae8",
+   "name": "Seller 96094 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 28,
+   "mdt_score": 0.6855,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9824,
+    "price": 0.1155,
+    "contract": 0.9733,
+    "latency": 0.7537,
+    "dispute": 0.8713,
+    "consistency": 0.5769,
+    "comms": 0.95,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6429,
+   "avg_ticket_usd": 31.5474,
+   "payment_risk": {
+    "payments": 11,
+    "volume_usd": 844.47,
+    "agent_share": 0.2727,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "282f23a9769b2690c5dda22e316f9941",
+   "name": "Seller 282f2 \u00b7 Belo Horizonte, MG",
+   "state": "MG",
+   "orders": 99,
+   "mdt_score": 0.6851,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9568,
+    "price": 0.4082,
+    "contract": 0.9417,
+    "latency": 0.5812,
+    "dispute": 0.8022,
+    "consistency": 0.487,
+    "comms": 0.9367,
+    "resolution": 0.367
+   },
+   "avg_review": 4.3333,
+   "avg_ticket_usd": 19.5222,
+   "payment_risk": {
+    "payments": 14,
+    "volume_usd": 3624.25,
+    "agent_share": 0.2143,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "17ca9b9e9b9ef8fdb529001b49ebb50f",
+   "name": "Seller 17ca9 \u00b7 Betim, MG",
+   "state": "MG",
+   "orders": 116,
+   "mdt_score": 0.6845,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9866,
+    "price": 0.4183,
+    "contract": 0.9805,
+    "latency": 0.7898,
+    "dispute": 0.5115,
+    "consistency": 0.4999,
+    "comms": 0.9056,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.0431,
+   "avg_ticket_usd": 24.1778,
+   "payment_risk": {
+    "payments": 18,
+    "volume_usd": 395.62,
+    "agent_share": 0.3889,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "813348c996469b40f2e028d5429d3495",
+   "name": "Seller 81334 \u00b7 Jundiai, SP",
+   "state": "SP",
+   "orders": 179,
+   "mdt_score": 0.6834,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9524,
+    "price": 0.5805,
+    "contract": 0.9371,
+    "latency": 0.7543,
+    "dispute": 0.5156,
+    "consistency": 0.5766,
+    "comms": 0.9739,
+    "resolution": 0.1771
+   },
+   "avg_review": 4.0571,
+   "avg_ticket_usd": 19.1999,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 322.1,
+    "agent_share": 0.8,
+    "dispute_rate": 0.2,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5a8e7d5003a1f221f9e1d6e411de7c23",
+   "name": "Seller 5a8e7 \u00b7 Campinas, SP",
+   "state": "SP",
+   "orders": 139,
+   "mdt_score": 0.6832,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9614,
+    "price": 0.5779,
+    "contract": 0.9814,
+    "latency": 0.7025,
+    "dispute": 0.5645,
+    "consistency": 0.5073,
+    "comms": 0.9399,
+    "resolution": 0.2303
+   },
+   "avg_review": 4.1449,
+   "avg_ticket_usd": 24.0854,
+   "payment_risk": {
+    "payments": 3,
+    "volume_usd": 25.78,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1771297ac436903d1dd6b0e9279aa505",
+   "name": "Seller 17712 \u00b7 Guarulhos, SP",
+   "state": "SP",
+   "orders": 28,
+   "mdt_score": 0.6831,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9561,
+    "price": 0.0666,
+    "contract": 0.962,
+    "latency": 0.7681,
+    "dispute": 0.8713,
+    "consistency": 0.4809,
+    "comms": 0.9763,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.6296,
+   "avg_ticket_usd": 32.1138,
+   "payment_risk": {
+    "payments": 14,
+    "volume_usd": 1092.84,
+    "agent_share": 0.3571,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "dbd66278cbfe1aa1000f90a217ca4695",
+   "name": "Seller dbd66 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 85,
+   "mdt_score": 0.6821,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9614,
+    "price": 0.0,
+    "contract": 0.9758,
+    "latency": 0.8439,
+    "dispute": 0.8783,
+    "consistency": 0.4046,
+    "comms": 0.98,
+    "resolution": 0.4129
+   },
+   "avg_review": 4.5059,
+   "avg_ticket_usd": 16.6635,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 492.29,
+    "agent_share": 0.6,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "3771c85bac139d2344864ede5d9341e3",
+   "name": "Seller 3771c \u00b7 Sorocaba, SP",
+   "state": "SP",
+   "orders": 26,
+   "mdt_score": 0.6816,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8981,
+    "price": 0.9063,
+    "contract": 0.952,
+    "latency": 0.5027,
+    "dispute": 0.3086,
+    "consistency": 0.6499,
+    "comms": 0.9472,
+    "resolution": 0.2879
+   },
+   "avg_review": 3.8462,
+   "avg_ticket_usd": 17.1466,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 2957.0,
+    "agent_share": 0.3,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "aafe36600ce604f205b86b5084d3d767",
+   "name": "Seller aafe3 \u00b7 Sao Jose, SC",
+   "state": "SC",
+   "orders": 129,
+   "mdt_score": 0.6811,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9592,
+    "price": 0.6028,
+    "contract": 0.9331,
+    "latency": 0.7603,
+    "dispute": 0.677,
+    "consistency": 0.4355,
+    "comms": 0.9504,
+    "resolution": 0.1303
+   },
+   "avg_review": 4.4031,
+   "avg_ticket_usd": 21.6857,
+   "payment_risk": {
+    "payments": 6,
+    "volume_usd": 499.06,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5bffbafbb22daf6d3bfc216a46db8708",
+   "name": "Seller 5bffb \u00b7 Nilopolis, RJ",
+   "state": "RJ",
+   "orders": 21,
+   "mdt_score": 0.681,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9784,
+    "price": 0.0,
+    "contract": 0.9673,
+    "latency": 0.732,
+    "dispute": 0.8422,
+    "consistency": 0.7289,
+    "comms": 0.9387,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.7619,
+   "avg_ticket_usd": 78.4022,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 715.25,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.1111,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1336efc61c316ddf92c899eb817f7cae",
+   "name": "Seller 1336e \u00b7 Assis, SP",
+   "state": "SP",
+   "orders": 74,
+   "mdt_score": 0.6807,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9206,
+    "price": 0.7616,
+    "contract": 0.9046,
+    "latency": 0.5827,
+    "dispute": 0.5053,
+    "consistency": 0.4381,
+    "comms": 0.9417,
+    "resolution": 0.3912
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 19.4713,
+   "payment_risk": {
+    "payments": 21,
+    "volume_usd": 1686.3,
+    "agent_share": 0.381,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "34056b8b55c1775a22af2331670a799c",
+   "name": "Seller 34056 \u00b7 Penapolis, SP",
+   "state": "SP",
+   "orders": 78,
+   "mdt_score": 0.6806,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8889,
+    "price": 0.5252,
+    "contract": 0.9095,
+    "latency": 0.7776,
+    "dispute": 0.4899,
+    "consistency": 0.3995,
+    "comms": 0.933,
+    "resolution": 0.5216
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 23.3505,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 1836.54,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "42fa4ee7240e9b8eb4576358ec142ba7",
+   "name": "Seller 42fa4 \u00b7 Caxias Do Sul, RS",
+   "state": "RS",
+   "orders": 22,
+   "mdt_score": 0.6798,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9791,
+    "price": 0.0,
+    "contract": 0.9683,
+    "latency": 0.7771,
+    "dispute": 0.8472,
+    "consistency": 0.6346,
+    "comms": 0.9719,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.8095,
+   "avg_ticket_usd": 50.4437,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 287.23,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.1
+   }
+  },
+  {
+   "merchant_id": "1c40343cc5d18c2d8248ac2f3366de34",
+   "name": "Seller 1c403 \u00b7 Limeira, SP",
+   "state": "SP",
+   "orders": 21,
+   "mdt_score": 0.6798,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9139,
+    "price": 0.0865,
+    "contract": 0.9581,
+    "latency": 0.6647,
+    "dispute": 0.8422,
+    "consistency": 0.5304,
+    "comms": 0.971,
+    "resolution": 0.4718
+   },
+   "avg_review": 4.619,
+   "avg_ticket_usd": 30.5417,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 1592.52,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "080199a181c46c657dc5aa235411be3b",
+   "name": "Seller 08019 \u00b7 Osasco, SP",
+   "state": "SP",
+   "orders": 79,
+   "mdt_score": 0.6798,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9812,
+    "price": 0.0,
+    "contract": 0.934,
+    "latency": 0.6983,
+    "dispute": 0.9076,
+    "consistency": 0.566,
+    "comms": 0.9674,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.6154,
+   "avg_ticket_usd": 55.5858,
+   "payment_risk": {
+    "payments": 20,
+    "volume_usd": 3837.29,
+    "agent_share": 0.2,
+    "dispute_rate": 0.05,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6061155addc1e54b4cfb51c1c2a32ad8",
+   "name": "Seller 60611 \u00b7 Campinas, SP",
+   "state": "SP",
+   "orders": 28,
+   "mdt_score": 0.6796,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9561,
+    "price": 0.0,
+    "contract": 0.9658,
+    "latency": 0.8008,
+    "dispute": 0.7836,
+    "consistency": 0.5701,
+    "comms": 0.9763,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.6429,
+   "avg_ticket_usd": 143.324,
+   "payment_risk": {
+    "payments": 10,
+    "volume_usd": 1267.84,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "6a8a889bde935bafa76d7848782dfaf9",
+   "name": "Seller 6a8a8 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 26,
+   "mdt_score": 0.6795,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9259,
+    "price": 1.0,
+    "contract": 0.8687,
+    "latency": 0.76,
+    "dispute": 0.5864,
+    "consistency": 0.1338,
+    "comms": 0.975,
+    "resolution": 0.1861
+   },
+   "avg_review": 4.0385,
+   "avg_ticket_usd": 9.4998,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 994.8,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "5a93f3ab0ef4c84ed5e1b5dbf23978bc",
+   "name": "Seller 5a93f \u00b7 Monteiro Lobato, SP",
+   "state": "SP",
+   "orders": 39,
+   "mdt_score": 0.6794,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9652,
+    "price": 0.6974,
+    "contract": 0.8836,
+    "latency": 0.5769,
+    "dispute": 0.7641,
+    "consistency": 0.349,
+    "comms": 0.9816,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.6923,
+   "avg_ticket_usd": 18.5889,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 809.07,
+    "agent_share": 0.0,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "dbb9b48c841a0e39e21f98e1a6b2ec3e",
+   "name": "Seller dbb9b \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 108,
+   "mdt_score": 0.6791,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9604,
+    "price": 0.5949,
+    "contract": 0.9369,
+    "latency": 0.7231,
+    "dispute": 0.6196,
+    "consistency": 0.5117,
+    "comms": 0.9415,
+    "resolution": 0.1448
+   },
+   "avg_review": 4.2685,
+   "avg_ticket_usd": 20.6752,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 293.97,
+    "agent_share": 0.375,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "b8bc237ba3788b23da09c0f1f3a3288c",
+   "name": "Seller b8bc2 \u00b7 Itajai, SC",
+   "state": "SC",
+   "orders": 45,
+   "mdt_score": 0.679,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9696,
+    "price": 0.0,
+    "contract": 0.9764,
+    "latency": 0.7837,
+    "dispute": 0.7293,
+    "consistency": 0.6241,
+    "comms": 0.9654,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.3182,
+   "avg_ticket_usd": 90.7601,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 44.83,
+    "agent_share": 0.4,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "1caf283236cd69af44cbc09a0a1e7d32",
+   "name": "Seller 1caf2 \u00b7 Nova Iguacu, RJ",
+   "state": "RJ",
+   "orders": 33,
+   "mdt_score": 0.6789,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9147,
+    "price": 1.0,
+    "contract": 0.7306,
+    "latency": 0.6864,
+    "dispute": 0.7312,
+    "consistency": 0.0,
+    "comms": 0.9558,
+    "resolution": 0.4129
+   },
+   "avg_review": 4.6061,
+   "avg_ticket_usd": 8.3448,
+   "payment_risk": {
+    "payments": 16,
+    "volume_usd": 2203.24,
+    "agent_share": 0.3125,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "4e06067cc08b3f41d837768d392c3ee3",
+   "name": "Seller 4e060 \u00b7 Betim, MG",
+   "state": "MG",
+   "orders": 31,
+   "mdt_score": 0.6785,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9593,
+    "price": 1.0,
+    "contract": 0.8777,
+    "latency": 0.7726,
+    "dispute": 0.3929,
+    "consistency": 0.2304,
+    "comms": 0.978,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.129,
+   "avg_ticket_usd": 8.8453,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1187.73,
+    "agent_share": 0.625,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8b321bb669392f5163d04c59e235e066",
+   "name": "Seller 8b321 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 943,
+   "mdt_score": 0.6782,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9131,
+    "price": 0.8282,
+    "contract": 0.8787,
+    "latency": 0.7143,
+    "dispute": 0.5017,
+    "consistency": 0.3787,
+    "comms": 0.9518,
+    "resolution": 0.2593
+   },
+   "avg_review": 4.0745,
+   "avg_ticket_usd": 5.5443,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 630.49,
+    "agent_share": 0.3333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "42ef3192a9ff87a22d1867b74b3ee205",
+   "name": "Seller 42ef3 \u00b7 Santo Andre, SP",
+   "state": "SP",
+   "orders": 23,
+   "mdt_score": 0.6774,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9797,
+    "price": 0.5123,
+    "contract": 0.9693,
+    "latency": 0.5135,
+    "dispute": 0.7508,
+    "consistency": 0.6424,
+    "comms": 0.7909,
+    "resolution": 0.2606
+   },
+   "avg_review": 4.6522,
+   "avg_ticket_usd": 17.6603,
+   "payment_risk": {
+    "payments": 15,
+    "volume_usd": 2233.04,
+    "agent_share": 0.5333,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "7e3f87d16fb353f408d467e74fbd8014",
+   "name": "Seller 7e3f8 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 92,
+   "mdt_score": 0.6774,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.934,
+    "price": 0.7634,
+    "contract": 0.8782,
+    "latency": 0.7249,
+    "dispute": 0.5926,
+    "consistency": 0.3354,
+    "comms": 0.9814,
+    "resolution": 0.2094
+   },
+   "avg_review": 4.1304,
+   "avg_ticket_usd": 15.1248,
+   "payment_risk": {
+    "payments": 7,
+    "volume_usd": 684.47,
+    "agent_share": 0.2857,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "ececbfcff9804a2d6b40f589df8eef2b",
+   "name": "Seller ececb \u00b7 Franca, SP",
+   "state": "SP",
+   "orders": 98,
+   "mdt_score": 0.6768,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9096,
+    "price": 0.7844,
+    "contract": 0.8824,
+    "latency": 0.7916,
+    "dispute": 0.5535,
+    "consistency": 0.3462,
+    "comms": 0.9824,
+    "resolution": 0.1645
+   },
+   "avg_review": 4.1122,
+   "avg_ticket_usd": 19.6629,
+   "payment_risk": {
+    "payments": 2,
+    "volume_usd": 285.93,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "730937bf88cb151eb2eb849f642fc213",
+   "name": "Seller 73093 \u00b7 Rio Claro, SP",
+   "state": "SP",
+   "orders": 22,
+   "mdt_score": 0.6765,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9478,
+    "price": 0.083,
+    "contract": 0.9594,
+    "latency": 0.7971,
+    "dispute": 0.6388,
+    "consistency": 0.6301,
+    "comms": 0.9719,
+    "resolution": 0.3838
+   },
+   "avg_review": 4.4091,
+   "avg_ticket_usd": 36.0947,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 1033.26,
+    "agent_share": 0.6667,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "91f848e9f4be368f4318775aac733370",
+   "name": "Seller 91f84 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 63,
+   "mdt_score": 0.6764,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9762,
+    "price": 0.1749,
+    "contract": 0.9712,
+    "latency": 0.7862,
+    "dispute": 0.7047,
+    "consistency": 0.6066,
+    "comms": 0.974,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.2787,
+   "avg_ticket_usd": 29.4056,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 301.92,
+    "agent_share": 0.6,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "9d4db00d65d7760644ac0c14edb5fd86",
+   "name": "Seller 9d4db \u00b7 Sorocaba, SP",
+   "state": "SP",
+   "orders": 98,
+   "mdt_score": 0.6754,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9564,
+    "price": 0.2591,
+    "contract": 0.9438,
+    "latency": 0.8257,
+    "dispute": 0.8004,
+    "consistency": 0.4907,
+    "comms": 0.9824,
+    "resolution": 0.1448
+   },
+   "avg_review": 4.5155,
+   "avg_ticket_usd": 29.0508,
+   "payment_risk": {
+    "payments": 5,
+    "volume_usd": 67.46,
+    "agent_share": 0.6,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "28f10b1c5e5abb9d4857745bede6147c",
+   "name": "Seller 28f10 \u00b7 Sao Paulo, SP",
+   "state": "SP",
+   "orders": 28,
+   "mdt_score": 0.6753,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.8771,
+    "price": 0.7086,
+    "contract": 0.8981,
+    "latency": 0.7426,
+    "dispute": 0.4327,
+    "consistency": 0.5107,
+    "comms": 0.9763,
+    "resolution": 0.2559
+   },
+   "avg_review": 4.0,
+   "avg_ticket_usd": 7.9001,
+   "payment_risk": {
+    "payments": 19,
+    "volume_usd": 3183.82,
+    "agent_share": 0.3158,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "845e8036c3f7bf62099352f5ed910240",
+   "name": "Seller 845e8 \u00b7 Rio De Janeiro, RJ",
+   "state": "RJ",
+   "orders": 21,
+   "mdt_score": 0.6749,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9784,
+    "price": 0.6755,
+    "contract": 0.9673,
+    "latency": 0.7548,
+    "dispute": 0.3046,
+    "consistency": 0.4872,
+    "comms": 0.971,
+    "resolution": 0.2606
+   },
+   "avg_review": 3.9524,
+   "avg_ticket_usd": 19.7179,
+   "payment_risk": {
+    "payments": 8,
+    "volume_usd": 1223.68,
+    "agent_share": 0.5,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.125
+   }
+  },
+  {
+   "merchant_id": "542917da124346b47ea1ac79a93ce454",
+   "name": "Seller 54291 \u00b7 Curitiba, PR",
+   "state": "PR",
+   "orders": 20,
+   "mdt_score": 0.6749,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9444,
+    "price": 0.7113,
+    "contract": 0.9519,
+    "latency": 0.6096,
+    "dispute": 0.5036,
+    "consistency": 0.5578,
+    "comms": 0.9033,
+    "resolution": 0.2171
+   },
+   "avg_review": 4.15,
+   "avg_ticket_usd": 20.2165,
+   "payment_risk": {
+    "payments": 12,
+    "volume_usd": 3725.77,
+    "agent_share": 0.25,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  },
+  {
+   "merchant_id": "8648b1e89e9b349e32d3741b30ec737e",
+   "name": "Seller 8648b \u00b7 Jacarei, SP",
+   "state": "SP",
+   "orders": 95,
+   "mdt_score": 0.6749,
+   "tier": "watch",
+   "dimensions": {
+    "delivery": 0.9061,
+    "price": 0.6468,
+    "contract": 0.9139,
+    "latency": 0.8098,
+    "dispute": 0.4772,
+    "consistency": 0.3653,
+    "comms": 0.9724,
+    "resolution": 0.3073
+   },
+   "avg_review": 4.0842,
+   "avg_ticket_usd": 22.4198,
+   "payment_risk": {
+    "payments": 9,
+    "volume_usd": 987.4,
+    "agent_share": 0.2222,
+    "dispute_rate": 0.0,
+    "mandate_violation_rate": 0.0
+   }
+  }
+ ],
+ "channel_risk": [
+  {
+   "initiation_channel": "agent_delegated",
+   "payments": 8215,
+   "avg_amount_usd": 211.7836,
+   "volume_usd": 1202295.34,
+   "disputes": 59,
+   "canceled": 286,
+   "dispute_rate": 0.0072,
+   "cancel_rate": 0.0348
+  },
+  {
+   "initiation_channel": "human_initiated",
+   "payments": 18444,
+   "avg_amount_usd": 223.5475,
+   "volume_usd": 2901646.44,
+   "disputes": 170,
+   "canceled": 734,
+   "dispute_rate": 0.0092,
+   "cancel_rate": 0.0398
+  },
+  {
+   "initiation_channel": "agent_to_agent",
+   "payments": 3038,
+   "avg_amount_usd": 0.2563,
+   "volume_usd": 553.85,
+   "disputes": 14,
+   "canceled": 131,
+   "dispute_rate": 0.0046,
+   "cancel_rate": 0.0431
+  }
+ ],
+ "cfpb_benchmarks": [
+  {
+   "product": "Credit reporting or other personal consumer reports",
+   "complaints": 27829,
+   "timely_response_rate": 0.9995,
+   "relief_rate": 0.0405,
+   "explanation_only_rate": 0.3293
+  },
+  {
+   "product": "Debt collection",
+   "complaints": 958,
+   "timely_response_rate": 0.9603,
+   "relief_rate": 0.214,
+   "explanation_only_rate": 0.547
+  },
+  {
+   "product": "Credit card",
+   "complaints": 334,
+   "timely_response_rate": 0.991,
+   "relief_rate": 0.1257,
+   "explanation_only_rate": 0.4102
+  },
+  {
+   "product": "Checking or savings account",
+   "complaints": 332,
+   "timely_response_rate": 0.994,
+   "relief_rate": 0.0843,
+   "explanation_only_rate": 0.4729
+  },
+  {
+   "product": "Mortgage",
+   "complaints": 147,
+   "timely_response_rate": 0.9524,
+   "relief_rate": 0.0136,
+   "explanation_only_rate": 0.5782
+  },
+  {
+   "product": "Money transfer, virtual currency, or money service",
+   "complaints": 137,
+   "timely_response_rate": 1.0,
+   "relief_rate": 0.0949,
+   "explanation_only_rate": 0.6131
+  },
+  {
+   "product": "Vehicle loan or lease",
+   "complaints": 95,
+   "timely_response_rate": 1.0,
+   "relief_rate": 0.0737,
+   "explanation_only_rate": 0.6316
+  },
+  {
+   "product": "Payday loan, title loan, personal loan, or advance loan",
+   "complaints": 86,
+   "timely_response_rate": 0.9651,
+   "relief_rate": 0.0581,
+   "explanation_only_rate": 0.6163
+  },
+  {
+   "product": "Student loan",
+   "complaints": 54,
+   "timely_response_rate": 0.9444,
+   "relief_rate": 0.0,
+   "explanation_only_rate": 0.5741
+  },
+  {
+   "product": "Prepaid card",
+   "complaints": 17,
+   "timely_response_rate": 1.0,
+   "relief_rate": 0.0,
+   "explanation_only_rate": 0.7647
+  },
+  {
+   "product": "Debt or credit management",
+   "complaints": 8,
+   "timely_response_rate": 0.875,
+   "relief_rate": 0.125,
+   "explanation_only_rate": 0.625
+  }
+ ]
+}

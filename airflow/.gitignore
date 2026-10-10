@@ -1,0 +1,4 @@
+lake/
+logs/
+.env
+__pycache__/
